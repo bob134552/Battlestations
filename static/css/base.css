@@ -1,0 +1,12 @@
+#user-options::after {
+    content: none;
+}
+
+#products:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+.bg-black {
+    background-color: black;
+    border: 1px solid black;
+}

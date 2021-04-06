@@ -1,0 +1,44 @@
+[
+  {
+    "pk": 1,
+    "model": "products.products",
+    "fields": {
+      "ln": "",
+      "name": "",
+      "description": "",
+      "specifications": {
+        
+      },
+      "price": "",
+      "category": 1,
+      "image_url": "",
+      "image": ""
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.products",
+    "fields": {
+      "ln": "",
+      "name": "",
+      "description": "",
+      "price": "",
+      "category": 1,
+      "image_url": "",
+      "image": ""
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.products",
+    "fields": {
+      "ln": "",
+      "name": "",
+      "description": "",
+      "price": "",
+      "category": 1,
+      "image_url": "",
+      "image": ""
+    }
+  }
+]

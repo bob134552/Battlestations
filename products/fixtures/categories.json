@@ -1,0 +1,82 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "cases",
+      "friendly_name": "Cases"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "cooling",
+      "friendly_name": "Cooling"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+      "name": "gpus",
+      "friendly_name": "GPUs"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+      "name": "cpus",
+      "friendly_name": "CPUs"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": {
+      "name": "psus",
+      "friendly_name": "Power Supplies"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": {
+      "name": "motherboards",
+      "friendly_name": "Motherboards"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.category",
+    "fields": {
+      "name": "storage_hdd",
+      "friendly_name": "Storage - HDD"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.category",
+    "fields": {
+      "name": "storage_ssd",
+      "friendly_name": "Storage - SSD"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.category",
+    "fields": {
+      "name": "memory",
+      "friendly_name": "Memory - RAM"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.category",
+    "fields": {
+      "name": "pre_built",
+      "friendly_name": "Pre-Built"
+    }
+  }
+]
