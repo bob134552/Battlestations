@@ -36,7 +36,7 @@
 
     <body>
         <header class="container-fluid fixed-top">
-            <div class="row bg-primary">
+            <div class="row d-none d-lg-flex" id="topnav">
                 <div class="col-12 col-md-4 mt-2">
                     <a class="btn" href="">
                         <h1><strong>BattleStations</strong></h1>
@@ -44,15 +44,17 @@
                 </div>
                 <div class="col-12 col-md-4 mt-2 py-3">
                     <form method="GET" action="">
-                        <div class="input-group">
+                        <div class="input-group w-100">
                             <input class="form-control rounded-start border border-secondary border-end-0" type="text" name="q" placeholder="Search..." maxlength="150">
-                            <button class="btn btn-outline-secondary bg-black rounded-end border-start-0" type="button"><span class="icon">
+                            <button class="btn btn-outline-dark bg-dark rounded-end border-start-0" type="button">
+                                <span class="icon">
                                     <i class="fas fa-search text-warning"></i>
                                 </span>
                             </button>
                         </div>
                     </form>
                 </div>
+
                 <div class="col-12 col-md-4 mt-2 d-md-flex justify-content-md-end py-1">
                     <ul class="list-inline list-unstyled">
                         <li class="list-inline-item dropdown">
@@ -62,16 +64,16 @@
                                     <p class="my-0">My Account</p>
                                 </div>
                             </a>
-                            <ul class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <ul class="dropdown-menu border-1 rounded-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                         <li><a href="" class="dropdown-item">Product Management</a></li>
                                     {% endif %}
                                     <li><a href="" class="dropdown-item">My Profile</a></li>
-                                    <li><a href="" class="dropdown-item">Logout</a></li>
+                                    <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
                                 {% else %}
-                                    <li><a href="" class="dropdown-item">Sign Up</a></li>
-                                    <li><a href="" class="dropdown-item">Login</a></li>
+                                    <li><a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a></li>
+                                    <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
                                 {% endif %}
                             </ul>
                         </li>
@@ -92,11 +94,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="row bg-warning">
-                <nav class="navbar navbar-expand-lg">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="row bg-warning border-bottom border-dark">
+                <nav class="navbar navbar-expand-lg navbar-light w-100">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
                 </nav>
             </div>
