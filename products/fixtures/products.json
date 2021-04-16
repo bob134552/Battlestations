@@ -1,44 +1,702 @@
 [
-  {
-    "pk": 1,
-    "model": "products.products",
-    "fields": {
-      "ln": "",
-      "name": "",
-      "description": "",
-      "specifications": {
-        
-      },
-      "price": "",
-      "category": 1,
-      "image_url": "",
-      "image": ""
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "DPCGRA-196",
+            "name": "ASUS NVIDIA GeForce RTX 3080 10GB ROG Strix OC Ampere Graphics Card",
+            "info": "ASUS NVIDIA GeForce RTX 3080 ROG Strix OC 10GB GDDR6X Ray-Tracing Graphics Card, 8704 Core, 1440MHz GPU, 1905MHz Boost",
+            "description": "The ROG Strix GeForce RTX\u2122 3080 OC has been drastically improved to house the revolutionary new Ampere chips from NVIDIA and to deliver the next generation of gaming performance. This state-of-the-art fresh design uses more metal surrounds and a grouping of Axial-tech fans. Last gen's uniform fan layout has been usurped by a new rotation scheme and specialised roles for central and auxiliary fans. Below the blades lies a larger, more impressive heatsink that's ready for the most demanding thermal loads. The PCB also has some new tricks, and even the backplate has some new performance-boosting changes. This is the latest and greatest in GPU design. ",
+            "price": 840,
+            "category": 3,
+            "image_url": "https://www.scan.co.uk/images/products/super/3217631-l-a.jpg",
+            "image": "3217631-l-a.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "DPCGRA-197",
+            "name": "ASUS NVIDIA GeForce RTX 3090 24GB ROG OC Strix Ampere Graphics Card",
+            "info": "ASUS NVIDIA GeForce RTX 3090 ROG Strix OC 24GB GDDR6X Ray-Tracing Graphics Card, 10496 Core, 1410MHz GPU, 1860MHz Boost",
+            "description": "Race through the next generation of games with the GeForce RTX 3090, powered by Ampere, NVIDIA's 2nd gen RTX architecture. Featuring AI performance and enhanced ray tracing as well as a massive 24 GB of memory, it's designed to deliver the ultimate gaming performance.",
+            "price": 1399,
+            "category": 3,
+            "image_url": "https://www.scan.co.uk/images/products/xlarge/3217634-xl-a.jpg",
+            "image": "3217634-l-a.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model":"products.product",
+        "fields": {
+            "sku": "LN112996",
+            "name": "Gigabyte AMD Radeon RX 6900 XT 16GB Graphics Card",
+            "info": "Gigabyte Radeon RX 6900 XT 16GB GDDR6 Ray-Tracing Graphics Card, RDNA2, 5120 Streams, 2015MHz GPU, 2250MHz Boost ",
+            "description": "The Gigabyte Radeon RX 6900 XT is here to bring you the incredible performance you deserve, featuring the all-new breakthrough RNDA2 architecture and 80 powerful enhanced compute units engineered to deliver powerhouse performance to all gamers. The AMD Radeon™ RX 6900XT graphics card powers a new generation of competitive and 4K gaming with vivid visuals, and elevated experiences in every game and every frame with 128MB of all new AMD Infinity Cache, DirectX 12/PCIe 4.0 Support and 16GB of dedicated GDDR6 memory. Experience gaming with realistic lighting, shadows, and reflections along with rich detail thanks to DirectX® Raytracing (DXR), variable rate shading (VRS), and AMD FidelityFX features, optimised for AMD RDNA™ 2 architecture.",
+            "price": 1100,
+            "category": 3,
+            "image_url": "https://www.scan.co.uk/images/products/super/3259849-l-a.jpg",
+            "image": "3259849-l-a.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model":"products.product",
+        "fields": {
+            "sku": "LN104735",
+            "name": "MSI AMD Radeon RX 5600 XT GAMING X 6GB GDDR6 RDNA PCIe 4.0 Graphics Card",
+            "info": "MSI Radeon RX 5600 XT GAMING X 6GB GDDR6 PCIe 4.0 Graphics Card, 7nm RDNA, 2304 Streams, 1235MHz GPU, 1620MHz Boost",
+            "description": "Introducing the AMD Radeon RX 5600 XT Gaming Graphics Card, powered by the all advanced 7nm RDNA Architecture taking 1080p gaming to all new heights giving you, ultra-responsive, high fidelity triple A gaming with up to 60 Frames/sec and eSports gaming with up to 90 Frames/sec and with all new compute units you can expect even higher levels of performance and optimised visual effects such as volumetric lighting, blur effects and multi-level cache hierarchy for reduced latency and faster response times, sounds great right? This is accelerated gaming customised for you.",
+            "price": 654.07,
+            "category": 3,
+            "image_url": "https://www.scan.co.uk/images/products/super/3140725-l-a.jpg",
+            "image": "3140725-l-a.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN77659",
+            "name": "MSI GTX 1050Ti 4GT LP 4GB Graphics Card with Low Profile Bracket",
+            "info": "4GB MSI GTX 1050Ti 4GT LP GDDR5 Graphics Card, 768 Core, 1290 MHz GPU, 1392 MHz Boost, Low Profile Compatible ",
+            "description": "GeForce GTX graphics cards are the most advanced ever created. Discover unprecedented performance, power efficiency, and next-generation gaming experiences. Pascal is built to meet the demands of next generation displays, including ultra-high-resolution and multiple monitors. It features NVIDIA GameWorks™ technologies for extremely smooth gameplay and cinematic experiences. Plus, it includes revolutionary new 360-degree image capture.",
+            "price": 276.99,
+            "category": 3,
+            "image_url": "https://www.scan.co.uk/images/products/super/2811846-l-a.jpg",
+            "image": "2811846-l-a.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN108898",
+            "name": "Corsair Black 4000D Mid-Tower Windowed PC Case",
+            "info": "Corsair 4000D, Black, Mid Tower Tempered Glass Window, 2x 120mm Fans, USB 3.1 Type-C, mITX/mATX/ATX/E-ATX",
+            "description": "Build a system and customise it to your expertise with the CORSAIR 4000D case in Black. This mid tower ATX case features a tempered glass side panel, a sharp looking solid steel front panel and wide ventilation channels to deliver both superior looks and airflow. Featuring Two 120mm AirGuide fans that concentrate cooling into your system for maximum airflow. Complete with a modern front I/O panel including a USB-C port, the Black 4000D makes great cooling and clean looks easier than ever – especially focusing on storage capabilities, with room for radiators in sizes up to 360mm and four storage drives.",
+            "price": 69.98,
+            "category": 1,
+            "image_url": "https://www.scan.co.uk/images/products/super/3199902-l-a.jpg",
+            "image": "3199902-l-a.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN113562",
+            "name": "Thermaltake Divider 300 TG Black Mid Tower Tempered Glass PC Gaming Case",
+            "info": "Thermaltake Divider 300, Black, Mid Tower w/ Tempered Glass Windows, 3x ARGB 120mm Fans, USB 3.2 Type-C, ATX/mATX/mITX",
+            "description": "Thermaltake designed a brand-new case series that contains a mixture of open frame style elements and customizable options blending all the functionalities into the Divider Series. The most exceptional feature of the Divider 300 TG Mid Tower Chassis is the two symmetrical triangular pieces comprised of a steel panel and tempered glass window. These panels are tool-free and easy to remove, offering a clear view of the components inside. The Divider 300 TG Snow Mid Tower Chassis is the next-gen gaming PC case for regular users, enthusiasts, and gamers, giving them unprecedented satisfaction.",
+            "price": 109.99,
+            "category": 1,
+            "image_url": "https://www.scan.co.uk/images/products/super/3273033-l-a.jpg",
+            "image": "3273033-l-a.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN99706",
+            "name": "ASUS ROG Strix Helios Addressable Aura RGB Aluminium Glass Midi PC Gaming Case",
+            "info": "ASUS ROG Strix Helios, Black, Mid Tower PC Case, with ARGB Lighting & Tempered Glass Windows, E-ATX~mITX, 3x 140mm Fans",
+            "description": "Craft a showcase build with the ROG Strix Helios case from ASUS. This exclusive mid-tower gaming chassis features three smoked tempered-glass panels, is built with an aluminium frame and offers unique integrated front-panel RGB lighting which can be controlled via ASUS AURA Sync with a variety of colours and effects. Build the ultimate gaming machine with this incredible case, which can house all the way up to an EATX motherboard, with room for serious water-cooling setups and built-in cable management. The ROG Strix Helios provides impressive expandability and performance, perfect for any gaming enthusiast.",
+            "price": 284.99,
+            "category": 1,
+            "image_url": "https://www.scan.co.uk/images/products/xlarge/3074140-l-a.jpg",
+            "image": "3074140-l-a.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN89622",
+            "name": "Corsair Obsidian 500D RGB SE Tempered Glass Midi PC Gaming Case with RGB Fans",
+            "info": "Corsair Obsidian 500D RGB SE Mid Tower PC Case w/ Tempered Glass Windows, ATX/mATX/mITX, 3x 120mm Light Loop RGB Fans",
+            "description": "The Obsidian Series 500D RGB SE is an ultramodern mid-tower PC case, built with innovative Corsair design for true enthusiasts. The RGB SE front panel has been restyled with tempered glass so you can appreciate the brilliant RGB lighting. Hinged tempered glass side doors and superior aluminium trim finish the look. Featuring three CORSAIR LL120 RGB fans, which provide spectacular RGB lighting, all controlled using the included CORSAIR Commander PRO and CORSAIR iCUE software. Accessing your system is simple, and cooling upgrades are uncomplicated thanks to fully removable radiator trays. The 500D RGB SE upgrade makes it easier than ever to build your dream PC.",
+            "price": 247.99,
+            "category": 1,
+            "image_url": "https://www.scan.co.uk/images/products/super/2944196-l-a.jpg",
+            "image": "2944196-l-a.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN75991",
+            "name": "Corsair Crystal 570X Tempered Glass RGB PC Gaming Case",
+            "info": "Corsair Crystal Series 570X RGB Mid Tower Computer Chassis, ATX/mATX/mITX, Tempered Glass, 3x120mm RGB Fan",
+            "description": "The 570X RGB is a compact and expandable two-panel tempered glass case, that allows you to view all of your components. The front glass panel hosts three SP120 RGB fans that you can customize to your heart’s content. These fans give you ample cooling directly to your components without the annoying fan hum. The Crystal 570X from Corsair also features Direct Airflow Technology that keeps everything cool and quite for the best PC experience.",
+            "price": 179.99,
+            "category": 1,
+            "image_url": "https://www.scan.co.uk/images/products/super/2783836-l-a.jpg",
+            "image": "2783836-l-a.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN100567",
+            "name": "ThermalTake UX200 ARGB Intel/AMD CPU Cooler with 120mm ARGB Fan",
+            "info": "ThermalTake UX200, 1x 120mm ARGB LED Fan, Single Tower, 1500rpm, 43.34 CFM, PWM, Aluminium Fins, Copper Heatpipes",
+            "description": "UX200 ARGB Lighting CPU Cooler comes with the high air flow blades and U-shape copper heat pipes. Built-in ARGB LEDs delivers a vibrant lighting effect that also supports motherboard sync. Compatible with universal Intel and AMD socket.",
+            "price": 34.99,
+            "category": 2,
+            "image_url": "https://www.scan.co.uk/images/products/super/3086309-l-a.jpg",
+            "image": "3086309-l-a.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN86752",
+            "name": "NZXT Kraken M22 RGB Intel/AMD All In One CPU Water Cooler 120mm",
+            "info": "NZXT Kraken M22, All-In-One RGB CPU Hydro Cooler 120mm Radiator CAM Control, 120mm PWM Fan, for Intel/AMD CPUs",
+            "description": "The NZXT M22 Kraken series is an impressive all-in-one CPU Hydro Cooler that features two addressable RGB channels and NZXTs signature mirroring effect to provide stunning lighting which can be controlled by CAM’s software. The M22 Kraken features a Aer P120 PWM radiator-optimized fan and is built from premium materials such as aluminum fins and a copper base for optimum cooling, and is all backed by a great 3-year warranty.",
+            "price": 69.98,
+            "category": 2,
+            "image_url": "https://www.scan.co.uk/images/products/super/2913573-l-a.jpg",
+            "image": "2913573-l-a.jpg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN110648",
+            "name": "ASUS TUF Gaming LC 240mm RGB AIO Intel/AMD CPU Water Cooler",
+            "info": "ASUS TUF Gaming LC 240 RGB, 240mm All-In-One Hydro CPU Cooler, 2x 120mm ARGB Fan, Aura Sync, Aluminium/Copper, Intel/AMD",
+            "description": "The TUF Gaming LC 240 RGB CPU water cooler delivers high-performance CPU cooling whilst radiating a colourful RGB style! This TUF Gaming series of durable CPU liquid coolers are designed for mid-sized gaming builds. Unleash the full potential of your Intel or AMD CPU, while further personalising your build with vivid RGB lighting effects on the iconic TUF Gaming logos with Aura Sync support. The pump’s design offers unbelievable durability and performance, and you can use this adaptable cooler with both AMD and Intel CPUs, and appreciate the easy installation with 38mm of fortified tubing that makes setup easier than ever.",
+            "price": 99.98,
+            "category": 2,
+            "image_url": "https://www.scan.co.uk/images/products/super/3219297-l-a.jpg",
+            "image": "3219297-l-a.jpg"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN107081",
+            "name": "CoolerMaster MasterLiquid ML240L V2 RGB All In One Liquid CPU Cooler",
+            "info": "Cooler Master MasterLiquid ML240L V2 RGB, 240mm All-in-One Hydro CPU Cooler, 2x120mm PWM Fan, RGB LEDs, Aluminium/Copper ",
+            "description": "End your search for a dependable, easy-to-install liquid cooler here with the MasterLiquid ML240L V2. Cooler Master has remastered it's first ML240L design to bring you a new and improved cooler that offers stunning colour and impeccable performance to bring your gaming PC to life. Customise your system and sync the beautiful RGB with compatible softwares such as ASUS AURA sync, GIGABYTE RGB Fusion, MSI Mystic Light Sync and ASRock RGB LED. The new SickleFlow 120 RGB fans use optimized Air Balance Fan blades for quieter and more efficient cooling. This new version of the ML240L provides quieter cooling performance with its new 3rd Gen Dual Chamber Pump, and offers a 20% increase in the surface area on the radiator for superior cooling performance so you're ready for any heavy-duty task.",
+            "price": 69.98,
+            "category": 2,
+            "image_url": "https://www.scan.co.uk/images/products/super/3173408-l-a.jpg",
+            "image": "3173408-l-a.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN90686",
+            "name": "Deepcool Gammaxx 200T CPU Cooler with 120mm Fan Intel/AMD",
+            "info": "DEEPCOOL Gammaxx 200T Single Tower CPU Cooler, 2 Heatpipes, 1x120mm PWM Bearing Quiet Fan, Intel/AMD",
+            "description": "The next-gen GAMMAXX 200T has preserved the essential features and great heat dissipation performance of the GAMMAXX 200: Core Touch Technology (CTT) directly transfers heat from the CPU to the heatsink. GAMMAXX 200T has upped its ante with a massive heatsink and an enlarged 12cm PWM fan, providing a more powerful airflow and enhanced cooling performance.",
+            "price": 12.98,
+            "category": 2,
+            "image_url": "https://www.scan.co.uk/images/products/super/2957580-l-a.jpg",
+            "image": "2957580-l-a.jpg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN102499",
+            "name": "Intel 10 Core i9 10900X Unlocked Cascade Lake-X CPU/Processor",
+            "info": "Intel Core i9 10900X, S 2066, Cascade Lake-X, 10 Cores, 20 Threads, 3.7GHz, 4.5GHz Turbo, 19.25MB Cache, 165W, Retail",
+            "description": "The latest Intel Core i9 10900X X Series processor is powered by 10 Cores and 20 Threads to address the simultaneous, compute-intensive demands of creators. The Intel Core X Series CPU’s allow flexible system configuration for specific creator usages, giving you access to 48 PCIe lanes, quad channel memory, plus support for Thunderbolt technology and high-speed SSD drives. The new X Series processors are fully unlocked and offer the power, and convenience of a full studio in your PC to help accelerate your creative work flow from start to finish.",
+            "price": 529.99,
+            "category": 4,
+            "image_url": "https://www.scan.co.uk/images/products/super/3111252-l-a.jpg",
+            "image": "3111252-l-a.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN113624",
+            "name": "Intel Core i7 11700K Rocket Lake PCIe 4.0 CPU/Processor Retail",
+            "info": "Intel Core i7 11700K, S 1200, Rocket Lake, PCIe 4.0, 8 Cores, 16 Threads, 3.6GHz, 5.0GHz Turbo, 16MB Cache, 125W, Retail",
+            "description": "The 11th Gen Intel® Core™ i7-11700K has got fast clock speeds and high core counts which work seamlessly together to get more out of competetive gaming and content creation. You can play, record and stream with high FPS and effortlessly switch to heavy multitasking workloads. The 11th Generations CPU's are compatible with most 400 and 500 series motherboards and support PCIe Gen 4, you can also take advantage of excellent memory speeds and great features like Intel Turbo Boost Max Technology 3.0 and Intel Thermal Volocity Technology.",
+            "price": 383.17,
+            "category": 4,
+            "image_url": "https://www.scan.co.uk/images/products/super/3273731-l-a.jpg",
+            "image": "3273731-l-a.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN95427",
+            "name": "Intel Core i7 9700KF Unlocked 9th Gen Desktop Processor/CPU - No iGPU",
+            "info": "Intel Core i7 9700KF, S 1151, Coffee Lake Refresh, 8 Core, 8 Thread, 3.6GHz, 4.9GHz Turbo, 12MB, w/o iGPU, 95W, CPU, Box",
+            "description": "xperience exceptional performance, immersive entertainment and simple convenience with 9th Gen Intel Core processors. The i7 9700KF processor extends all the capabilities that users love from previous generation CPUs with even more advanced innovations that deliver new levels of performance immersing you into your computer on a variety of form factors. The Intel 9700KF CPU is unlocked allowing you to overclock it to your gaming or production needs for additional performance headroom. The 9700KF also ditches integrated graphics which further increases performance on systems where only a dedicated GPU can deliver the graphics power you need.",
+            "price": 179.99,
+            "category": 4,
+            "image_url": "https://www.scan.co.uk/images/products/super/3019319-l-a.jpg",
+            "image": "3019319-l-a.jpg"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN111443",
+            "name": "AMD Ryzen 9 5900X 12 Core AM4 CPU/Processor",
+            "info": "AMD Ryzen™ 9 5900X, AM4, Zen 3, 12 Core, 24 Thread, 3.7GHz, 4.8GHz Turbo, 70MB Cache, PCIe 4.0, 105W, CPU",
+            "description": "The AMD Ryzen 9 5900X has a great 12 Cores and 24 thread making this processor great for gaming, content creators and to even power a workstation. When you have the world’s most advanced processor architecture for gamers and content creators, the possibilities are endless. Whether you are playing the latest games, designing the next skyscraper, or crunching data, you need a powerful processor that can handle it all—and more. Hands down, the AMD Ryzen™ 5000 Series desktop processors set the bar for gamers and artists alike.",
+            "price": 559.98,
+            "category": 4,
+            "image_url": "https://www.scan.co.uk/images/products/super/3231872-l-a.jpg",
+            "image": "3231872-l-a.jpg"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN104661",
+            "name": "AMD Ryzen Threadripper 3990X Gen3 64 Core TRX4 CPU/Processor",
+            "info": "AMD Ryzen™ Threadripper 3990X, TRX4, Zen 2, 64 Core, 128 Thread, 2.9GHz, 4.3GHz Turbo, PCIe 4.0, 280W, CPU",
+            "description": "The 3rd Generation of Threadripper™ are truly built for the best whether you are a content creator, professional or an enthusiast. The 3990X has been optimized for use with video editing, 3D modelling, data sciences, simulation and even software development and delivers incredible performance. The 3990X Threadripper™ is faster in every single workload as 64 cores provide an astonishing 128 threads of simultaneous multi-processing power and has a boost clock of 4.3Ghz with a huge 288MB combined cache along with 88 PCIe lanes allow for substantial performance and connectivity along with quad channel DDR4 memory allowing you to push your PC to its limits.",
+            "price": 3479.99,
+            "category": 4,
+            "image_url": "https://www.scan.co.uk/images/products/super/3140107-l-a.jpg",
+            "image": "3140107-l-a.jpg"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN110144",
+            "name": "EVGA SuperNOVA 650 GA Power Supply/PSU",
+            "info": "650W EVGA SuperNOVA 650 GA, 80PLUS Gold, Fully Modular, Single Rail, 54.1A + 12V, 135mm DBB Fan, ATX PSU",
+            "description": "Introducing the EVGA SuperNOVA GA power supply. This is the latest edition to the outstanding line-up of EVGA PSUs. Featuring an 80 Plus Gold certification, 100% Japanese capacitors, a super-durable double-ball bearing fan, and a fully modular design, this power supply is built for long-term usage and durability. All the crucial features you need are built into the SuperNOVA GA and are accompanied by a great price. You're also completely covered by EVGA's generous 10-year warranty.",
+            "price": 94.99,
+            "category": 5,
+            "image_url": "https://www.scan.co.uk/images/products/super/3213410-l-a.jpg",
+            "image": "3213410-l-a.jpg"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN97756",
+            "name": "Silverstone Strider 750 Watt Fully Modular 80+ Gold PSU/Power Supply",
+            "info": "750W SilverStone Strider ST75F-GS v3.0, Fully Modular, 80PLUS Gold, Single Rail, 62.5A, 120mm Fan, ATX PSU",
+            "description": "To meet the requirements of current and future desktop computers, SilverStone created the Strider Gold S series power supplies. The Strider Gold S models are all new designs engineered to be the smallest, full-modular ATX power supplies at any wattage levels. The Strider Gold S series includes wattage range from 550W to 1500W for a great variety of applications. With short depth designs, all models in the series are among the world’s smallest full-modular ATX PSUs. In addition to 80 PLUS Gold level efficiency, the Strider Gold S PSUs are built to meet very high standards in electrical performance with ±3% voltage regulation, ±3% ripple & noise, and high amperage single +12V rail. Other notable features included are 24/7 40? continuous output capability, low-noise fan, and multiple sets of PCI-E cables. For users looking for a power supply with faultless combination of compact size, performance, efficiency, and quality, the Strider Gold S Series is the only choice.",
+            "price": 89.99,
+            "category": 5,
+            "image_url": "https://www.scan.co.uk/images/products/super/3050106-l-a.jpg",
+            "image": "3050106-l-a.jpg"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "sku": "",
+            "name": "Corsair 750 Watt CX750F RGB Fully Modular Black PSU/Power Supply",
+            "info": "750W Corsair CX750F RGB Black, Fully Modular, 80 PLUS Bronze, Single Rail, 62.5A, 120mm Fan, ATX PSU",
+            "description": "The CORSAIR CX RGB is a fully modular PSU that delivers reliable 80 PLUS Bronze efficient power to your dream rig, with vibrant, customisable lighting from a 120mm RGB fan which boasts eight RGB LEDs and a super-clean aesthetic. Simply cycle through nine preset lighting modes, or connect to a CORSAIR iCUE RGB Lighting Controller or compatible motherboard to unlock advanced lighting control. The CX Series PSUs are crafted with 105°C rated Japanese primary capacitors for excellent electrical performance, with fully modular cables to make your building and upgrading a breeze. Designed for low-noise operation with near-silent operation at low loads, and supporting Microsoft Modern Standby sleep mode for extremely fast wake-up times, the CX RGB Series is the ultimate PSU for silence and stunning colour.",
+            "price": 89.99,
+            "category": 5,
+            "image_url": "https://www.scan.co.uk/images/products/super/3213944-l-a.jpg",
+            "image": "3213944-l-a.jpg"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN108109",
+            "name": "Thermaltake Smart BM2 650 Watt Full Modular 80+ Bronze PSU/Power Supply",
+            "info": "650W Thermaltake Smart BM2, Full Modular, 80 PLUS Bronze, Single Rail, 54A, 140mm Fan, ATX, PSU",
+            "description": "The semi modular Smart BM2 series is built to deliver 80 PLUS Bronze efficiency. The series features a 140mm rifle bearing fan, a Japanese capacitor and other premium components to help deliver a continuous and stable power where near silent operation and reliable performance are always guaranteed. The Smart BM2 power supply is able to satisfy where PC enthusiasts are looking for a premium power supply with all the latest features.",
+            "price": 64.99,
+            "category": 5,
+            "image_url": "https://www.scan.co.uk/images/products/super/3188836-l-a.jpg",
+            "image": "3188836-l-a.jpg"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN110371",
+            "name": "SilverStone ET650-B v1.4 650 Watt Wired 80+ Bronze PSU/Power Supply",
+            "info": "650W SilverStone ET650-B v1.4, Fully Wired, 80 Plus Bronze, Single Rail, 50A, 120mm Fan, ATX PSU",
+            "description": "Designed for 80 PLUS Bronze level of efficiency to reduce wasted heat and save on electricity. With a power density of 360W per litre, featuring Sliverstone's class-leading single +12V rail design, dual EPS 8-pin with multiple PCIe 8/6-pin connectors - all of which has been tested for 24/7 continuous power output with only a 40°C operating temperature - efficient operation and reliability is guaranteed. Finished in sleek black with all black flat cables for a professional, tidy look to compliment any build.",
+            "price": 49.99,
+            "category": 5,
+            "image_url": "https://www.scan.co.uk/images/products/super/3216044-l-a.jpg",
+            "image": "3216044-l-a.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN114059",
+            "name": "ASUS ROG Maximus XIII Extreme Intel Z590 PCIe 4.0 E-ATX Motherboard",
+            "info": "ASUS ROG Maximus XIII Extreme, Intel Z590, S 1200, DDR4, PCIe 4.0, SATA3, 5x M.2, 10Gbe + 2.5GbE, TB4, E-ATX",
+            "description": "The Z590 ROG Maximus XIII Extreme is fully armed for those wanting to push the latest 11th Gen Intel® Core™ processors to the very edges of the performance envelope. It features the latest hardware and software that work in unison to optimise your overclocking experience, as well as AI-enhancements and comprehensive cooling controls to give you total command over your build. This top tier performance is achieved by packing this E-ATX motherboard with a robust 18+2 power solution with ProCool II power connectors, enlarged VRM, 5x M.2 heat sinks, high-conductivity thermal pads and ROG Water-Cooling Zones. The Maximus Xiii Extreme also features Wifi 6E and onboard 2.5GbE and dual ThunderBolt4 connectivity, full Pcie 4.0 design, 5x M.2 slots and industry leading audio, but thats all with ASUS AURA Sync support you are free to customise the 2” LiveDash OLED, ASUS-exclusive Aura Sync RGB lighting, including one RGB header and three addressable Gen 2 RGB headers. This Beast is ready to take you into a new realm of performance... are you ready?",
+            "price": 939.98,
+            "category": 6,
+            "image_url": "https://www.scan.co.uk/images/products/super/3280684-l-a.jpg",
+            "image": "3280684-l-a.jpg"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN114350",
+            "name": "Gigabyte Intel Z590 Gaming X ATX Motherboard",
+            "info": "Gigabyte Z590 Gaming X, Intel Z590, S 1200, DDR4, PCIe 4.0, SATA3, 3x M.2, 2.5GbE, USB 3.2 Gen2 A+C, ATX",
+            "description": "Here to herald the arrival of the latest generation of Intel CPUs is the Gigabyte Z590 Gaming X Motherboard, in order to squeeze every ounce of performance from the new 11th Generation Intel CPUs the Gaming X boasts an updated digital power design, access to PCIe 4.0 technology, a comprehensive cooling solution with integrated IO armour, PCIe 4.0 M.2 slot with thermal guard to prevent throttling, a super-fast 2.5GbE LAN, Type-C connectivity and support for Gigabytes RGB Fusion 2.0 Software to control and synchronise lighting across compatible products. The Gigabyte Z590 Gaming X is perfect for daily users and mainstream enthusiasts that are looking to push the modern boundaries of performance. Start with a strong foundation, now is your chance.",
+            "price": 172.99,
+            "category": 6,
+            "image_url": "https://www.scan.co.uk/images/products/super/3283869-l-a.jpg",
+            "image": "3283869-l-a.jpg"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN114061",
+            "name": "ASUS ROG STRIX Z590-E GAMING WIFI Intel Z590 PCIe 4.0 ATX Motherboard",
+            "info": "ASUS ROG STRIX Z590-E GAMING WIFI, Intel Z590, S 1200, DDR4, PCIe 4.0, SATA3, 4x M.2, 2x 2.5GbE, ax/BT5.2, USB 3.2, ATX",
+            "description": "The incredibly powerful ROG Strix Z590-E Gaming WiFi motherboard is designed with advanced power delivery and enhanced cooling to manage with the strains of potent 11th Generation Intel® Core™ Rocket Lake processors. Along with the latest Intel® Wi-Fi 6E and PCI Express® 4.0 M.2 for super-fast transfer speeds and storage, Strix Z590-E Gaming WiFi features Two-Way AI Noise Cancellation to guarantee clear communication in any situation. This powerhouse of a motherboard is decked in a futuristic look that’s emphasised with a brushed-metal finish, iridescent ROG logo on the I/O shroud, and Aura Sync illumination.",
+            "price": 339.98,
+            "category": 6,
+            "image_url": "https://www.scan.co.uk/images/products/super/3280687-l-a.jpg",
+            "image": "3280687-l-a.jpg"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN103589",
+            "name": "ASUS AMD Threadripper ROG STRIX TRX40-E GAMING PCIe 4.0 ATX Motherboard",
+            "info": "ASUS ROG STRIX TRX40-E GAMING, AMD TRX40, sTRX4, DDR4, PCIe 4.0, 3xM.2, SLI/CrossFire, 2.5GbE, ax WiFi, USB3.2 Gen2, ATX",
+            "description": "ROG Strix TRX40-E Gaming combines stunning gaming aesthetics with high-end desktop performance for do-it-all builds for users that like to work hard and play hard. A huge range of design touches show off its cyberpunk origins, including a translucent I/O shroud glows under Aura lighting and a striking rainfall pattern on the VRM & chipset heatsinks. When it comes to performance, ROG Strix TRX40-E Gaming delivers with a wealth of ultrafast connectivity options, including three PCIe 4.0 M.2 slots, the latest 2.5G Ethernet and Wi-Fi 6 networking, and eight USB 3.2 Gen 2 ports.\nROG Strix TRX40-E Gaming motherboard supports the latest 3rd Gen AMD Ryzen™ Threadripper™ series processors that boast up to 32 cores. It features quad-channel DDR4 memory, 64 lanes of PCI Express® 4.0, 16 GT/s transfer speed for Gen 4 M.2 SSDs, and built-in native USB 3.2 Gen 2 (10 Gbps) for superior performance.",
+            "price": 494.99,
+            "category": 6,
+            "image_url": "https://www.scan.co.uk/images/products/super/3123958-l-a.jpg",
+            "image": "3123958-l-a.jpg"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN114282",
+            "name": "ASUS AMD Threadripper Pro WS WRX80E-SAGE SE WIFI PCIe 4.0 eATX Motherboard",
+            "info": "ASUS PRO WS WRX80E-SAGE SE WIFI, AMD WRX80, sWRX8, DDR4, 3x M.2, SLI/CrossFire, Dual 10GbE, ax WiFi, USB 3.2 Gen2, E-ATX",
+            "description": "ASUS Pro WS WRX80E-SAGE SE WIFI is engineered to unleash the incredible power of the latest AMD® Ryzen® Threadripper™ Pro series processors and is a reliable foundation for professional creative workloads that benefit from multi-core CPUs, such as video editing and 3D rendering. Additionally, seven PCIe 4.0 slots with SafeSlot fortification deliver exceptional performance with the latest high-power graphics cards.",
+            "price": 889.99,
+            "category": 6,
+            "image_url": "https://www.scan.co.uk/images/products/super/3283489-l-a.jpg",
+            "image": "3283489-l-a.jpg"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN89663",
+            "name": "WD Black 4TB 3.5\" Desktop SATA Performance HDD/Hard Drive",
+            "info": "4TB WD Black WD4005FZBX, 3.5\" Performance HDD, SATA III - 6Gb/s, 7200rpm, 256MB Cache, OEM",
+            "description": "WD Black™ performance storage is designed to enhance your PC experience across heavier computing tasks whether you are a digital artist, video editor, photographer, or gamer. Available with an impressive 256MB of DRAM cache on higher capacity models, the WD Black drive is optimized for drive performance so you can spend more time experiencing the things you love most. Enhance your PC’s performance even further when you combine a WD Black drive with an SSD for a dual drive configuration, allowing you to benefit from the additional caching of your operating system onto the SSD for increased performance. All together, the WD Black drive gives you the hard drive performance, capacity and an industry leading 5-year limited warranty for an inspiring three-in-one storage solution.",
+            "price": 167.99,
+            "category": 7,
+            "image_url": "https://www.scan.co.uk/images/products/super/2944354-l-a.jpg",
+            "image": "2944354-l-a.jpg"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN53871",
+            "name": "WD Black 2TB 3.5\" SATA III Desktop HDD/Hard Drive",
+            "info": "2TB WD Black WD2003FZEX, 3.5\" HDD, SATA III - 6Gb/s, 7200rpm, 2ms, 64MB Cache",
+            "description": "The 2TB WD BLACK HDD provides high quality and incredible performance using the latest SATA III standard which runs at 6Gb/s, the 3.5 inch form factor is just 26.1mm in height. The RPM class for this drive is 7200 rpm with a storage capacity of 2000GB, these drives come with a 64MB cache with an access time of just 2ms.",
+            "price": 111.98,
+            "category": 7,
+            "image_url": "https://www.scan.co.uk/images/products/super/2250265-l-a.jpg",
+            "image": "2250265-l-a.jpg"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN86645",
+            "name": "Toshiba P300 3.5\" SATA III Desktop HDD/Hard Drive 7200rpm",
+            "info": "3TB Toshiba P300 HDWD130UZSVA, 3.5\" HDD, SATA III - 6Gb/s, 7200rpm, 64MB Cache, 4.17ms, OEM",
+            "description": "• High performance, reliable internal hard drive. It is halogen Free\n• Data protection technology\n• Temperature (operating / non-operating) : 0 to 65 degree celsius / -40 to 70 degree celsius\n• Perfect for challenging applications including gaming and photo/video editing",
+            "price": 57.18,
+            "category": 7,
+            "image_url": "https://www.scan.co.uk/images/products/super/2912090-l-a.jpg",
+            "image": "2912090-l-a.jpg"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN92230",
+            "name": "Seagate BarraCuda 2TB 3.5\" SATA III Desktop HDD/Hard Drive",
+            "info": "2TB Seagate BarraCuda ST2000DM008, 3.5\" HDD, SATA III - 6Gb/s, 7200rpm, 4.16ms, 256MB Cache, NCQ, OEM",
+            "description": "All hard drives in the BarraCuda family come equipped with Multi-Tier Caching Technology (MTC). MTC takes your PC to new performance levels so you can load applications and files faster than ever before. BarraCuda delivers improved read and write performance by optimising data flow with intelligent layers of NAND Flash, DRAM, and media cache technologies.",
+            "price": 41.99,
+            "category": 7,
+            "image_url": "https://www.scan.co.uk/images/products/super/2975686-l-a.jpg",
+            "image": "2975686-l-a.jpg"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN76530",
+            "name": "Seagate BarraCuda 1TB 3.5\" SATA III Desktop HDD/Hard Drive 7200rpm",
+            "info": "1TB Seagate BarraCuda ST1000DM010, 3.5\" HDD, SATA III - 6Gb/s, 7200rpm, 64MB Cache, 8.5ms, NCQ",
+            "description": "The 1TB Seagate BarraCuda is a high-quality HDD that delivers incredible performance thanks to its easy to use 3.5 inch form factor that is just 20.2mm in height, the drive runs at 7200 rpm, the BarraCuda's technical highlight is it’s 6Gb/s interface, which is the latest SATA III standard. This drive in particular has a storage capacity of 1000GB with an access time of 8.5ms and a 64MB Cache.",
+            "price": 31.19,
+            "category": 7,
+            "image_url": "https://www.scan.co.uk/images/products/super/2798059-l-a.jpg",
+            "image": "2798059-l-a.jpg"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN91495",
+            "name": "Gigabyte 240GB 2.5\" SATA SSD/Solid State Drive",
+            "info": "240GB Gigabyte SSD, 2.5\" SSD, SATA 3.0 (6Gb/s), NAND Flash, 500MB/s Read, 420MB/s Write, 50k IOPS/75k IOPS, Retail",
+            "description": "Introducing the Gigabyte 240GB 2.5\" SATA SSD, featuring great sequential read/write speed. This 2.5\" form factor features a height of just 7mm and a SATA 6.0Gb/s interface. Discover incredible computing with impressive storage capabilities and experience an SSD that includes SSD Tool Box, the application that assists users in monitoring their SSD Status. GIGABYTE SSDs possess both high data transferring speed and enhanced endurance, providing durable MTBF of 2.0 million hours and 3 years limited warranty.",
+            "price": 29.99,
+            "category": 8,
+            "image_url": "https://www.scan.co.uk/images/products/super/2970245-l-a.jpg",
+            "image": "2970245-l-a.jpg"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN87290",
+            "name": "Samsung 860 PRO 2TB 2.5\" SATA 3D NAND SSD/Solid State Drive",
+            "info": "2TB Samsung 860 PRO, 2.5\" SSD, SATA III 6Gb/s, MJX, MLC 3D V-NAND, 2GB Cache, Read 560MB/s, Write 530MB/s, 100k/90k",
+            "description": "The 860 PRO Solid State Drive from Samsung is the latest addition to the best-selling SATA SSD Series. The 860 PRO is specially designed for mainstream PCs and laptops. Featuring the latest V-NAND technology and a robust algorithm-based controller making the 860 series extremely fast and reliable SSD. Thanks to its easy to install 2.5\" form factor that is just 6.8mm in height makes the 860 SATA series compatible for not only desktop PCs but for laptops also, giving you extreme performance in any chassis.",
+            "price": 382.99,
+            "category": 8,
+            "image_url": "https://www.scan.co.uk/images/products/super/2920812-l-a.jpg",
+            "image": "2920812-l-a.jpg"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN86767",
+            "name": "Crucial MX500 3D 250GB 2.5\" SATA SSD/Solid State Drive",
+            "info": "250GB Crucial MX500, 2.5\" SSD, 7mm SATA III - 6Gb/s, 3D TLC NAND, Read 560MB/s, Write 510MB/s, 95k/90k IOPS, Retail",
+            "description": "Every time you turn on your computer, you’re using your storage drive. It holds all your irreplaceable files and it loads and saves almost everything your system does. Join more and more people who are keeping their family videos, travel photos, music, and important documents on an SSD, and get the near-instant performance and lasting reliability that comes with solid state storage. Upgrade with the Crucial® MX500 SSD, a drive built on quality, speed, and security that’s all backed by helpful service and support. Even if you’ve never installed an SSD, don’t sweat it – our step-by-step guide walks you through the process to make installation easy. It’s worth it.",
+            "price": 43.19,
+            "category": 8,
+            "image_url": "https://www.scan.co.uk/images/products/super/2913679-l-a.jpg",
+            "image": "2913679-l-a.jpg"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN110538",
+            "name": "Seagate 240GB IronWolf Pro 125 NAS SSD SATA 2.5\"",
+            "info": "240GB Seagate IronWolf Pro 125 NAS 2.5\" SSD, SATA III 6GB/S, 3D TLC NAND, Read 545MB/s, Write 360MB/s, 90k/12k IOPS",
+            "description": "The Seagate IronWolf® Pro 125 is a high-quality SSD optimized for NAS storage that delivers incredible power, thanks to the performance with up to 1 DWPD for storing more data, and its easy to use 2.5 inch form factor that is just 7.1 mm in height, the drive runs swiftly. The IronWolf® Pro 125 technical highlight is it’s 6Gb/s interface, which is the latest SATA III standard.",
+            "price": 57.98,
+            "category": 8,
+            "image_url": "https://www.scan.co.uk/images/products/super/3218241-l-a.jpg",
+            "image": "3218241-l-a.jpg"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN87293",
+            "name": "Samsung 860 PRO 1TB 2.5” SATA SSD/Solid State Drive",
+            "info": "1TB Samsung 860 PRO, 2.5” SSD, SATA III 6Gb/s, MJX, MLC V-NAND, 1GB Cache, Read 560MB/s, Write 530MB/s, 100k/90k",
+            "description": "The 860 PRO Solid State Drive from Samsung is the latest addition to the best-selling SATA SSD Series. The 860 PRO is specially designed for mainstream PCs and laptops. Featuring the latest V-NAND technology and a robust algorithm-based controller making the 860 series extremely fast and reliable SSD. Thanks to its easy to install 2.5\" form factor that is just 6.8mm in height makes the 860 SATA series compatible for not only desktop PCs but for laptops also, giving you extreme performance in any chassis.",
+            "price": 196.99,
+            "category": 8,
+            "image_url": "https://www.scan.co.uk/images/products/super/2920822-l-a.jpg",
+            "image": "2920822-l-a.jpg"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN62777",
+            "name": "Corsair DDR4 4GB Value Select Desktop PC/Computer RAM/Memory",
+            "info": "4GB Corsair DDR4 Value Select, PC4-17000 (2133), Non-ECC Unbuffered, CAS 15-15-15-36, 1.2V, Single Stick, Desktop Memory",
+            "description": "Building a PC with a budget? Then this may be exactly what you are looking for. Despite this memory having minimal density for DDR4, 4GB is still plenty for the average computer user. This RAM may struggle with high-end applications and media but the DDR4 power it utilizes will be plenty enough for web-browsing and word documenting. This memory makes use of DDR4 technologies but has kept to the lower end of speeds – this allows for a much lower CAS latency which in-turn allows for a quicker response to requests.",
+            "price": 25.20,
+            "category": 9,
+            "image_url": "https://www.scan.co.uk/images/products/super/2519054-l-a.jpg",
+            "image": "2519054-l-a.jpg"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN94229",
+            "name": "Corsair Vengeance RGB PRO Black 32GB 2933 MHz DDR4 Dual Channel Memory Kit",
+            "info": "32GB (2x16GB) Corsair DDR4 Vengeance RGB PRO Black, PC4-23400 (2933), Non-ECC Unbuff, CAS 16-18-18-36, RGB LED, 1.35V",
+            "description": "CORSAIR VENGEANCE RGB PRO Series DDR4 memory lights up your PC with mesmerizing dynamic multi-zone RGB lighting, while delivering the best in DDR4 performance and stability. Every module boasts ten individually controlled RGB LEDs, while wire-free design makes installation simple. Take control with CORSAIR iCUE software and completely customize every module’s lighting to match your system, or easily synchronize lighting across all your CORSAIR products with Light LINK. A custom designed PCB provides the highest signal quality for the best level of performance and stability on the latest AMD and Intel DDR4 motherboards, while specially screened ICs unlock superior overclocking.",
+            "price": 205.99,
+            "category": 9,
+            "image_url": "https://www.scan.co.uk/images/products/super/3002624-l-a.jpg",
+            "image": "3002624-l-a.jpg"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN101258",
+            "name": "Corsair Vengeance LPX Black 64GB 2666MHz DDR4 Dual Channel Memory Kit",
+            "info": "64GB (2x32GB) Corsair DDR4 Vengeance LPX Black, PC4-21300 (2666), Non-ECC Unbuffered, CAS 16-18-18-35, XMP 2.0, 1.2V ",
+            "description": "This dual packet of top-end memory brings a huge 64GB of premium Vengeance LPX RAM to your PC. If you prefer to fill two DIMM slots and want extreme performance then this set of 2x32GB modules could be for you. The DDR4 form factor is optimized for the latest Intel DDR4 motherboards and offers higher frequencies, greater bandwidth, and lower power consumption than DDR3 modules. Vengeance LPX DDR4 modules are compatibility-tested across Intel motherboards for reliably fast performance. They’re available in multiple colors to match your motherboard, your components, or just your style.",
+            "price": 347.48,
+            "category": 9,
+            "image_url": "https://www.scan.co.uk/images/products/super/3097923-l-a.jpg",
+            "image": "3097923-l-a.jpg"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN90361",
+            "name": "Corsair Vengeance RGB PRO Black 16GB 2666 MHz DDR4 Dual Channel Memory Kit",
+            "info": "16GB (2x8GB) Corsair DDR4 Vengeance RGB PRO Black, PC4-21300 (2666), Non-ECC Unbuff, CAS 16-18-18-35, RGB LED, 1.2V ",
+            "description": "CORSAIR VENGEANCE RGB PRO Series DDR4 memory illuminates your system with captivating dynamic multi-zone RGB lighting, while providing the optimum in DDR4 performance and stability. Every module features ten separately controlled RGB LEDs, while the wire-free design makes installation easy. Take control with CORSAIR iCUE software and completely customize every module’s lighting to match your system, or easily synchronise lighting across all your CORSAIR products with Light LINK. A custom designed PCB provides the highest signal quality for the best level of performance and stability on the latest AMD and Intel DDR4 motherboards, while specially screened ICs unlock superior overclocking.",
+            "price": 100.68,
+            "category": 9,
+            "image_url": "https://www.scan.co.uk/images/products/super/2952707-l-a.jpg",
+            "image": "2952707-l-a.jpg"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN66140",
+            "name": "Corsair 16GB DDR4 Vengeance LPX 2133MHz Memory Kit for Skylake",
+            "info": "16GB (2x8GB) Corsair DDR4 Vengeance LPX Black, PC4-17000 (2133), Non-ECC Unbuffered, CAS 13-15-15-28, XMP 2.0, 1.2V",
+            "description": "This particular batch of DDR4 memory comes as two 8GB sticks allowing you to access a high density whilst only requiring two DIMM slots - this allows the set to fit into a wider array of motherboards. An ideal buy for your gaming rig set-up that comes at a reasonable price. Purchasing this 16GB allows your computer to have that extra breathing room for multi-tasking whilst gaming, or for extra storage for your media devices. The embedded speeds are toward the bottom-end of DDR4 but boast some of the fastest CAS latency in DDR4 technology, this means the RAM doesn’t have to wait as long between reading commands. Combining the CAS Latency with the Vengeance LPX heat-sink makes for a very reliable and fluent process.",
+            "price": 85.30,
+            "category": 9,
+            "image_url": "https://www.scan.co.uk/images/products/super/2588980-l-a.jpg",
+            "image": "2588980-l-a.jpg"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN110464",
+            "name": "High End Gaming PC with NVIDIA Ampere GeForce RTX 3090 and Intel Core i9 10850K",
+            "info": "3XS Gamer iCUE RTX, Intel Core i9 10850K \"Comet Lake\", 16GB DDR4, 24GB NVIDIA RTX 3090, 1TB M.2 SSD, 2TB, Win 10",
+            "description": "This 3XS Gamer iCUE RTX features the brand-new flagship Ampere based 24GB NVIDIA GeForce RTX 3090 graphics card featuring new GDDR6X memory, 2nd generation RT cores, 3rd generation Tensor cores, Reflex Low Latency technology, RTX IO and NVIDIA Broadcast. This is the worlds first GPU capable of 8K HDR gaming.\n\nWe have paired this powerful GPU with the new 10C/20T Intel Core i9 10850K CPU. The system also includes 16GB (2x8GB) Corsair Vengeance LPX 3000MHz DDR4 , an ASUS ROG STRIX B460-H GAMING motherboard and a massive 1TB WD Blue SN550 M.2 PCIe NVMe SSD for lightning quick loading times, file transfer and storage. We professionally tweak this system to keep temperatures and noise levels down to a minimum and our engineers have managed to perfect the balance between acoustics and performance.\n\nThis gaming PC comes with Windows 10 Home pre-installed and a premium 3-year warranty.",
+            "price": 2899.99,
+            "category": 10,
+            "image_url": "https://www.scan.co.uk/images/products/super/3217667-l-a.jpg",
+            "image": "3217667-l-a.jpg"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "products.product",
+        "fields": {
+            "sku": "",
+            "name": "High End Gaming PC with NVIDIA Ampere GeForce RTX 3080 and Intel Core i9 10850K",
+            "info": "3XS Gamer RTX, Intel Core i9 10850K \"Comet Lake\", 16GB DDR4, 10GB NVIDIA RTX 3080, 1TB M.2 SSD, 2TB, Win 10",
+            "description": "This 3XS Gamer RTX features the brand-new Ampere based 10GB NVIDIA GeForce RTX 3080 graphics card featuring new GDDR6X memory, 2nd generation RT cores, 3rd generation Tensor cores, Reflex Low Latency technology, RTX IO and NVIDIA Broadcast.\n\nWe have paired this powerful GPU with the 10C/20T Intel Core i9 10850K CPU. The system also includes 16GB (2x8GB) Corsair Vengeance LPX 3000MHz DDR4 , an ASUS ROG STRIX B460-H GAMING motherboard, a massive 1TB WD Blue SN550 M.2 PCIe NVMe SSD for lightning quick loading times and file transfer and a 2TB Seagate HDD for storage. We professionally tweak this system to keep temperatures and noise levels down to a minimum and our engineers have managed to perfect the balance between acoustics and performance.\n\nThis gaming PC comes with Windows 10 Home pre-installed and a premium 3-year warranty.",
+            "price": 2099.99,
+            "category": 10,
+            "image_url": "https://www.scan.co.uk/images/products/super/3217943-l-a.jpg",
+            "image": "3217943-l-a.jpg"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN115953",
+            "name": "Gaming PC with NVIDIA GeForce GTX 1660 SUPER & AMD Ryzen 5 3600",
+            "info": "Scan Gamer, AMD Ryzen 5 3600, 8GB DDR4, 6GB EVGA GTX 1660 SUPER, 1TB M.2 SSD, Win 10",
+            "description": "This Gamer system includes the 6GB EVGA GeForce GTX 1660 SUPER SC ULTRA which is perfect for gaming at 1080p and 1440p in all your favourite titles. Also included is the AMD Ryzen 5 3600 6C/12T CPU that runs up to 4.2GHz in addition to 8GB Corsair Vengeance 3000MHz DDR4 RAM, a 240GB WD Green M.2 SSD for rapid loading times. A 1TB Seagate HDD is also included for storage.\n\nThis gaming PC comes with Windows 10 Home pre-installed and a 2-year warranty.",
+            "price": 1029.98,
+            "category": 10,
+            "image_url": "https://www.scan.co.uk/images/products/super/3307973-l-a.jpg",
+            "image": "3307973-l-a.jpg"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN115271",
+            "name": "Gaming PC with AMD Radeon RX 6700 XT and AMD Ryzen 5 2600",
+            "info": "Gamer RX, AMD Ryzen 5 2600, 8GB DDR4, 12GB AMD Radeon RX 6700 XT, 1TB M.2 SSD, Win 10",
+            "description": "Gamer RX features a high performance 12GB AMD Radeon RX 6700 XT graphics card for superb 1080p and 1440p performance in games and VR. We have paired this powerful GPU configuration with the AMD Ryzen 5 2600 6C/12T CPU. The system also includes 8GB of Corsair Vengeance LPX 3000MHz DDR4, an ASUS PRIME B450M-A II motherboard and a 1TB WD Blue SN550 NVMe M.2 SSD for lightning quick loading times and storage.\n\nWe professionally tweak this system to keep temperatures and noise levels down to a minimum and our engineers have managed to perfect the balance between acoustics and performance.\n\nThis gaming PC comes with Windows 10 Home pre-installed and a 2-year warranty.",
+            "price": 1079.99,
+            "category": 10,
+            "image_url": "https://www.scan.co.uk/images/products/super/3298428-l-a.jpg",
+            "image": "3298428-l-a.jpg"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "products.product",
+        "fields": {
+            "sku": "LN115353",
+            "name": "High End Gaming PC with AMD Radeon RX 6900 XT and AMD Ryzen 9 5900X",
+            "info": "3XS Vengeance RX, AMD Ryzen 9 5900X, 32GB DDR4, 16GB AMD Radeon RX 6900 XT, 1TB M.2 SSD, 2TB, Win 10",
+            "description": "Designed, built and tested to the highest standards by our multi award winning team, the 3XS Vengeance RX features a high performance 16GB AMD Radeon RX 6900 XT graphics card for superb 4K performance in games and VR. We have paired this powerful GPU configuration with the AMD Ryzen 9 5900X 12C/24T CPU. The system also includes 32GB of Corsair Vengeance RGB PRO 3200MHz DDR4, ASUS ROG STRIX B550-E GAMING motherboard, a 1TB Corsair MP600 PCIe 4.0 NVMe M.2 SSD for lightning quick loading times and a 2TB HDD for storage. We professionally tweak this system to keep temperatures and noise levels down to a minimum and our engineers have managed to perfect the balance between acoustics and performance.\n\nThis gaming PC comes with Windows 10 Home pre-installed and a premium 3-year warranty.",
+            "price": 2799.98,
+            "category": 10,
+            "image_url": "https://www.scan.co.uk/images/products/super/3299263-l-a.jpg",
+            "image": "3299263-l-a.jpg"
+        }
     }
-  },
-  {
-    "pk": 2,
-    "model": "products.products",
-    "fields": {
-      "ln": "",
-      "name": "",
-      "description": "",
-      "price": "",
-      "category": 1,
-      "image_url": "",
-      "image": ""
-    }
-  },
-  {
-    "pk": 3,
-    "model": "products.products",
-    "fields": {
-      "ln": "",
-      "name": "",
-      "description": "",
-      "price": "",
-      "category": 1,
-      "image_url": "",
-      "image": ""
-    }
-  }
 ]
