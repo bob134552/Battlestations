@@ -35,10 +35,10 @@
     </head>
 
     <body>
-        <header class="container-fluid fixed-top">
+        <header class="container-fluid fixed-top bg-light">
             <div class="row d-none d-lg-flex" id="topnav">
                 <div class="col-12 col-md-4 mt-2">
-                    <a class="btn" href="">
+                    <a class="btn" href="{% url 'home' %}">
                         <h1><strong>BattleStations</strong></h1>
                     </a>
                 </div>
@@ -80,7 +80,9 @@
                         <li class="list-inline-item">
                             <a class="btn" href="">
                                 <div class="text-center">
-                                    <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                                    <div>
+                                        <i class="fas fa-shopping-cart fa-lg"></i>
+                                    </div>
                                     <p class="my-0">
                                         {% if grand_total %}
                                             £{{ grand_total|floatformat:2 }}

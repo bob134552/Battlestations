@@ -311,7 +311,7 @@
         "pk": 23,
         "model": "products.product",
         "fields": {
-            "sku": "",
+            "sku": "LN110189",
             "name": "Corsair 750 Watt CX750F RGB Fully Modular Black PSU/Power Supply",
             "info": "750W Corsair CX750F RGB Black, Fully Modular, 80 PLUS Bronze, Single Rail, 62.5A, 120mm Fan, ATX PSU",
             "description": "The CORSAIR CX RGB is a fully modular PSU that delivers reliable 80 PLUS Bronze efficient power to your dream rig, with vibrant, customisable lighting from a 120mm RGB fan which boasts eight RGB LEDs and a super-clean aesthetic. Simply cycle through nine preset lighting modes, or connect to a CORSAIR iCUE RGB Lighting Controller or compatible motherboard to unlock advanced lighting control. The CX Series PSUs are crafted with 105°C rated Japanese primary capacitors for excellent electrical performance, with fully modular cables to make your building and upgrading a breeze. Designed for low-noise operation with near-silent operation at low loads, and supporting Microsoft Modern Standby sleep mode for extremely fast wake-up times, the CX RGB Series is the ultimate PSU for silence and stunning colour.",
@@ -647,7 +647,7 @@
         "pk": 47,
         "model": "products.product",
         "fields": {
-            "sku": "",
+            "sku": "LN110480",
             "name": "High End Gaming PC with NVIDIA Ampere GeForce RTX 3080 and Intel Core i9 10850K",
             "info": "3XS Gamer RTX, Intel Core i9 10850K \"Comet Lake\", 16GB DDR4, 10GB NVIDIA RTX 3080, 1TB M.2 SSD, 2TB, Win 10",
             "description": "This 3XS Gamer RTX features the brand-new Ampere based 10GB NVIDIA GeForce RTX 3080 graphics card featuring new GDDR6X memory, 2nd generation RT cores, 3rd generation Tensor cores, Reflex Low Latency technology, RTX IO and NVIDIA Broadcast.\n\nWe have paired this powerful GPU with the 10C/20T Intel Core i9 10850K CPU. The system also includes 16GB (2x8GB) Corsair Vengeance LPX 3000MHz DDR4 , an ASUS ROG STRIX B460-H GAMING motherboard, a massive 1TB WD Blue SN550 M.2 PCIe NVMe SSD for lightning quick loading times and file transfer and a 2TB Seagate HDD for storage. We professionally tweak this system to keep temperatures and noise levels down to a minimum and our engineers have managed to perfect the balance between acoustics and performance.\n\nThis gaming PC comes with Windows 10 Home pre-installed and a premium 3-year warranty.",

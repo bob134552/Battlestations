@@ -16,6 +16,20 @@ html {
     transform-origin: top center;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
+.btt-atb {
+    margin-bottom: 1.1rem!important;
+}
+
 @keyframes growDown {
   0% {
     transform: scaleY(0);
@@ -46,4 +60,12 @@ html {
     .header-container {
         padding-top: 116px;
     }
+}
+
+@media (min-width: 1200px) {
+
+    .product-img {
+        max-height: 300px;
+    }
+
 }

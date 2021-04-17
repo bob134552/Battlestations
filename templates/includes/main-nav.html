@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item d-block d-lg-none">
-            <a class="nav-link mr-5" href="/" id="home-link">
+            <a class="nav-link" href="/" id="home-link">
                 Home
             </a>
         </li>
@@ -11,6 +11,7 @@
                 Products
             </a>
             <ul class="dropdown-menu rounded-0 bg-warning border-0">
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}">All Products</a></li>
                 <li class="dropdown-item"><a class="text-dark" href="#">GPUs</a></li>
                 <li class="dropdown-item"><a class="text-dark" href="#">CPUs</a></li>
                 <li class="dropdown-item"><a class="text-dark" href="#">Motherboard</a></li>

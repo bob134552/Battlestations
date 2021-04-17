@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block content %}
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-12">
+                    <div class="card mb-3 rounded-0">
+                        <div class="row g-0">
+                            <div class="col-md-4 col-12">
+                                <a href="" class="d-flex justify-content-center">
+                                    {% if product.image %}
+                                        <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    {% else %}
+                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" class="img-fluid product-img">
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="col-md-8 col-12">
+                                <div class="card-body h-100 d-flex flex-column">
+                                    <a href="" class="text-dark">
+                                        <h5 class="card-title">{{ product.name }}</h5>
+                                    </a>
+                                    <p class="card-subtitle text-muted my-0">{{ product.info }}</p>
+                                    <p class="card-text my-0"><small class="text-muted">Product Code: {{ product.sku }}</small></p>
+                                    <ul class="list-unstyled mt-auto align-self-end mb-0">
+                                        <li class="list-item">
+                                            <p class="text-primary fs-3 text-center">£{{ product.price }}</p>
+                                        </li>
+                                        <li class="list-item">
+                                            <a href="" class="mx-auto btn btn-medium bg-success">
+                                                <span>Add To Cart</span>
+                                                <i class="fas fa-cart-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
