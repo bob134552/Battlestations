@@ -12,19 +12,19 @@
             </a>
             <ul class="dropdown-menu rounded-0 bg-warning border-0">
                 <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}">All Products</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">GPUs</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">CPUs</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">Motherboard</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">RAM</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">Storage</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">PSUs</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">Cooling</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="#">Cases</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=gpus">GPUs</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=cpus">CPUs</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=motherboards">Motherboard</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=memory">RAM</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=storage_hdd,storage_ssd">Storage - SSD/HDD</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=psus">PSUs</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=cooling">Cooling</a></li>
+                <li class="dropdown-item"><a class="text-dark" href="{% url 'products' %}?category=cases">Cases</a></li>
             </ul>
         </li>
 
         <li class="nav-item">
-            <a href="" class="nav-link">Pre-Built PCs</a>
+            <a href="{% url 'products' %}?category=pre_built" class="nav-link">Pre-Built PCs</a>
         </li>
 
         <li class="nav-item">

@@ -43,10 +43,10 @@
                     </a>
                 </div>
                 <div class="col-12 col-md-4 mt-2 py-3">
-                    <form method="GET" action="">
+                    <form method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
                             <input class="form-control rounded-start border border-secondary border-end-0" type="text" name="q" placeholder="Search..." maxlength="150">
-                            <button class="btn btn-outline-dark bg-dark rounded-end border-start-0" type="button">
+                            <button class="btn btn-outline-dark bg-dark rounded-end border-start-0" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search text-warning"></i>
                                 </span>
@@ -78,7 +78,7 @@
                             </ul>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn" href="">
+                            <a class="btn" href="{% url 'show_basket' %}">
                                 <div class="text-center">
                                     <div>
                                         <i class="fas fa-shopping-cart fa-lg"></i>

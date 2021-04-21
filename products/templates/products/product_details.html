@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+    <div class="container-fluid bg-dark header-container sticky-top">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center fs-6 text-light">
+                    <i class="fas fa-truck"></i>
+                    Due to the current COVID pandemic deliveries may take longer than usual and some items may be out of stock. Thank you for your understanding.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block content %}
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-decoration-underline pt-2 text-center">{{ product.name }}</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-12">
+                    {% if product.image %}
+                        <img class="img-fluid border" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img class="img-fluid border" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    {% endif %}
+                </div>
+                <div class="col-md-8 col-12">
+                    <p class="text-muted">{{ product.info }}</p>
+                    <p class="text-muted mt-0">Product Code: {{ product.sku }}</p>
+                    <p class="text-decoration-underline mb-1">Product Description:</p>
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="col-12 d-flex align-items-end flex-column">
+                    <p class="text-primary fs-3 text-center me-3 mb-0">£{{ product.price }}</p>
+                    {% if product.in_stock %}
+                        <a href="" class="btn btn-medium bg-success">
+                            <span>Add To Cart</span>
+                            <i class="fas fa-cart-plus"></i>
+                        </a>
+                    {% else %}
+                        <a href="#" class="btn btn-medium bg-danger disabled">
+                            <span>Out Of Stock</span>
+                            <i class="far fa-times-circle"></i>
+                        </a>
+                    {% endif %}
+                    {% if not product.in_stock %}
+                            <p class="text-muted me-4"><small>Coming soon</small></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

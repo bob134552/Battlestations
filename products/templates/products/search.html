@@ -3,7 +3,7 @@
 
 {% block page_header %}
 
-    <div class="container-fluid bg-dark header-container mb-2 sticky-top">
+    <div class="container-fluid bg-dark header-container sticky-top mb-2">
         <div class="row">
             <div class="col-12">
                 <p class="text-center fs-6 text-light">
@@ -45,7 +45,6 @@
         </div>
         <div class="row">
             {% for product in products %}
-                {% if product.category.name != "pre_built" %}
                     <div class="col-12">
                         <div class="card mb-3 rounded-0">
                             <div class="row g-0">
@@ -93,7 +92,6 @@
                             </div>
                         </div>
                     </div>
-                {% endif %}
             {% endfor %}
         </div>
     </div>
