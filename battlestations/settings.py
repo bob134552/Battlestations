@@ -76,6 +76,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'basket.contexts.basket_items',
             ],
+            'libraries':{
+               'filter_tags': 'products.templatetags.template_extras',
+            },
         },
     },
 ]
@@ -157,4 +160,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 FREE_DELIVERY_THRESHOLD = 30
-STANDARD_DELIVERY_COST = 9.99
+STANDARD_DELIVERY_PERCENTAGE = 10

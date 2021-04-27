@@ -43,8 +43,8 @@
             <div class="text-center">
                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                 <p class="my-0">
-                    {% if grand_total %}
-                        £{{ grand_total|floatformat:2 }}
+                    {% if final_amount %}
+                        £{{ final_amount|floatformat:2 }}
                     {% else %}
                         £0.00
                     {% endif %}

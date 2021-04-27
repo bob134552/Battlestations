@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load template_extras %}
 
 {% block page_header %}
     <div class="container-fluid bg-dark header-container sticky-top">
@@ -27,7 +28,75 @@
         <div class="row">
             <div class="col">
                 {% if basket_items %}
-                    <div class="table-responsive"></div>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product</th>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="ps-4">Price</th>
+                                    <th scope="col" class="text-center">Qty</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+
+                            {% for item in basket_items %}
+                                <tr>
+                                    <td class="w-25 p-4">
+                                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid">
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'product_details' item.product.id %}" class="text-dark">
+                                            <p class="my-0 text-decoration-underline"><strong>{{ item.product.name }}</strong></p>
+                                        </a>
+                                        <p class="my-0 text-muted">SKU: {{ item.product.sku }}</p>
+                                        <p class="my-0">
+                                            {% with item.product.info|split:"," as details %}
+                                                {% for detail in details %}
+                                                    - {{ detail }}<br>
+                                                {% endfor %}
+                                            {% endwith %}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="mt-1 ps-2">£{{ item.product.price }}</p>
+                                    </td>
+                                    <td class="w-25">
+                                        <div class="input-group px-5">
+                                            <button class="btn btn-sm bg-dark text-light rounded-start" type="button" id="quantity-minus"><i class="fas fa-minus"></i></button>
+                                            <input class="form-control" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                                            <button class="btn btn-sm bg-dark text-light" type="button" id="quantity-plus"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="mt-1">£{{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                             <tr>
+                                <td colspan="5" class="pt-5 text-end">
+                                    <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Total: £{{ final_amount|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                        <p class="mb-1 text-danger">
+                                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
+                                        </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-end">
+                                    <a href="" class="btn bg-dark text-light btn-lg">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 {% else %}
                     <p class="lead mb-5">Your basket is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-medium bg-dark text-light rounded-1">
