@@ -47,17 +47,17 @@
                                     <p class="text-primary fs-3 text-center me-4 mb-0">£{{ product.price }}</p>
                                     <div class="input-group w-auto mb-2">
                                         <label for="quantity" class="form-label me-2 mt-1 fs-5"><strong>Quantity:</strong></label>
-                                        <button class="btn btn-sm bg-dark text-light rounded-start quantity-minus" type="button" id="quantity-minus_{{ product.id }}"><i class="fas fa-minus"></i></button>
-                                        <input class="form-control quantity_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                        <button class="btn btn-sm bg-dark text-light quantity-plus" type="button" id="quantity-plus_{{ product.id }}"><i class="fas fa-plus"></i></button>
+                                        <button class="btn btn-sm bg-dark text-light rounded-start quantity-minus" type="button" id="quantity-minus_{{ product.id }}" data-item_id="{{ product.id }}"><i class="fas fa-minus"></i></button>
+                                        <input class="form-control quantity-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <button class="btn btn-sm bg-dark text-light quantity-plus" type="button" id="quantity-plus_{{ product.id }}" data-item_id="{{ product.id }}"><i class="fas fa-plus"></i></button>
                                     </div>
-                                    <button type="submit" class="btn btn-medium bg-success me-2">
+                                    <button type="submit" class="btn bg-success me-2">
                                         <span>Add To Cart</span>
                                         <i class="fas fa-cart-plus"></i>
                                     </button>
                                 {% else %}
                                     <p class="text-muted text-center mb-1 me-4"><small>Coming soon</small></p>
-                                    <a href="#" class="btn btn-medium bg-danger disabled">
+                                    <a href="#" class="btn bg-danger disabled">
                                         <span>Out Of Stock</span>
                                         <i class="far fa-times-circle"></i>
                                     </a>

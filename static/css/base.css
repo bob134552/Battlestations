@@ -30,6 +30,22 @@ html {
     margin-bottom: 1.1rem!important;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.message-container {
+    position: fixed;
+    top: 205px;
+    right: 15px;
+    z-index: 99999999;
+}
+
+.toast-capper {
+    height: 3px;
+}
+
 @keyframes growDown {
   0% {
     transform: scaleY(0);
