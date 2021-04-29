@@ -46,6 +46,12 @@ html {
     height: 3px;
 }
 
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 @keyframes growDown {
   0% {
     transform: scaleY(0);
