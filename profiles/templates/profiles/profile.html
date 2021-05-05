@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% load template_extras %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profile/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container-fluid bg-dark header-container sticky-top">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center fs-6 text-light">
+                    <i class="fas fa-truck"></i>
+                    Due to the current COVID pandemic deliveries may take longer than usual and some items may be out of stock. Thank you for your understanding.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-uppercase mt-2">My Profile</h2>
+                <hr class="mt-0">
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
