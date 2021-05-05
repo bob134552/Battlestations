@@ -25,11 +25,26 @@
     color: #aab7c4;
 }
 
+.form-select {
+    padding-top: 5px;
+    border-radius: 0;
+}
+
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 #payment-form .form-control,
-#card-element {
+.form-select ,#card-element {
     color: #000;
     border: 1px solid #000;
 }
+
 /* CSS for checkout page loading found at: https://1stwebdesigner.com/pure-css-animated-page-loaders/ */
 #loading {
     display: none;
