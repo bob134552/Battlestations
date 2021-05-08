@@ -11,7 +11,7 @@
                 <hr class="mt-1 mb-3">
             </div>
         </div>
-        {% if final_amount %}
+        {% if final_amount and not on_profile_page %}
             <p class="logo-font bg-white text-black py-1">Your Basket ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in basket_items %}
