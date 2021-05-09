@@ -1,0 +1,33 @@
+Hi {{ order.full_name }},
+
+Thank you for your purchase.
+This is a confirmation email for your order:{{ order.order_number }}.
+Your order details are below:
+
+Items:
+{% for item in order.lineitems.all %}
+    -{{ item.product.name }} x {{ item.quantity }}
+{% endfor %}
+
+Order Date: {{ order.date }}
+Subtotal: {{ order.order_total }}
+Delivery: {{ order.delivery_cost }}
+Final Amount: {{ order.final_amount }}
+
+Delivery Details:
+
+{{ order.full_name }},
+{{ order.street_address1 }},
+{{ order.town_or_city }},
+{{ order.country }},
+{{ order.postcode }}
+
+Your phone number being: {{ order.phone_number }}.
+
+If there is anything wrong in the above details or you have any questions, feel free to contact us at {{ contact_email }}
+
+Thank you for your order!
+
+Best Wishes,
+
+BattleStations.
