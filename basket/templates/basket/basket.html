@@ -43,7 +43,11 @@
                             {% for item in basket_items %}
                                 <tr>
                                     <td class="w-25 p-4">
-                                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid">
+                                        {% if item.product.image %}
+                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid">
+                                        {% else %}
+                                            <img src="{{ item.product.image.url }}" alt="{{ MEDIA_URL }}noimage.png" class="img-fluid">
+                                        {% endif %}
                                     </td>
                                     <td>
                                         <a href="{% url 'product_details' item.product.id %}" class="text-dark">
@@ -76,7 +80,7 @@
                                             </div>
                                         </form>
                                         <a class="update-link ms-5 text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger text-end" id="remove_{{ item.product_id }}"><small>Remove</small></a>
+                                        <a class="remove-item text-danger" id="remove_{{ item.product_id }}"><small>Remove</small></a>
                                     </td>
                                     <td>
                                         <p class="mt-1">£{{ item.product.price |calc_subtotal:item.quantity }}</p>

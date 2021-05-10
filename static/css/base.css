@@ -127,13 +127,15 @@ html {
 
 @media (min-width: 1200px) {
 
-    .product-img {
-        max-height: 300px;
-    }
-
     #product-image {
         border-bottom: none!important;
     }
+
+    .product-img {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
 }
 
 @media (max-width: 1199.98px) {
