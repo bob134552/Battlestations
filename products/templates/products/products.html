@@ -61,10 +61,10 @@
                         <div class="col-auto border-end border-bottom d-flex" id="product-image">
                             <a href="{% url 'product_details' product.id %}" class="align-self-center">
                                 {% if product.image %}
-                                    <img class="img-fluid product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="img-fluid card-img-top product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
                                     <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"
-                                        class="img-fluid product-img">
+                                        class="img-fluid card-img-top product-img">
                                 {% endif %}
                             </a>
                         </div>

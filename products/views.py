@@ -117,8 +117,8 @@ def update_product(request, product_id):
             if form.is_valid():
                 form.save()
                 messages.success(request,
-                                 'Update for {product.name} successful.')
-                return redirect(reverse('product_detail', args=[product.id]))
+                                 f'Update for {product.name} successful.')
+                return redirect(reverse('product_details', args=[product.id]))
             else:
                 messages.error(request, 'Error updating, \
                     please ensure form is valid.')
