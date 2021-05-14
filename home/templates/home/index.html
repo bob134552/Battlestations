@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container-fluid bg-dark header-container sticky-top">
         <div class="row">
@@ -15,16 +19,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-12">
-        <h1 class="display-6 pt-2 text-center">
-            Check Out Our Latest Builds!
-        </h1>
-        <hr>
-    </div>
-</div>
-    <div class="container">
+<div class="container bg-light vh-100 h-100">
         <div class="row">
+            <div class="col-12">
+                <h1 class="display-6 pt-2 text-center">
+                    Check Out Our Latest Builds!
+                </h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row bg-light">
             <div class="col-12 my-auto">
                 <div id="prebuildcarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -32,7 +36,7 @@
                         <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-inner bg-dark">
+                    <div class="carousel-inner pb-3">
                         {% for product in products %}
                             <a href="{% url 'product_details' product.id %}" class="text-decoration-none carousel-item{% if forloop.counter == 1 %} active{% endif %}">
                                 <div class="row">
@@ -44,7 +48,7 @@
                                         {% endif %}
                                     </div>
                                     <div class="col-12 col-md-7 d-flex flex-column align-self-center">
-                                        <h5 class="text-light">{{ product.name }}</h5>
+                                        <h5 class="text-dark">{{ product.name }}</h5>
                                         <p class="text-muted">{{ product.info }}</p>
                                     </div>
                                 </div>
@@ -52,13 +56,124 @@
                         {% endfor %}
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#prebuildcarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="fas fa-arrow-left rounded-circle prev" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#prebuildcarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="fas fa-arrow-right rounded-circle next" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row bg-light mt-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-8 offset-2 text-center">
+                        <h4>Why Buy From Us?</h4>
+                        <hr>
+                    </div>
+                </div>
+                    <div class="row w-75 mx-auto">
+                        <div class="col-12 col-md-4 text-center">
+                            <i class="fas fa-shipping-fast"></i>
+                            <p class="lead my-0">Fast Shipping
+                                <hr class="w-50 mx-auto my-0">
+                                Straight to your door!
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <i class="fas fa-desktop"></i>
+                            <p class="lead my-0">
+                                Up-to-date
+                                <hr class="w-50 mx-auto my-0">
+                                All the latest hardware!
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <i class="fas fa-phone"></i>
+                            <p class="lead my-0">
+                                24/7 Support
+                                <hr class="w-50 mx-auto my-0">
+                                Your needs above all else!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row bg-light">
+            <div class="col-8 offset-2 text-center">
+                <h4>Customer Reviews</h4>
+                <hr>
+            </div>
+            <div class="row w-50 mx-auto">
+                {% for review in reviews %}
+                    <div class="col-12 col-md-6 mt-4 text-center">
+                        <div class="stars">
+                            <form>
+                                <input class="star star-5" id="star-5" type="radio" name="star"{% if review.rating == 1 %} checked{% endif %} disabled/>
+                                <label class="star star-5" for="star-5"></label>
+                                <input class="star star-4" id="star-4" type="radio" name="star"{% if review.rating == 2 %} checked{% endif %} disabled/>
+                                <label class="star star-4" for="star-4"></label>
+                                <input class="star star-3" id="star-3" type="radio" name="star"{% if review.rating == 3 %} checked{% endif %} disabled/>
+                                <label class="star star-3" for="star-3"></label>
+                                <input class="star star-2" id="star-2" type="radio" name="star"{% if review.rating == 4 %} checked{% endif %} disabled/>
+                                <label class="star star-2" for="star-2"></label>
+                                <input class="star star-1" id="star-1" type="radio" name="star"{% if review.rating == 5 %} checked{% endif %} disabled/>
+                                <label class="star star-1" for="star-1"></label>
+                            </form>
+                        </div>
+                        <br>
+                        {{ review.review }}
+                        <br>
+                        <span class="text-end text-muted text-capitalize">-{% if review.user %}{{ review.user }}{% else%}Anonymous User{% endif %},
+                            <br>
+                        </span>
+                        <span class="fs-6 text-muted">{{ review.date }}</span>
+                    </div>
+                {% endfor %}
+                <div class="col-12 mt-4 d-flex align-items-center flex-column">
+                    <p>Tell us how we did!</p>
+                    {% if request.user.is_authenticated %}
+                        <!-- Review Modal Trigger-->
+                        <a class="review-link" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                            Write A Review
+                        </a>
+
+                        <!-- Review Modal -->
+                        <div class="modal fade" id="reviewModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="reviewModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="reviewModalLabel">Leave a Review</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="{% url 'home' %}" id="review-form">
+                                            {% csrf_token %}
+                                            <input class="star star-5" id="star-6" type="radio" name="rating" value="5" required/>
+                                            <label class="star star-5" for="star-6"></label>
+                                            <input class="star star-4" id="star-7" type="radio" name="rating" value="4"/>
+                                            <label class="star star-4" for="star-7"></label>
+                                            <input class="star star-3" id="star-8" type="radio" name="rating" value="3"/>
+                                            <label class="star star-3" for="star-8"></label>
+                                            <input class="star star-2" id="star-9" type="radio" name="rating" value="2"/>
+                                            <label class="star star-2" for="star-9"></label>
+                                            <input class="star star-1" id="star-10" type="radio" name="rating" value="1"/>
+                                            <label class="star star-1" for="star-10"></label>
+                                            {{ review_form.review |as_crispy_field }}
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Send Review</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>Please <a href="{% url 'account_signup' %}">Sign Up</a> or <a href="{% url 'account_login' %}">Log in</a> if you would like to leave a review!</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

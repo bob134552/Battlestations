@@ -16,16 +16,6 @@ html {
     transform-origin: top center;
 }
 
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: white;
-    z-index: -1;
-}
-
 .btt-atb {
     margin-bottom: 1.1rem!important;
 }
@@ -112,6 +102,13 @@ html {
 
 .custom-checkbox .custom-control-input:checked {
     background-color: #dc3545;
+}
+
+.prev, .next {
+    background-color: #000!important;
+    height: 30px;
+    width: 30px;
+    padding-top: 7px;
 }
 
 @keyframes growDown {

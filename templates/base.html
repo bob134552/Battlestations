@@ -36,7 +36,7 @@
         <title>BattleStations {% block extra_title %}{% endblock %}</title>
     </head>
 
-    <body>
+    <body style="background-image: url({{ MEDIA_URL }}1236519.jpg); background-attachment: fixed;">
         <header class="container-fluid fixed-top bg-light">
             <div class="row d-none d-lg-flex" id="topnav">
                 <div class="col-12 col-md-4 mt-2">
@@ -134,13 +134,13 @@
         {% endblock %}
 
         {% block postloadjs %}
-        <script type="text/javascript">
-            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-            var toastList = toastElList.map(function (toastEl) {
-                return new bootstrap.Toast(toastEl)
-            })
-            toastList.forEach(toast => toast.show());
-        </script>
+            <script type="text/javascript">
+                var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+                var toastList = toastElList.map(function (toastEl) {
+                    return new bootstrap.Toast(toastEl)
+                })
+                toastList.forEach(toast => toast.show());
+            </script>
         {% endblock %}
     </body>
 

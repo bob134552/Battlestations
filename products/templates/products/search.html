@@ -4,7 +4,7 @@
 
 {% block page_header %}
 
-    <div class="container-fluid bg-dark header-container sticky-top mb-2">
+    <div class="container-fluid bg-dark header-container sticky-top">
         <div class="row">
             <div class="col-12">
                 <p class="text-center fs-6 text-light">
@@ -19,12 +19,11 @@
 
 {% block content %}
 
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row mt-2">
+    <div class="container bg-light">
+        <div class="row pt-2">
             <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
                 <div class="sort-select-wrapper">
-                    <select id="sort-selector" class="form-select form-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <select id="sort-selector" class="form-select form-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}dark{% endif %}">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                         <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                         <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -36,7 +35,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 order-md-first">
-                <p class="text-muted mt-3 text-center text-md-left">
+                <p class="text-muted mt-3 text-center text-md-start">
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
                         <span class="small"><a href="{% url 'products' %}">Back To All Products</a> | </span>
                     {% endif %}
