@@ -5,6 +5,7 @@ from profiles.models import User
 class SiteReviews(models.Model):
     class Meta:
         verbose_name_plural = 'Site Reviews'
+        ordering = ('-date',)
 
     CHOICES = [(i, i) for i in range(1, 6)]
 

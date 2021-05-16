@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Comment
+from .forms import ProductForm, CommentForm
 
 
 def all_products(request):
@@ -67,15 +68,65 @@ def all_products(request):
 
 
 def product_details(request, product_id):
-    """A view to display product details"""
+    """A view to display product details and comments"""
 
     product = get_object_or_404(Product, pk=product_id)
-
+    comments = product.comments.filter(product=product)
+    new_comment = None
+    if request.method == 'POST':
+        form_data = {
+            'username': request.user if request.user else 'AnonymousUser',
+            'body': request.POST['body'],
+        }
+        comment_form = CommentForm(form_data)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.product = product
+            messages.success(request, 'Comment submitted. Thank you!')
+            new_comment.save()
+            return redirect(reverse('product_details', args=[product.id]))
+    comment_form = CommentForm()
     context = {
         'product': product,
+        'comments': comments,
+        'new_comment': new_comment,
+        'comment_form': comment_form,
     }
 
     return render(request, 'products/product_details.html', context)
+
+
+@login_required
+def update_comment(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.method == 'POST':
+        try:
+            form_data = {
+                'username': request.user if request.user else 'AnonymousUser',
+                'body': request.POST['body'],
+            }
+            comment_form = CommentForm(form_data, instance=comment)
+            if comment_form.is_valid():
+                comment_form.save()
+                return HttpResponse(content='Comment updated!', status=200)
+            else:
+                return HttpResponse(content='Unable to update comment',
+                                    status=200)
+        except Exception as e:
+            return HttpResponse(
+                    content=f'ERROR: {e}',
+                    status=500)
+
+
+@login_required
+def delete_comment(request, product_id, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.user == comment.username or request.user.is_superuser:
+        comment.delete()
+        return redirect(reverse('product_details', args=[product_id]))
+    else:
+        messages.error(request, 'Sorry can only delete your own comments.')
+        return redirect(reverse('product_details', args=[product_id]))
 
 
 @login_required
@@ -146,3 +197,14 @@ def delete_product(request, product_id):
         messages.success(request, f'{product.name} deleted from store.')
         product.delete()
         return redirect(reverse('products'))
+
+
+def custom_build(request):
+    products = Product.objects.exclude(
+        category__name=('pre_built', 'custom_build'))
+    template = 'products/custom_build.html'
+    context = {
+        'products': products,
+    }
+
+    return render(request, template, context)

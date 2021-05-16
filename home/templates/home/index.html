@@ -132,45 +132,24 @@
                             <br>
                         </span>
                         <span class="fs-6 text-muted">{{ review.date }}</span>
+                        {% if request.user == review.user or request.user.is_superuser %}    
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="fs-6">
+                                        <a href="{% url 'update_review' review.id %}"><small>Update</small></a>
+                                        <a class="text-danger" href="{% url 'delete_review' review.id %}"><small>Delete</small></a>
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
                 <div class="col-12 mt-4 d-flex align-items-center flex-column">
                     <p>Tell us how we did!</p>
                     {% if request.user.is_authenticated %}
-                        <!-- Review Modal Trigger-->
-                        <a class="review-link" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                        <a class="review-link" href="{% url 'add_review' %}">
                             Write A Review
                         </a>
-
-                        <!-- Review Modal -->
-                        <div class="modal fade" id="reviewModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="reviewModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="reviewModalLabel">Leave a Review</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form method="POST" action="{% url 'home' %}" id="review-form">
-                                            {% csrf_token %}
-                                            <input class="star star-5" id="star-6" type="radio" name="rating" value="5" required/>
-                                            <label class="star star-5" for="star-6"></label>
-                                            <input class="star star-4" id="star-7" type="radio" name="rating" value="4"/>
-                                            <label class="star star-4" for="star-7"></label>
-                                            <input class="star star-3" id="star-8" type="radio" name="rating" value="3"/>
-                                            <label class="star star-3" for="star-8"></label>
-                                            <input class="star star-2" id="star-9" type="radio" name="rating" value="2"/>
-                                            <label class="star star-2" for="star-9"></label>
-                                            <input class="star star-1" id="star-10" type="radio" name="rating" value="1"/>
-                                            <label class="star star-1" for="star-10"></label>
-                                            {{ review_form.review |as_crispy_field }}
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Send Review</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     {% else %}
                         <p>Please <a href="{% url 'account_signup' %}">Sign Up</a> or <a href="{% url 'account_login' %}">Log in</a> if you would like to leave a review!</p>
                     {% endif %}

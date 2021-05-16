@@ -78,5 +78,13 @@
       "name": "pre_built",
       "friendly_name": "Pre-Built"
     }
+  },
+  {
+    "pk": 11,
+    "model": "products.category",
+    "fields": {
+      "name": "custom_build",
+      "friendly_name": "Custom Build"
+    }
   }
 ]

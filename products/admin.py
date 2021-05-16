@@ -1,8 +1,19 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Comment
+
+
+class ProductCommentAdmin(admin.StackedInline):
+    model = Comment
+    list_display = (
+        'username',
+        'body',
+        'product',
+        'created',
+    )
 
 
 class ProductAdmin(admin.ModelAdmin):
+    inlines = (ProductCommentAdmin,)
     list_display = (
         'sku',
         'name',

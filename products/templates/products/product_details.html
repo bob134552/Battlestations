@@ -17,8 +17,8 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="container bg-light vh-100">
+    <div class="overlay"></div>
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <h3 class="text-decoration-underline pt-2 text-center">{{ product.name }}</h3>
@@ -93,12 +93,66 @@
                    </form>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 mt-5 text-center">
+                    <h5>Comments Section</h5>
+                    <hr>
+                </div>
+                <div class="row pb-5">
+                    {% for comment in comments %}
+                        <div class="col-md-6 offset-md-3 col-12 border rounded mb-3 comment">
+                            <p class="fw-bold mt-2">
+                                {{ comment.username }}, {{ comment.created }}
+                                <hr>
+                                <span class=" text-muted fw-normal">
+                                {{ comment.created_on }}
+                                </span>
+                            </p>
+                            <p class="comment-body">{{ comment.body }}</p>
+                            <p>
+                                <a class="update-btn text-dark d-inline w-100">Edit</a>
+                                <a href="{% url 'delete_comment' product.id comment.id %}" class="text-danger d-inline w-100">Delete</a>
+                            </p>
+                        </div>
+                        <div class="col-md-6 offset-md-3 col-12 border rounded mb-3 update" style="display: none;">
+                            <form method="POST" class="pb-2 update-form" id="comment_{{ comment.id }}">
+                                {% csrf_token %}
+                                <textarea name="body" id="body" class="w-100 mt-2" rows="5">{{ comment.body }}</textarea>
+                                <button type="button" class="cancel">Cancel</button>
+                                <button type="submit">Save</button>
+                            </form>
+                        </div>
+                    {% empty %}
+                            <p class="text-center">There are no comments yet. Be the first to leave one!</p>
+                    {% endfor %}
+                    <h3>Leave a comment</h3>
+                    <form method="POST" action="{% url 'product_details' product.id %}">
+                        {% csrf_token %}
+                        {{ comment_form.body|as_crispy_field }}
+                    <button type="submit" class="btn btn-dark rounded-0">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+    {{ block.super }}
+    {% include 'products/includes/quantity_input_script.html' %}
+    <script type="text/javascript">
+        $('.update-btn').click(function(e) {
+            var form = $(this).parent().parent().next('.update')
+            $(this).parent().parent().hide()
+            form.show()
+        })
+
+        $('.cancel').click(function(e) {
+            var comment = $(this).parent().parent().prev('.comment')
+            $(this).parent().parent().hide()
+            comment.show()
+        })
+    </script>
+    <script src="{% static 'products/js/comment_update.js' %}"></script>
 {% endblock %}
