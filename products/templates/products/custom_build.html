@@ -29,58 +29,64 @@
             </div>
         </div>
         <div class="col-12 col-md-6 offset-md-3">
-            <form>
+            <form method="POST" id="custom-build-form">
+                {% csrf_token %}
                 <label for="cases" class="form-label">Choose A Case:</label>
-                <select id="cases" class="form-select">
-                    <option selected>----</option>
+                <select id="cases" name="cases" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'cases' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>{{ product.name }} (+£{{ product.price }}){% if not product.in_stock %}
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        data-image="{{ product.image.url }}"{% if not product.in_stock %} disabled{% endif %}>{{ product.name }}
+                        (+£{{ product.price }}){% if not product.in_stock %}
                         *Currently out of stock.{% endif %}</option>
                     {% endif %}
                     {% endfor %}
                 </select>
                 <label for="motherboard" class="form-label">Choose A Motherboard:</label>
-                <select id="motherboard" class="form-select">
-                    <option selected>----</option>
+                <select id="motherboard" name="motherboard" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'motherboards' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>{{ product.name }} (+£{{ product.price }}){% if not product.in_stock %}
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        {% if not product.in_stock %} disabled{% endif %}>{{ product.name }}
+                        (+£{{ product.price }}){% if not product.in_stock %}
                         *Currently out of stock.{% endif %}</option>
                     {% endif %}
                     {% endfor %}
                 </select>
                 <label for="cpus" class="form-label">Choose A CPU:</label>
-                <select id="cpus" class="form-select">
-                    <option selected>----</option>
+                <select id="cpus" name="cpus" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'cpus' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>{{ product.name }} (+£{{ product.price }}){% if not product.in_stock %}
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        {% if not product.in_stock %} disabled{% endif %}>{{ product.name }}
+                        (+£{{ product.price }}){% if not product.in_stock %}
                         *Currently out of stock.{% endif %}</option>
                     {% endif %}
                     {% endfor %}
                 </select>
                 <label for="gpus" class="form-label">Choose A GPU:</label>
-                <select id="gpus" class="form-select">
-                    <option selected>----</option>
+                <select id="gpus" name="gpus" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'gpus' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>{{ product.name }} (+£{{ product.price }}){% if not product.in_stock %}
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        {% if not product.in_stock %} disabled{% endif %}>{{ product.name }}
+                        (+£{{ product.price }}){% if not product.in_stock %}
                         *Currently out of stock.{% endif %}</option>
                     {% endif %}
                     {% endfor %}
                 </select>
                 <label for="memory" class="form-label">Choose your RAM:</label>
-                <select id="memory" class="form-select">
-                    <option selected>----</option>
+                <select id="memory" name="memory" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'memory' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>{{ product.name }} (+£{{ product.price }}){% if not product.in_stock %}
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        {% if not product.in_stock %} disabled{% endif %}>{{ product.name }}
+                        (+£{{ product.price }}){% if not product.in_stock %}
                         *Currently out of stock.{% endif %}</option>
                     {% endif %}
                     {% endfor %}
@@ -89,47 +95,54 @@
                     <small>Note: Kits are usually 2 RAM sticks that add up to specified memory(e.g. 2 x 32GB).</small>
                 </p>
                 <label for="storage" class="form-label">Choose your Storage:</label>
-                <select id="storage" class="form-select">
-                    <option selected>----</option>
+                <select id="storage" name="storage" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'storage_hdd' or product.category.name == 'storage_ssd' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>{{ product.name }} (+£{{ product.price }}){% if not product.in_stock %}
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        {% if not product.in_stock %} disabled{% endif %}>{{ product.name }}
+                        (+£{{ product.price }}){% if not product.in_stock %}
                         *Currently out of stock.{% endif %}</option>
                     {% endif %}
                     {% endfor %}
                 </select>
-                <label for="psu" class="form-label">Choose A Power Supply:</label>
-                <select id="psu" class="form-select">
-                    <option selected>----</option>
+                <label for="psus" class="form-label">Choose A Power Supply:</label>
+                <select id="psus" name="psus" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'psus' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>{{ product.name }} (+£{{ product.price }}){% if not product.in_stock %}
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        {% if not product.in_stock %} disabled{% endif %}>{{ product.name }}
+                        (+£{{ product.price }}){% if not product.in_stock %}
                         *Currently out of stock.{% endif %}</option>
                     {% endif %}
                     {% endfor %}
                 </select>
-                <label for="cooling" class="form-label">Optional Cooling:</label>
-                <select id="cooling" class="form-select">
-                    <option selected>----</option>
+                <label for="cooling" class="form-label">Choose Your Cooling:</label>
+                <select id="cooling" name="cooling" class="form-select" required>
+                    <option value>----</option>
                     {% for product in products %}
                     {% if product.category.name == 'cooling' %}
-                    <option value="{{ product.info }}|{{ product.price }}" {% if not product.in_stock %}
-                        disabled{% endif %}>
+                    <option value="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}"
+                        {% if not product.in_stock %} disabled{% endif %}>
                         {{ product.name }} (+£{{ product.price }}){% if not product.in_stock %} *Currently out of
                         stock.{% endif %}
                     </option>
                     {% endif %}
                     {% endfor %}
                 </select>
-                <p>
-                    <small>Note: Leave blank if not required.</small>
-                </p>
-                <a href="{% url 'home' %}" class="btn btn-outline-dark rounded-0">Cancel</a>
-                <button type="submit" class="btn btn-dark rounded-0">Build!</button>
+                <input type="hidden" name="category" id="category" value="11">
+                <input type="hidden" name="quantity" id="quantity" value="1">
+                <a href="{% url 'home' %}" class="btn btn-outline-dark rounded-0 mt-2">Cancel</a>
+                <button type="submit" class="btn btn-dark rounded-0 mt-2">Build!</button>
             </form>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+
+<script src="{% static 'products/js/create_and_add_custom_build.js' %}"></script>
+
 {% endblock %}

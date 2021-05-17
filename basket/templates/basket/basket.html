@@ -54,11 +54,19 @@
                                         </a>
                                         <p class="my-0 text-muted">SKU: {{ item.product.sku }}</p>
                                         <p class="my-0">
-                                            {% with item.product.info|split:"," as details %}
-                                                {% for detail in details %}
-                                                    - {{ detail }}<br>
-                                                {% endfor %}
-                                            {% endwith %}
+                                            {% if item.product.category.name != 'custom_build' %}
+                                                {% with item.product.info|split:"," as details %}
+                                                    {% for detail in details %}
+                                                        - {{ detail }}<br>
+                                                    {% endfor %}
+                                                {% endwith %}
+                                            {% else %}
+                                                {% with item.product.description|split:"|" as details %}
+                                                    {% for detail in details %}
+                                                        - {{ detail }}<br>
+                                                    {% endfor %}
+                                                {% endwith %}
+                                            {% endif %}
                                         </p>
                                     </td>
                                     <td>

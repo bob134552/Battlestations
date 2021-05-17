@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -12,7 +12,7 @@ from .forms import ProductForm, CommentForm
 def all_products(request):
     """A view to display all products"""
 
-    products = Product.objects.all()
+    products = Product.objects.exclude(category__name='custom_build')
     query = None
     categories = None
     sort = None
@@ -208,3 +208,39 @@ def custom_build(request):
     }
 
     return render(request, template, context)
+
+
+def add_custom_to_basket(request):
+    '''Creates and adds custom built pc to product model and basket'''
+    basket = request.session.get('basket', {})
+    custom_pc_data = request.POST
+    custom_pc_form = ProductForm({
+        'sku': 'CUSTOMBUILD',
+        'category': 11,
+        'name': custom_pc_data['name'],
+        'image': custom_pc_data['image'],
+        'description': custom_pc_data['description'],
+        'price': custom_pc_data['total'],
+    })
+    if custom_pc_form.is_valid():
+        custom_pc = Product(
+            category=Category.objects.get(pk=11),
+            sku='CUSTOMBUILD',
+            name=custom_pc_data['name'],
+            image=custom_pc_data['image'].split('/media/')[1],
+            description=custom_pc_data['description'],
+            price=custom_pc_data['total'],
+        )
+        custom_pc.save(force_insert=True)
+        quantity = int(request.POST.get('quantity'))
+        basket[custom_pc.id] = quantity
+        request.session['basket'] = basket
+        messages.success(request, 'Successfully added custom build to basket.')
+        return HttpResponse(
+                content='Added Custom Build To Basket',
+                status=200)
+    else:
+        return HttpResponse(
+            content='Unable to add build.',
+            status=200
+        )

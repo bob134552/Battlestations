@@ -10,4 +10,5 @@ urlpatterns = [
     path('delete_comment/<int:product_id>/<int:comment_id>', views.delete_comment, name='delete_comment'),
     path('update_comment/<int:comment_id>', views.update_comment, name='update_comment'),
     path('custom_build/', views.custom_build, name='custom_build'),
+    path('add_custom/', views.add_custom_to_basket, name='add_custom_to_basket'),
 ]
