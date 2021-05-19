@@ -2,6 +2,51 @@ html {
     height: 100%;
 }
 
+.logo {
+    position: relative;
+}
+
+.head-underline {
+    width: 50px;
+    height: 3px;
+    background: #ffc107;
+    margin: auto;
+}
+
+.home-img {
+    width: 265px;
+    height: 265px;
+}
+
+.footer-icon {
+    font-size: 2rem;
+}
+
+a.footer-icon--fb:hover i {
+    transition: 0.3s;
+    color: #036ce4 !important;
+}
+
+a.footer-icon--tw:hover i {
+    transition: 0.3s;
+    color: #1c9cea !important;
+}
+
+a.footer-icon--ig:hover i {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+    position: fixed;
+    top: -5px;
+    left: 0;
+    height: 150px;
+    width: 150px;
+}
+
 #user-options::after {
     content: none;
 }
@@ -134,7 +179,7 @@ html {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 150px;
     }
 }
 
@@ -153,16 +198,6 @@ html {
     .product-img {
         width: 300px;
         height: 300px;
-    }
-
-    .overlay {
-        height: 100%;
-        width: 90%;
-        top: 0;
-        left: 5%;
-        position: fixed;
-        background: white;
-        z-index: -1;
     }
 
 }

@@ -1,0 +1,85 @@
+<!-- Customer Review Section -->
+<div class="row">
+    <div class="col-8 offset-2 text-center">
+        <h3>Customer Reviews</h3>
+        <hr>
+    </div>
+    <div class="row w-50 mx-auto">
+        <div class="col-12 text-center">
+            <div class="stars">
+                <form>
+                    <input class="star star-5" id="star-5" type="radio" name="star" {% if rating_avg == 5 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" id="star-4" type="radio" name="star" {% if rating_avg == 4 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" id="star-3" type="radio" name="star" {% if rating_avg == 3 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" id="star-2" type="radio" name="star" {% if rating_avg == 2 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" id="star-1" type="radio" name="star" {% if rating_avg == 1 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-1" for="star-1"></label>
+                    {% if rating_avg == None %}
+                    No Reviews for this site yet.
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+        {% for review in reviews %}
+        <div class="col-12 col-md-6 mt-4 text-center">
+            <div class="stars">
+                <form>
+                    <input class="star star-5" id="star-5" type="radio" name="star" {% if review.rating == 5 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" id="star-4" type="radio" name="star" {% if review.rating == 4 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" id="star-3" type="radio" name="star" {% if review.rating == 3 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" id="star-2" type="radio" name="star" {% if review.rating == 2 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" id="star-1" type="radio" name="star" {% if review.rating == 1 %}
+                        checked{% endif %} disabled />
+                    <label class="star star-1" for="star-1"></label>
+                </form>
+            </div>
+            <br>
+            {{ review.review }}
+            <br>
+            <span class="text-end text-muted text-capitalize">-{% if review.user %}{{ review.user }}{% else%}Anonymous
+                User{% endif %},
+                <br>
+            </span>
+            <span class="fs-6 text-muted">{{ review.date }}</span>
+            {% if request.user == review.user or request.user.is_superuser %}
+            <div class="row">
+                <div class="col-12">
+                    <p class="fs-6">
+                        <a href="{% url 'update_review' review.id %}"><small>Update</small></a>
+                        <a class="text-danger" href="{% url 'delete_review' review.id %}"><small>Delete</small></a>
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <div class="col-12 mt-4 d-flex align-items-center flex-column">
+            <p>Tell us how we did!</p>
+            {% if request.user.is_authenticated %}
+            <a class="review-link" href="{% url 'add_review' %}">
+                Write A Review
+            </a>
+            {% else %}
+            <p>Please <a href="{% url 'account_signup' %}">Sign Up</a> or <a href="{% url 'account_login' %}">Log in</a>
+                if you would like to leave a review!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -5,6 +5,7 @@ from products.models import Product
 from .forms import SiteReviewsForm
 from .models import SiteReviews
 from django.contrib.auth.models import User
+from django.db.models import Avg
 
 
 def index(request):
@@ -12,8 +13,13 @@ def index(request):
 
     products = Product.objects.filter(category__name='pre_built')[:3]
     reviews = SiteReviews.objects.all()[:4]
+    overall = SiteReviews.objects.aggregate(Avg('rating'))
+    rating_avg = None
+    if overall['rating__avg'] is not None:
+        rating_avg = round(overall['rating__avg'])
 
     context = {
+        'rating_avg': rating_avg,
         'products': products,
         'reviews': reviews,
     }

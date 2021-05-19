@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load account socialaccount %}
+{% providers_media_js %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -19,11 +20,13 @@
 
 <div class="socialaccount_ballot">
 
-    <ul class="socialaccount_providers">
-        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    <p class="text-dark">Login with:</p>
+    <ul class="list-inline">
+        <li class="inline-item">
+            <a href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Login</a>
+        </li>
+        <li class="inline-item"><a href="{% provider_login_url "google" %}">Google Login</a></li>
     </ul>
-
-    <div class="login-or">{% trans 'or' %}</div>
 
 </div>
 

@@ -2,159 +2,150 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container-fluid bg-dark header-container sticky-top">
-        <div class="row">
-            <div class="col-12">
-                <p class="text-center fs-6 text-light">
-                    <i class="fas fa-truck"></i>
-                    Due to the current COVID pandemic deliveries may take longer than usual and some items may be out of stock. Thank you for your understanding.
+<div class="container-fluid bg-dark header-container sticky-top">
+    <div class="row">
+        <div class="col-12">
+            <p class="text-center fs-6 text-light">
+                <i class="fas fa-truck"></i>
+                Due to the current COVID pandemic deliveries may take longer than usual and some items may be out of
+                stock. Thank you for your understanding.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row mt-3 container-fluid border-bottom border-dark mx-0 px-0">
+    <div class="col-12">
+        <div class="row w-75 mx-auto">
+            <div class="col-12 col-md-4 text-center">
+                <i class="fas fa-shipping-fast"></i>
+                <p class="lead my-0">Fast Shipping
+                    <hr class="w-50 mx-auto my-0">
+                    Straight to your door!
+                </p>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+                <i class="fas fa-desktop"></i>
+                <p class="lead my-0">
+                    Up-to-date
+                    <hr class="w-50 mx-auto my-0">
+                    All the latest hardware!
+                </p>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+                <i class="fas fa-phone"></i>
+                <p class="lead my-0">
+                    24/7 Support
+                    <hr class="w-50 mx-auto my-0">
+                    Your needs above all else!
                 </p>
             </div>
         </div>
     </div>
-{% endblock %}
+</div>
+<div class="container vh-100 h-100">
 
-{% block content %}
-<div class="container bg-light vh-100 h-100">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="display-6 pt-2 text-center">
-                    Check Out Our Latest Builds!
-                </h1>
-                <hr>
-            </div>
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-6 pt-2 text-center">
+                Check Out Our Latest Builds!
+            </h1>
+            <hr>
         </div>
-        <div class="row bg-light">
-            <div class="col-12 my-auto">
-                <div id="prebuildcarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner pb-3">
-                        {% for product in products %}
-                            <a href="{% url 'product_details' product.id %}" class="text-decoration-none carousel-item{% if forloop.counter == 1 %} active{% endif %}">
-                                <div class="row">
-                                    <div class="col-12 col-md-3 offset-md-1">
-                                        {% if product.image %}
-                                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid product-img">
-                                        {% else %}
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" class="img-fluid product-img">
-                                        {% endif %}
-                                    </div>
-                                    <div class="col-12 col-md-7 d-flex flex-column align-self-center">
-                                        <h5 class="text-dark">{{ product.name }}</h5>
-                                        <p class="text-muted">{{ product.info }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        {% endfor %}
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#prebuildcarousel" data-bs-slide="prev">
-                        <span class="fas fa-arrow-left rounded-circle prev" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#prebuildcarousel" data-bs-slide="next">
-                        <span class="fas fa-arrow-right rounded-circle next" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+    </div>
 
-
-        <div class="row bg-light mt-5">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-8 offset-2 text-center">
-                        <h4>Why Buy From Us?</h4>
-                        <hr>
-                    </div>
+    <div class="row">
+        <div class="col-12 my-auto">
+            <div id="prebuildcarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#prebuildcarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
                 </div>
-                    <div class="row w-75 mx-auto">
-                        <div class="col-12 col-md-4 text-center">
-                            <i class="fas fa-shipping-fast"></i>
-                            <p class="lead my-0">Fast Shipping
-                                <hr class="w-50 mx-auto my-0">
-                                Straight to your door!
-                            </p>
-                        </div>
-                        <div class="col-12 col-md-4 text-center">
-                            <i class="fas fa-desktop"></i>
-                            <p class="lead my-0">
-                                Up-to-date
-                                <hr class="w-50 mx-auto my-0">
-                                All the latest hardware!
-                            </p>
-                        </div>
-                        <div class="col-12 col-md-4 text-center">
-                            <i class="fas fa-phone"></i>
-                            <p class="lead my-0">
-                                24/7 Support
-                                <hr class="w-50 mx-auto my-0">
-                                Your needs above all else!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div class="row bg-light">
-            <div class="col-8 offset-2 text-center">
-                <h4>Customer Reviews</h4>
-                <hr>
-            </div>
-            <div class="row w-50 mx-auto">
-                {% for review in reviews %}
-                    <div class="col-12 col-md-6 mt-4 text-center">
-                        <div class="stars">
-                            <form>
-                                <input class="star star-5" id="star-5" type="radio" name="star"{% if review.rating == 1 %} checked{% endif %} disabled/>
-                                <label class="star star-5" for="star-5"></label>
-                                <input class="star star-4" id="star-4" type="radio" name="star"{% if review.rating == 2 %} checked{% endif %} disabled/>
-                                <label class="star star-4" for="star-4"></label>
-                                <input class="star star-3" id="star-3" type="radio" name="star"{% if review.rating == 3 %} checked{% endif %} disabled/>
-                                <label class="star star-3" for="star-3"></label>
-                                <input class="star star-2" id="star-2" type="radio" name="star"{% if review.rating == 4 %} checked{% endif %} disabled/>
-                                <label class="star star-2" for="star-2"></label>
-                                <input class="star star-1" id="star-1" type="radio" name="star"{% if review.rating == 5 %} checked{% endif %} disabled/>
-                                <label class="star star-1" for="star-1"></label>
-                            </form>
-                        </div>
-                        <br>
-                        {{ review.review }}
-                        <br>
-                        <span class="text-end text-muted text-capitalize">-{% if review.user %}{{ review.user }}{% else%}Anonymous User{% endif %},
-                            <br>
-                        </span>
-                        <span class="fs-6 text-muted">{{ review.date }}</span>
-                        {% if request.user == review.user or request.user.is_superuser %}    
-                            <div class="row">
-                                <div class="col-12">
-                                    <p class="fs-6">
-                                        <a href="{% url 'update_review' review.id %}"><small>Update</small></a>
-                                        <a class="text-danger" href="{% url 'delete_review' review.id %}"><small>Delete</small></a>
-                                    </p>
-                                </div>
+                <div class="carousel-inner pb-3">
+                    {% for product in products %}
+                    <a href="{% url 'product_details' product.id %}"
+                        class="text-decoration-none carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                        <div class="row">
+                            <div class="col-12 col-md-3 offset-md-1">
+                                {% if product.image %}
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}"
+                                    class="img-fluid product-img">
+                                {% else %}
+                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"
+                                    class="img-fluid product-img">
+                                {% endif %}
                             </div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-                <div class="col-12 mt-4 d-flex align-items-center flex-column">
-                    <p>Tell us how we did!</p>
-                    {% if request.user.is_authenticated %}
-                        <a class="review-link" href="{% url 'add_review' %}">
-                            Write A Review
-                        </a>
-                    {% else %}
-                        <p>Please <a href="{% url 'account_signup' %}">Sign Up</a> or <a href="{% url 'account_login' %}">Log in</a> if you would like to leave a review!</p>
-                    {% endif %}
+                            <div class="col-12 col-md-7 d-flex flex-column align-self-center">
+                                <h5 class="text-dark">{{ product.name }}</h5>
+                                <p class="text-muted">{{ product.info }}</p>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#prebuildcarousel"
+                    data-bs-slide="prev">
+                    <span class="fas fa-arrow-left rounded-circle prev" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#prebuildcarousel"
+                    data-bs-slide="next">
+                    <span class="fas fa-arrow-right rounded-circle next" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <h3 class="text-center">Browse By Category:</h3>
+        </div>
+        <div class="row d-flex justify-content-around">
+            <div class="col-12 col-md-3">
+                <h4 class="text-center">
+                    <a href="{% url 'products' %}?category=gpus" class="text-dark text-decoration-none">GPUs</a>
+                </h4>
+                <div class="head-underline"></div>
+                <a href="{% url 'products' %}?category=gpus"><img class="home-img ms-3 shadow-sm" src="{{ MEDIA_URL }}gpus.png" alt="GPU"></a>
+                <p class="text-muted pt-1"><small>The Latest GPU Selection for avid PC builders.</small></p>
+            </div>
+            <div class="col-12 col-md-3">
+                <h4 class="text-center">
+                    <a href="{% url 'products' %}?category=cpus" class="text-dark text-decoration-none">CPUs</a>
+                </h4>
+                <div class="head-underline"></div>
+                <a href="{% url 'products' %}?category=cpus"><img class="home-img ps-3 shadow-sm" src="{{ MEDIA_URL }}3111252-l-a.jpg" alt="CPU"></a>
+                <p class="text-muted pt-1"><small>The Latest CPUs to keep your rig at top speeds.</small></p>
+            </div>
+            <div class="col-12 col-md-3">
+                <h4 class="text-center">
+                    <a href="{% url 'products' %}?category=motherboards" class="text-dark text-decoration-none">Motherboards</a>
+                </h4>
+                <div class="head-underline"></div>
+                <a href="{% url 'products' %}?category=gpus"><img class="home-img ps-3 shadow-sm" src="{{ MEDIA_URL }}3123958-l-a.jpg" alt="MOBO"></a>
+                <p class="text-muted pt-1"><small>The Latest GPU Selection for avid PC builders.</small></p>
+            </div>
+            <div class="col-12 col-md-3">
+                <h4 class="text-center">
+                    <a href="{% url 'products' %}?category=pre_built" class="text-dark text-decoration-none">Gaming PCs</a>
+                </h4>
+                <div class="head-underline"></div>
+                <a href="{% url 'products' %}?category=gpus"><img class="home-img ps-3 shadow-sm" src="{{ MEDIA_URL }}3299263-l-a.jpg" alt="GPU"></a>
+                <p class="text-muted pt-1"><small>The Latest GPU Selection for avid PC builders.</small></p>
+            </div>
+        </div>
+    </div>
+
+    {% include 'includes/customer-reviews.html' %}
+</div>
 {% endblock %}

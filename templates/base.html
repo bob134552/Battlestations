@@ -36,12 +36,12 @@
         <title>BattleStations {% block extra_title %}{% endblock %}</title>
     </head>
 
-    <body style="background-image: url({{ MEDIA_URL }}1236519.jpg); background-attachment: fixed;">
-        <header class="container-fluid fixed-top bg-light">
+    <body class="bg-light">
+        <header class="container-fluid fixed-top bg-warning">
             <div class="row d-none d-lg-flex" id="topnav">
                 <div class="col-12 col-md-4 mt-2">
-                    <a class="btn" href="{% url 'home' %}">
-                        <h1><strong>BattleStations</strong></h1>
+                    <a class="navbar-brand logo stretched-link" href="{% url 'home' %}">
+                        <img src="{{ MEDIA_URL }}brand-logo.png" alt="brand-logo">
                     </a>
                 </div>
                 <div class="col-12 col-md-4 mt-2 py-3">
@@ -56,50 +56,10 @@
                         </div>
                     </form>
                 </div>
-
-                <div class="col-12 col-md-4 mt-2 d-md-flex justify-content-md-end py-1">
-                    <ul class="list-inline list-unstyled">
-                        <li class="list-inline-item dropdown">
-                            <a class="dropdown-toggle btn" href="#" role="button" id="user-options" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My Account</p>
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu border-1 rounded-0" aria-labelledby="user-options">
-                                {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                        <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
-                                    {% endif %}
-                                    <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                                    <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
-                                {% else %}
-                                    <li><a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a></li>
-                                    <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                                {% endif %}
-                            </ul>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn" href="{% url 'show_basket' %}">
-                                <div class="text-center">
-                                    <div>
-                                        <i class="fas fa-shopping-cart fa-lg"></i>
-                                    </div>
-                                    <p class="my-0">
-                                        {% if final_amount %}
-                                            £{{ final_amount|floatformat:2 }}
-                                        {% else %}
-                                            £0.00
-                                        {% endif %}
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                {% include 'includes/profile-and-basket.html' %}
             </div>
             <div class="row bg-warning border-bottom border-dark">
-                <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <nav class="navbar navbar-expand-lg navbar-light p-0 w-100">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -132,6 +92,23 @@
 
         {% block content %}
         {% endblock %}
+
+        <footer class="bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mt-3 d-flex justify-content-center">
+                        <a class="nav-link footer-icon--fb footer-icon" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook text-white" aria-hidden="true"></i></a>
+                        <a class="nav-link footer-icon--ig footer-icon" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram text-white" aria-hidden="true"></i></a>
+                        <a class="nav-link footer-icon--tw footer-icon" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter text-white" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-2 mb-3 d-flex justify-content-center">
+                        <p class="footer-text text-center text-white">Copyright&copy; <script>document.write(new Date().getFullYear());</script> MP4 - Bobby Jackson</p>
+                    </div>
+                </div>        
+            </div>
+        </footer>
 
         {% block postloadjs %}
             <script type="text/javascript">
