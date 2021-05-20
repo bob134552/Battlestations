@@ -55,7 +55,9 @@ def remove_from_basket(request, product_id):
     try:
         product = get_object_or_404(Product, pk=product_id)
         basket = request.session.get('basket', {})
-
+        # Deletes custom built pc on removal from basket
+        if product.category.name == 'custom_build':
+            product.delete()
         basket.pop(product_id)
         messages.success(request, f'Removed {product.name} from your basket.')
         request.session['basket'] = basket

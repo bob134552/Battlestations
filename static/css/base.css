@@ -6,6 +6,10 @@ html {
     position: relative;
 }
 
+.border-custom {
+    border-width: 0 0 0 4px!important;
+}
+
 .head-underline {
     width: 50px;
     height: 3px;
@@ -86,6 +90,10 @@ a.footer-icon--ig:hover i {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
 }
 
 .allauth-form-inner-content p {

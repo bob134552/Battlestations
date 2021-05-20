@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from random import randrange
 
 from .models import Product, Category, Comment
 from .forms import ProductForm, CommentForm
@@ -213,9 +214,10 @@ def custom_build(request):
 def add_custom_to_basket(request):
     '''Creates and adds custom built pc to product model and basket'''
     basket = request.session.get('basket', {})
+    x = str(randrange(0, 999999)).zfill(6)
     custom_pc_data = request.POST
     custom_pc_form = ProductForm({
-        'sku': 'CUSTOMBUILD',
+        'sku': f'CB{x}',
         'category': 11,
         'name': custom_pc_data['name'],
         'image': custom_pc_data['image'],
@@ -225,7 +227,7 @@ def add_custom_to_basket(request):
     if custom_pc_form.is_valid():
         custom_pc = Product(
             category=Category.objects.get(pk=11),
-            sku='CUSTOMBUILD',
+            sku=f'CB{x}',
             name=custom_pc_data['name'],
             image=custom_pc_data['image'].split('/media/')[1],
             description=custom_pc_data['description'],

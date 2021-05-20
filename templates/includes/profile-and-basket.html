@@ -9,7 +9,7 @@
                     <p class="my-0">My Account</p>
                 </div>
             </a>
-            <ul class="dropdown-menu border-1 rounded-0" aria-labelledby="user-options">
+            <ul class="dropdown-menu border-1 rounded-0 py-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
