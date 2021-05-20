@@ -98,10 +98,6 @@ a.footer-icon--ig:hover i {
     border-radius: 0;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
-}
-
 .allauth-form-inner-content input::placeholder {
     color: #aab7c4;
 }
