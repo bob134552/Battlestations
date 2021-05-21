@@ -6,8 +6,21 @@ html {
     position: relative;
 }
 
+.btn-black {
+    background-color: #000!important;
+    color: #fff!important;
+}
+
 .border-custom {
     border-width: 0 0 0 4px!important;
+}
+
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .head-underline {
@@ -18,8 +31,8 @@ html {
 }
 
 .home-img {
-    width: 265px;
-    height: 265px;
+    max-width: 265px;
+    max-height: 265px;
 }
 
 .footer-icon {
@@ -59,7 +72,7 @@ a.footer-icon--ig:hover i {
     text-decoration: none;
 }
 
-#products>.dropdown-menu, #mobile-searchbar {
+#products > .dropdown-menu, #mobile-searchbar {
     animation: growDown 300ms ease-in-out;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
     transform-origin: top center;
@@ -77,13 +90,9 @@ a.footer-icon--ig:hover i {
 
 .message-container {
     position: fixed;
-    top: 205px;
+    top: 115px;
     right: 15px;
     z-index: 99999999;
-}
-
-.toast-capper {
-    height: 3px;
 }
 
 .bag-notification-wrapper {
@@ -173,6 +182,8 @@ a.footer-icon--ig:hover i {
   }
 }
 
+/* Media Queries */
+
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -185,25 +196,57 @@ a.footer-icon--ig:hover i {
     .header-container {
         padding-top: 150px;
     }
+
+    .custom-container {
+        min-height: 1000px;
+    }
 }
 
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 82px;
     }
+
+    .custom-container {
+        min-height: 390px;
+    }
+
+    h1.display-6.text-center.pt-2 {
+        font-size: 1.5rem!important;
+    }
+
+    .border-custom {
+        width: 290px;
+    }
+
+    i.fa-lg {
+        font-size: 1rem!important;
+    }
+
+    .mobile {
+        padding: 0;
+    }
+
+    .mobile-text {
+        font-size: 15px;
+    }
+
+    #covid-delivery p {
+        font-size: .9rem;
+    }
+
 }
 
 @media (min-width: 1200px) {
-
+    
     #product-image {
         border-bottom: none!important;
     }
-
+    
     .product-img {
         width: 300px;
         height: 300px;
     }
-
 }
 
 @media (max-width: 1199.98px) {
@@ -216,6 +259,11 @@ a.footer-icon--ig:hover i {
         position: fixed;
         background: white;
         z-index: -1;
+    }
+    
+    .home-img {
+        max-width: 200px;
+        max-width: 200px;
     }
 
     #product-image {

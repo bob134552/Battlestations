@@ -5,7 +5,9 @@ from decimal import Decimal
 
 
 def basket_items(request):
-
+    '''
+    Where product and final costs are worked out
+    '''
     basket_items = []
     total = 0
     product_count = 0
@@ -21,6 +23,7 @@ def basket_items(request):
             'product': product,
         })
 
+    # Where delivery costs are worked out.
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total

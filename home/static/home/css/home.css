@@ -1,3 +1,7 @@
+/*
+CSS for the star rating on the home page.
+Idea from: https://stackoverflow.com/questions/40870635/star-rating-system-html 
+*/
 div.stars {
   width: 175px;
   display: inline-block;

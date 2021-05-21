@@ -10,5 +10,15 @@ class SiteReviewsAdmin(admin.ModelAdmin):
         'rating',
     )
 
+    readonly_fields = ('date',)
+
+    fields = (
+        'date',
+        'user',
+        'review',
+        'rating',)
+
+    ordering = ('-date',)
+
 
 admin.site.register(SiteReviews, SiteReviewsAdmin)

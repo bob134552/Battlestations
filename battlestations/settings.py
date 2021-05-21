@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'storages',
 
-    # Required for allauth
+    # Required for allauth social accounts
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
 ]
@@ -115,8 +115,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-
-
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -180,6 +178,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# Set static and media depending on development mode.
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
@@ -187,7 +186,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
-
+    # S3 cache parameters.
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
@@ -215,6 +214,7 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
+# Email Set up
 if 'DEVELOPEMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'battlestations@example.com'

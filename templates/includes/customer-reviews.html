@@ -4,7 +4,7 @@
         <h3>Customer Reviews</h3>
         <hr>
     </div>
-    <div class="row w-50 mx-auto">
+    <div class="row mx-auto">
         <div class="col-12 text-center">
             <div class="stars">
                 <form>
@@ -53,7 +53,7 @@
             <br>
             {{ review.review }}
             <br>
-            <span class="text-end text-muted text-capitalize">-{% if review.user %}{{ review.user }}{% else%}Anonymous
+            <span class="text-end text-muted text-capitalize overflow-auto">-{% if review.user %}{{ review.user }}{% else%}Anonymous
                 User{% endif %},
                 <br>
             </span>

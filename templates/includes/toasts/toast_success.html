@@ -1,4 +1,4 @@
-<div class="border-custom border-success toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+<div class="border-custom border-success toast align-items-center bg-light" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
     <div class="toast-header justify-content-between">
         <p class="my-auto">Success!</p>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -11,7 +11,7 @@
             </div>
         </div>
         {% if final_amount and not on_profile_page %}
-            <p class="logo-font bg-white text-black py-1">Your Basket ({{ product_count }})</p>
+            <p class="logo-font bg-light text-dark py-1">Your Basket ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in basket_items %}
                     <div class="row">
@@ -31,7 +31,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <strong><p class="mt-3 mb-1 text-black">
+                    <strong><p class="mt-3 mb-1 text-dark">
                         Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}: 
                         <span class="float-right">£{{ total|floatformat:2 }}</span>
                     </p></strong>

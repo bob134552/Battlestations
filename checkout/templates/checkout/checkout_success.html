@@ -10,23 +10,9 @@
 - Checkout Complete
 {% endblock %}
 
-{% block page_header %}
-<div class="container-fluid bg-dark header-container sticky-top">
-    <div class="row">
-        <div class="col-12">
-            <p class="text-center fs-6 text-light">
-                <i class="fas fa-truck"></i>
-                Due to the current COVID pandemic deliveries may take longer than usual and some items may be out of
-                stock. Thank you for your understanding.
-            </p>
-        </div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
-
-<div class="container bg-light vh-100">
+<!-- Successful checkout or to display previously placed order -->
+<div class="container bg-light">
     <div class="order-confirmation-wrapper p-2 mt-3 border">
         <div class="row">
             <div class="col text-center">
@@ -41,7 +27,7 @@
 
         <div class="row">
             <div class="col text-center">
-                <h3>Order No: {{ order.order_number }}</h3>
+                <h3 class="fs-5 overflow-scroll">Order No: {{ order.order_number }}</h3>
             </div>
         </div>
         <div class="row">

@@ -10,29 +10,16 @@
 - Checkout
 {% endblock %}
 
-{% block page_header %}
-    <div class="container-fluid bg-dark header-container sticky-top">
-        <div class="row">
-            <div class="col-12">
-                <p class="text-center fs-6 text-light">
-                    <i class="fas fa-truck"></i>
-                    Due to the current COVID pandemic deliveries may take longer than usual and some items may be out of stock. Thank you for your understanding.
-                </p>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
-
-<div class="container bg-light vh-100">
+<!-- Checkout page - uses Stripe for payment -->
+<div class="container">
         <div class="row">
             <div class="col">
                 <h2 class="text-uppercase mt-2">Checkout</h2>
                 <hr class="mt-0">
             </div>
         </div>
-        <div class="row bg-light">
+        <div class="row">
             <div class="col-12 col-md-6">
                 <div class="card shadow-sm">
                     <p class="fs-5 card-header">Please fill out your details below.</p>
@@ -43,6 +30,7 @@
                             {{ order_form.full_name | as_crispy_field }}
                             {{ order_form.email | as_crispy_field }}
                         </fieldset>
+
                         <fieldset>
                             <legend class="fieldset-label">Delivery</legend>
                             {{ order_form.phone_number | as_crispy_field }}
@@ -64,6 +52,7 @@
                                 {% endif %}
                             </div>
                         </fieldset>
+
                         <fieldset>
                             <legend class="fieldset-label">Payment</legend>
                             <!--Stripe card element here-->
@@ -73,6 +62,7 @@
                             <!--Client secret input-->
                             <input type="hidden" name="client_secret" value="{{ client_secret }}">
                         </fieldset>
+
                         <div class="submit-button text-end mt-5 mb-2">
                             <a href="{% url 'show_basket' %}" class="btn btn-warning btn-outline-dark rounded-0">
                                 <span class="icon">
@@ -94,7 +84,8 @@
                     </form>
                 </div>
             </div>
-            <div class="col-12 col-md-6 bg-light">
+            <!-- Displays order summary to user -->
+            <div class="col-12 col-md-6 mt-1">
                 <div class="card shadow-sm">
                     <p class="fs-5 card-header">Order Summary ({{ product_count }})</p>
                     <div class="card-body">
@@ -144,197 +135,7 @@
             </div>
         </div>
     </div>
-    <div id="loading">
-        <div class="socket">
-			<div class="gel center-gel">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c1 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c2 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c3 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c4 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c5 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c6 r1">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			
-			<div class="gel c7 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			
-			<div class="gel c8 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c9 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c10 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c11 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c12 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c13 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c14 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c15 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c16 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c17 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c18 r2">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c19 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c20 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c21 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c22 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c23 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c24 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c25 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c26 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c28 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c29 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c30 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c31 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c32 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c33 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c34 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c35 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c36 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-			<div class="gel c37 r3">
-				<div class="hex-brick h1"></div>
-				<div class="hex-brick h2"></div>
-				<div class="hex-brick h3"></div>
-			</div>
-		</div>
-    </div>
+    {% include 'checkout/includes/loading-overlay.html' %}
 {% endblock %}
 
 {% block postloadjs %}

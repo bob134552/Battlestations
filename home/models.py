@@ -7,6 +7,7 @@ class SiteReviews(models.Model):
         verbose_name_plural = 'Site Reviews'
         ordering = ('-date',)
 
+    '''Allows users to give the site a rating between 1 and 5'''
     CHOICES = [(i, i) for i in range(1, 6)]
 
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)

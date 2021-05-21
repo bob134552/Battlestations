@@ -4,6 +4,10 @@
 
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
+{% block extra_title %}
+- Email
+{% endblock %}
+
 {% block inner_content %}
 <hr>
 <h2 class="logo-font mb-4">{% trans "E-mail Addresses" %}</h2>
@@ -36,9 +40,9 @@
         {% endfor %}
 
         <div class="buttonHolder mt-2">
-            <button class="secondaryAction" type="submit" name="action_primary">{% trans 'Make Primary' %}</button>
-            <button class="secondaryAction" type="submit" name="action_send">{% trans 'Re-send Verification' %}</button>
-            <button class="primaryAction" type="submit" name="action_remove">{% trans 'Remove' %}</button>
+            <button class="secondaryAction mt-1" type="submit" name="action_primary">{% trans 'Make Primary' %}</button>
+            <button class="secondaryAction mt-1" type="submit" name="action_send">{% trans 'Re-send Verification' %}</button>
+            <button class="primaryAction mt-1" type="submit" name="action_remove">{% trans 'Remove' %}</button>
         </div>
 
     </fieldset>
@@ -58,6 +62,7 @@
     {% csrf_token %}
     {{ form|crispy }}
     <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+    <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-1">Back to profile</a>
 </form>
 
 {% endblock %}

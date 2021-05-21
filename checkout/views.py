@@ -34,6 +34,11 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    '''
+    A view that displays the checkout template and
+    prefills it if user has saved data. Handles
+    creating the order on a POST request.
+    '''
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 

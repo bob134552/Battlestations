@@ -9,8 +9,10 @@ from django.db.models import Avg
 
 
 def index(request):
-    '''A view to return the index page'''
-
+    '''
+    A view to return the index page and display
+    site reviews and average site rating.
+    '''
     products = Product.objects.filter(category__name='pre_built')[:3]
     reviews = SiteReviews.objects.all()[:4]
     overall = SiteReviews.objects.aggregate(Avg('rating'))
@@ -28,6 +30,7 @@ def index(request):
 
 @login_required
 def add_review(request):
+    '''Allows a logged in user to leave a review'''
     if request.method == 'POST':
         user = get_object_or_404(User, username=request.user)
         form_data = {
@@ -57,6 +60,7 @@ def add_review(request):
 
 @login_required
 def update_review(request, review_id):
+    '''Updates user review'''
     review = get_object_or_404(SiteReviews, pk=review_id)
     if request.method == 'POST':
         review_form = SiteReviewsForm(request.POST, instance=review)
@@ -80,6 +84,7 @@ def update_review(request, review_id):
 
 @login_required
 def delete_review(request, review_id):
+    '''Deletes user review.'''
     review = get_object_or_404(SiteReviews, pk=review_id)
     if request.user == review.user or request.user.is_superuser:
         review.delete()

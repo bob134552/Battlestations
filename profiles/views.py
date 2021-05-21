@@ -28,6 +28,7 @@ def profile(request):
     orders = profile.orders.all()
     template = 'profiles/profile.html'
     context = {
+        'profile': profile,
         'form': form,
         'orders': orders,
         'on_profile_page': True,
@@ -37,6 +38,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    '''Allows user to view previous orders'''
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

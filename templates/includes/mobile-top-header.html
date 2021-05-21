@@ -1,9 +1,9 @@
-<ul class="list-inline">
+<ul class="list-inline mt-2 me-4">
     <li class="list-inline-item">
-        <a class="btn d-block d-lg-none dropdown" href="#" id="mobile-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn d-block d-lg-none dropdown mobile" href="#" id="mobile-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fas fa-search fa-lg"></i></div>
-                <p class="my-0">Search</p>
+                <p class="my-0 mobile-text">Search</p>
             </div>
         </a>
         <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0 bg-warning" aria-labelledby="mobile-search" id="mobile-searchbar">
@@ -11,7 +11,7 @@
                 <div class="input-group">
                     <input class="form-control rounded-start border border-secondary border-end-0" type="text" name="q" placeholder="Search..." maxlength="150">
                     <button class="btn btn-outline-dark bg-dark rounded-end border-start-0" type="button"><span class="icon">
-                            <i class="fas fa-search text-warning"></i>
+                            <i class="fas fa-search fa-lg text-warning"></i>
                         </span>
                     </button>
                 </div>
@@ -19,13 +19,13 @@
         </div>
     </li>
     <li class="list-inline-item dropdown">
-        <a class="dropdown-toggle btn d-block d-lg-none" href="#" role="button" id="user-options" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="dropdown-toggle btn d-block d-lg-none p-0 mobile" href="#" role="button" id="user-options" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
-                <p class="my-0">My Account</p>
+                <p class="my-0 mobile-text">My Account</p>
             </div>
         </a>
-        <ul class="dropdown-menu border-1 rounded-0" aria-labelledby="user-options">
+        <ul class="dropdown-menu border-1 rounded-0 dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="user-options">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                     <li><a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a></li>
@@ -39,10 +39,10 @@
         </ul>
     </li>
     <li class="list-inline-item">
-        <a class="btn d-block d-lg-none" href="{% url 'show_basket' %}">
+        <a class="btn d-block d-lg-none mobile" href="{% url 'show_basket' %}">
             <div class="text-center">
                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-                <p class="my-0">
+                <p class="my-0 mobile-text">
                     {% if final_amount %}
                         £{{ final_amount|floatformat:2 }}
                     {% else %}

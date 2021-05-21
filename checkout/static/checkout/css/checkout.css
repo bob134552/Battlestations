@@ -1,3 +1,6 @@
+/* CSS for checkout template */
+
+/* Stripe */
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -25,6 +28,7 @@
     color: #aab7c4;
 }
 
+/* Checkout form */
 .form-select {
     padding-top: 5px;
     border-radius: 0;
@@ -56,7 +60,7 @@ select option[value=""] {
     background: #1e1e1e;
     z-index: 9999;
 }
-.socket{
+.socket {
     width: 200px;
     height: 200px;
     position: absolute;
@@ -66,7 +70,7 @@ select option[value=""] {
     margin-top: -100px;
 }
 			
-.hex-brick{
+.hex-brick {
     background: #ABF8FF;
     width: 30px;
     height: 17px;
@@ -80,17 +84,17 @@ select option[value=""] {
     -webkit-animation-iteration-count: infinite;
 }
 			
-.h2{
+.h2 {
     transform: rotate(60deg);
     -webkit-transform: rotate(60deg);
 }
 			
-.h3{
+.h3 {
     transform: rotate(-60deg);
     -webkit-transform: rotate(-60deg);
 }
 			
-.gel{
+.gel {
     height: 30px;
     width: 30px;	
     transition: all .3s;
@@ -100,7 +104,7 @@ select option[value=""] {
     left: 50%;
 }
 
-.center-gel{
+.center-gel {
     margin-left: -15px;
     margin-top: -15px;
     
@@ -112,191 +116,191 @@ select option[value=""] {
     -webkit-animation-iteration-count: infinite;
 }
 
-.c1{
+.c1 {
     margin-left: -47px;
     margin-top: -15px;
 }
 
-.c2{
+.c2 {
     margin-left: -31px;
     margin-top: -43px;
 }
 
-.c3{
+.c3 {
     margin-left: 1px;
     margin-top: -43px;
 }
 
-.c4{
+.c4 {
     margin-left: 17px;
     margin-top: -15px;
 }
-.c5{
+.c5 {
     margin-left: -31px;
     margin-top: 13px;
 }
 
-.c6{
+.c6 {
     margin-left: 1px;
     margin-top: 13px;
 }
 
-.c7{
+.c7 {
     margin-left: -63px;
     margin-top: -43px;
 }
 
-.c8{
+.c8 {
     margin-left: 33px;
     margin-top: -43px;
 }
 
-.c9{
+.c9 {
     margin-left: -15px;
     margin-top: 41px;
 }
 
-.c10{
+.c10 {
     margin-left: -63px;
     margin-top: 13px;
 }
 
-.c11{
+.c11 {
     margin-left: 33px;
     margin-top: 13px;
 }
 
-.c12{
+.c12 {
     margin-left: -15px;
     margin-top: -71px;
 }
 
-.c13{
+.c13 {
     margin-left: -47px;
     margin-top: -71px;
 }
 
-.c14{
+.c14 {
     margin-left: 17px;
     margin-top: -71px;
 }
 
-.c15{
+.c15 {
     margin-left: -47px;
     margin-top: 41px;
 }
 
-.c16{
+.c16 {
     margin-left: 17px;
     margin-top: 41px;
 }
 
-.c17{
+.c17 {
     margin-left: -79px;
     margin-top: -15px;
 }
 
-.c18{
+.c18 {
     margin-left: 49px;
     margin-top: -15px;
 }
 
-.c19{
+.c19 {
     margin-left: -63px;
     margin-top: -99px;
 }
 
-.c20{
+.c20 {
     margin-left: 33px;
     margin-top: -99px;
 }
 
-.c21{
+.c21 {
     margin-left: 1px;
     margin-top: -99px;
 }
 
-.c22{
+.c22 {
     margin-left: -31px;
     margin-top: -99px;
 }
 
-.c23{
+.c23 {
     margin-left: -63px;
     margin-top: 69px;
 }
 
-.c24{
+.c24 {
     margin-left: 33px;
     margin-top: 69px;
 }
 
-.c25{
+.c25 {
     margin-left: 1px;
     margin-top: 69px;
 }
 
-.c26{
+.c26 {
     margin-left: -31px;
     margin-top: 69px;
 }
 
-.c27{
+.c27 {
     margin-left: -79px;
     margin-top: -15px;
 }
 
-.c28{
+.c28 {
     margin-left: -95px;
     margin-top: -43px;
 }
 
-.c29{
+.c29 {
     margin-left: -95px;
     margin-top: 13px;
 }
 
-.c30{
+.c30 {
     margin-left: 49px;
     margin-top: 41px;
 }
 
-.c31{
+.c31 {
     margin-left: -79px;
     margin-top: -71px;
 }
 
-.c32{
+.c32 {
     margin-left: -111px;
     margin-top: -15px;
 }
 
-.c33{
+.c33 {
     margin-left: 65px;
     margin-top: -43px;
 }
 
-.c34{
+.c34 {
     margin-left: 65px;
     margin-top: 13px;
 }
 
-.c35{
+.c35 {
     margin-left: -79px;
     margin-top: 41px;
 }
 
-.c36{
+.c36 {
     margin-left: 49px;
     margin-top: -71px;
 }
 
-.c37{
+.c37 {
     margin-left: 81px;
     margin-top: -15px;
 }
 
-.r1{
+.r1 {
     animation-name: pulse;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -307,7 +311,7 @@ select option[value=""] {
     -webkit-animation-delay: .2s;
 }
 
-.r2{
+.r2 {
     animation-name: pulse;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -318,7 +322,7 @@ select option[value=""] {
     -webkit-animation-delay: .4s;
 }
 
-.r3{
+.r3 {
     animation-name: pulse;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -329,7 +333,7 @@ select option[value=""] {
     -webkit-animation-delay: .6s;
 }
 
-.r1 > .hex-brick{
+.r1 > .hex-brick {
     animation-name: fade;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -340,7 +344,7 @@ select option[value=""] {
     -webkit-animation-delay: .2s;
 }
 
-.r2 > .hex-brick{
+.r2 > .hex-brick {
     animation-name: fade;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -351,7 +355,7 @@ select option[value=""] {
     -webkit-animation-delay: .4s;
 }
 
-.r3 > .hex-brick{
+.r3 > .hex-brick {
     animation-name: fade;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -363,7 +367,7 @@ select option[value=""] {
 }
 
 
-@keyframes pulse{
+@keyframes pulse {
     0%{
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -380,7 +384,7 @@ select option[value=""] {
     }
 }
 			
-@keyframes fade{
+@keyframes fade {
     0%{
         background: #ABF8FF;
     }
@@ -394,7 +398,7 @@ select option[value=""] {
     }
 }
 			
-@-webkit-keyframes pulse{
+@-webkit-keyframes pulse {
     0%{
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -411,7 +415,7 @@ select option[value=""] {
     }
 }
 			
-@-webkit-keyframes fade{
+@-webkit-keyframes fade {
     0%{
         background: #ABF8FF;
     }

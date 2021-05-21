@@ -1,164 +1,168 @@
 {% extends "base.html" %}
 {% load static %}
+<!-- Allows the use of split tag -->
 {% load template_extras %}
 
 {% block extra_title %}
 - Basket
 {% endblock %}
 
-
-{% block page_header %}
-    <div class="container-fluid bg-dark header-container sticky-top">
-        <div class="row">
-            <div class="col-12">
-                <p class="text-center fs-6 text-light">
-                    <i class="fas fa-truck"></i>
-                    Due to the current COVID pandemic deliveries may take longer than usual and some items may be out of stock. Thank you for your understanding.
-                </p>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
 
-<div class="container bg-light vh-100">
-        <div class="row">
-            <div class="col-6 offset-md-3 mt-3 text-center">
-                <h2>Your Basket</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row bg-light">
-            <div class="col">
-                {% if basket_items %}
-                    <div class="table-responsive">
-                        <table class="table table-sm table-borderless">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Product</th>
-                                    <th scope="col"></th>
-                                    <th scope="col" class="ps-4">Price</th>
-                                    <th scope="col" class="text-center">Qty</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
-
-                            {% for item in basket_items %}
-                                <tr>
-                                    <td class="w-25 p-4">
-                                        {% if item.product.image %}
-                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid">
-                                        {% else %}
-                                            <img src="{{ item.product.image.url }}" alt="{{ MEDIA_URL }}noimage.png" class="img-fluid">
-                                        {% endif %}
-                                    </td>
-                                    <td>
-                                        <a href="{% url 'product_details' item.product.id %}" class="text-dark">
-                                            <p class="my-0 text-decoration-underline"><strong>{{ item.product.name }}</strong></p>
-                                        </a>
-                                        <p class="my-0 text-muted">SKU: {{ item.product.sku }}</p>
-                                        <p class="my-0">
-                                            {% if item.product.category.name != 'custom_build' %}
-                                                {% with item.product.info|split:"," as details %}
-                                                    {% for detail in details %}
-                                                        - {{ detail }}<br>
-                                                    {% endfor %}
-                                                {% endwith %}
-                                            {% else %}
-                                                {% with item.product.description|split:"|" as details %}
-                                                    {% for detail in details %}
-                                                        - {{ detail }}<br>
-                                                    {% endfor %}
-                                                {% endwith %}
-                                            {% endif %}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="mt-1 ps-2">£{{ item.product.price }}</p>
-                                    </td>
-                                    <td class="w-25">
-                                        <form class="form update-form" action="{% url 'adjust_basket' item.product_id %}" method="POST">
-                                            {% csrf_token %}
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="input-group px-5">
-                                                        <button class="btn btn-sm bg-dark text-light rounded-start quantity-minus" type="button" id="quantity-minus_{{ item.product.id }}" data-item_id="{{ item.product.id }}"><i class="fas fa-minus"></i></button>
-                                                        <input class="form-control quantity-input" type="number" name="quantity" value="{{ item.quantity }}" min="0" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
-                                                        <button class="btn btn-sm bg-dark text-light quantity-plus" type="button" id="quantity-plus_{{ item.product.id }}" data-item_id="{{ item.product.id }}"><i class="fas fa-plus"></i></button>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            </div>
-                                        </form>
-                                        <a class="update-link ms-5 text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger" id="remove_{{ item.product_id }}"><small>Remove</small></a>
-                                    </td>
-                                    <td>
-                                        <p class="mt-1">£{{ item.product.price |calc_subtotal:item.quantity }}</p>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                             <tr>
-                                <td colspan="5" class="pt-5 text-end">
-                                    <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Total: £{{ final_amount|floatformat:2 }}</strong></h4>
-                                    {% if free_delivery_delta > 0 %}
-                                        <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
-                                        </p>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-end">
-                                    <a href="{% url 'checkout' %}" class="btn bg-dark text-light btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                {% else %}
-                    <div class="text-center">
-                        <p class="lead mb-5">Your basket is empty.</p>
-                        <a href="{% url 'products' %}" class="btn bg-dark text-light rounded-1">
-                                <i class="fas fa-chevron-left"></i>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
-                    </div>
-                {% endif %}
-            </div>
+<div class="container bg-light custom-container">
+    <div class="row">
+        <div class="col-6 offset-md-3 mt-3 text-center">
+            <h2>Your Basket</h2>
+            <hr>
         </div>
     </div>
+    <div class="row bg-light">
+        <div class="col">
+            {% if basket_items %}
+            <div class="table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col"></th>
+                            <th scope="col" class="ps-4">Price</th>
+                            <th scope="col" class="text-center">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in basket_items %}
+                        <tr>
+                            <td class="w-25 p-4">
+                                {% if item.product.image %}
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid">
+                                {% else %}
+                                    <img src="{{ item.product.image.url }}" alt="{{ MEDIA_URL }}noimage.png" class="img-fluid">
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url 'product_details' item.product.id %}" class="text-dark">
+                                    <p class="my-0 text-decoration-underline"><strong>{{ item.product.name }}</strong></p>
+                                </a>
+                                <p class="my-0 text-muted">SKU: {{ item.product.sku }}</p>
+                                <!-- Split tag used to display product information or custom build details -->
+                                <p class="my-0">
+                                    {% if item.product.category.name != 'custom_build' %}
+                                        {% with item.product.info|split:"," as details %}
+                                            {% for detail in details %}
+                                                - {{ detail }}<br>
+                                            {% endfor %}
+                                        {% endwith %}
+                                    {% else %}
+                                        {% with item.product.description|split:"|" as details %}
+                                            {% for detail in details %}
+                                                - {{ detail }}<br>
+                                            {% endfor %}
+                                        {% endwith %}
+                                    {% endif %}
+                                </p>
+                            </td>
+                            <td>
+                                <p class="mt-1 ps-2">£{{ item.product.price }}</p>
+                            </td>
+                            <td class="w-25">
+                                <form class="form update-form" action="{% url 'adjust_basket' item.product_id %}"
+                                    method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- Quantity Selector -->
+                                            <div class="input-group px-5">
+                                                <button class="btn btn-sm bg-dark text-light rounded-start quantity-minus"
+                                                    type="button" id="quantity-minus_{{ item.product.id }}"
+                                                    data-item_id="{{ item.product.id }}"><i
+                                                        class="fas fa-minus"></i></button>
+                                                <input class="form-control quantity-input" type="number" name="quantity"
+                                                    value="{{ item.quantity }}" min="0" max="99"
+                                                    data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                                                <button class="btn btn-sm bg-dark text-light quantity-plus" type="button"
+                                                    id="quantity-plus_{{ item.product.id }}"
+                                                    data-item_id="{{ item.product.id }}"><i
+                                                        class="fas fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </div>
+                                </form>
+                                <a class="update-link ms-5 text-info"><small>Update</small></a>
+                                <a class="remove-item text-danger"
+                                    id="remove_{{ item.product_id }}"><small>Remove</small></a>
+                            </td>
+                            <td>
+                                <p class="mt-1">£{{ item.product.price |calc_subtotal:item.quantity }}</p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <!-- Basket Costs -->
+                        <td colspan="5" class="pt-5 text-end">
+                            <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Total: £{{ final_amount|floatformat:2 }}</strong></h4>
+                            {% if free_delivery_delta > 0 %}
+                                <p class="mb-1 text-danger">
+                                    You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong>
+                                    more!
+                                </p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--Checkout button -->
+                        <td colspan="5" class="text-end">
+                            <a href="{% url 'checkout' %}" class="btn bg-dark text-light btn-lg">
+                                <span class="text-uppercase">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% else %}
+            <!-- Empty Shopping basket -->
+            <div class="text-center">
+                <p class="lead mb-5">Your basket is empty.</p>
+                <a href="{% url 'products' %}" class="btn bg-dark text-light rounded-0 mb-4">
+                    <i class="fas fa-chevron-left"></i>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
+    <script type="text/javascript">
+        // Update quantity on click
+        $('.update-link').click(function (e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
+        })
 
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/basket/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        // Remove item and reload on click
+        $('.remove-item').click(function (e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var url = `/basket/remove/${itemId}/`;
+            var data = { 'csrfmiddlewaretoken': csrfToken };
 
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
+            $.post(url, data)
+                .done(function () {
+                    location.reload();
+                });
+        })
+    </script>
+
 {% endblock %}

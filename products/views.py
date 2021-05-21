@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -12,7 +12,6 @@ from .forms import ProductForm, CommentForm
 
 def all_products(request):
     """A view to display all products"""
-
     products = Product.objects.exclude(category__name='custom_build')
     query = None
     categories = None
@@ -20,6 +19,7 @@ def all_products(request):
     direction = None
     template = 'products/products.html'
 
+    # Allows sorting based on category.
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -43,6 +43,7 @@ def all_products(request):
                 products = products.filter(category__name='pre_built')
                 template = 'products/search.html'
 
+        # Allows searching based on user input to the searchbar
         if 'q' in request.GET:
             template = 'products/search.html'
             query = request.GET['q']
@@ -70,10 +71,10 @@ def all_products(request):
 
 def product_details(request, product_id):
     """A view to display product details and comments"""
-
     product = get_object_or_404(Product, pk=product_id)
     comments = product.comments.filter(product=product)
     new_comment = None
+
     if request.method == 'POST':
         form_data = {
             'username': request.user if request.user else 'AnonymousUser',
@@ -99,6 +100,10 @@ def product_details(request, product_id):
 
 @login_required
 def update_comment(request, comment_id):
+    '''
+    Allows users to edit comments they have left on products,
+    data is sent through a ajax POST.
+    '''
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.method == 'POST':
         try:
@@ -121,6 +126,7 @@ def update_comment(request, comment_id):
 
 @login_required
 def delete_comment(request, product_id, comment_id):
+    '''Lets users delete their comments'''
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user == comment.username or request.user.is_superuser:
         comment.delete()
@@ -201,6 +207,11 @@ def delete_product(request, product_id):
 
 
 def custom_build(request):
+    '''
+    Renders the custom build page and fills
+    each form select input with relevant product
+    data.
+    '''
     products = Product.objects.exclude(
         category__name=('pre_built', 'custom_build'))
     template = 'products/custom_build.html'
@@ -224,6 +235,7 @@ def add_custom_to_basket(request):
         'description': custom_pc_data['description'],
         'price': custom_pc_data['total'],
     })
+    
     if custom_pc_form.is_valid():
         custom_pc = Product(
             category=Category.objects.get(pk=11),
