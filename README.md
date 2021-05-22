@@ -4,33 +4,35 @@
 
 ## Bobby Jackson
 
-<img src="#" alt="responsive-mockup">
+<img src="/media/responsive-mockup.png" alt="responsive-mockup">
 
-The live site can be found [here]().
+The live site can be found [here](https://battlestations-mp4.herokuapp.com/).
 
-A site designed for use by anyone that is enthusiastic about reading, sharing and finding comic books.
-The website contains comics from a variety of genres. 
-The website features a gallery of various comic books with search function, user registration, comic book editing,
-the ability to favourite comics and a contact page. editing
-The primary goal of the website is to create a large collection of various comic books for a wide user base. 
+A site designed to allow users to view and purchase computer components, pre-built desktops or create their own custom
+build from the parts provided within the store.
+The website contains products recently released and aims to keep up to date with all recent releases of pc parts. 
+The website features a catalogue of recently released product, user registration including social media integration 
+and email authentication and the ability to create your own custom desktop pc.
+The primary goal of the website is to create a easy platform for users to browse, buy and comment on products available
+on the site. 
 
 ## UX
 
 The ideal user for this site is:
-- Interested in sharing and recommending comic books they have read.
-- Interested in searching for new comics to read.
+- Interested in either building or purchasing desktops or components for their own builds.
+- Interested in leaving their thoughts on products to help other users.
 - English speaking.
 
 Visitors to the site are looking for:
-- A place to return to for suggestions on the next comic book to read.
-- The ability to make new entries on comics that may not be already on the site.
-- The ability to favourite comics they are interested in reading, so they can easily find them in the future. 
+- Other users thoughts on products being sold on the site.
+- The ability to purchase any available product on the site.
+- The ability to create personal pc builds based on items within the store. 
 
 The website should be:
 - Easy to navigate.
-- Have a simple registration and log in.
-- Able to search through a collection of comics to find specific ones.
-- Able to moderate content added to the site. 
+- Have a simple registration and log in with the possibility of using a social account to log in with.
+- Able to search through a database of PC components to find specific ones.
+- Able to add or remove products as required.
 
 ### User Stories
 
@@ -39,12 +41,12 @@ The website should be:
 1. As a new visitor, I want to be able to navigate the site with ease.
 2. As a new visitor, I want to be able to use the site before registering, 
    and still be able to use most features, so that I make an informed decision on whether to sign up. 
-3. As a new visitor, I want to be able to sign up easily and get started browsing.
+3. As a new visitor, I want to be able to sign up easily.
 
 #### Returning User
 
-1. As a returning user, I want to be able to favourite comics to know which ones I am interested in.
-2. As a returning user, I want to provide my own entries to the collection.
+1. As a returning user, I want to be able to quickly purchase any product I may need.
+2. As a returning user, I want to be able to build my own desktop.
 3. As a returning user, I want to be able to edit my details should they change.
 4. As a returning user, I want an easy to fill-in contact form, so I can contact the owner of the site for new ideas or to help moderate the site.
 

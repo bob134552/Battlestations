@@ -7,7 +7,7 @@
 
 
 {% block extra_title %}
-- Checkout Complete
+{% if from_profile %}- Order Summary:{{ order.order_number }}{% else %}- Checkout Complete{% endif %}
 {% endblock %}
 
 {% block content %}

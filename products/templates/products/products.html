@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 order-md-first">
-            <p class="text-muted mt-3 text-center text-md-left">
+            <p class="text-muted mt-3 text-center text-md-start">
                 {% if search_term or current_categories or current_sorting != 'None_None' %}
                 <span class="small"><a href="{% url 'products' %}">Back To All Products</a> | </span>
                 {% endif %}
@@ -78,14 +78,14 @@
                                                             <label for="quantity"
                                                                 class="form-label me-2 mt-1 fs-5"><strong>Quantity:</strong></label>
                                                             <button
-                                                                class="btn btn-sm bg-dark text-light rounded-start quantity-minus"
+                                                                class="btn btn-sm btn-black rounded-start quantity-minus"
                                                                 type="button" data-item_id="{{ product.id }}"
                                                                 id="quantity-minus_{{ product.id }}"><i
                                                                     class="fas fa-minus"></i></button>
                                                             <input class="form-control quantity-input" type="number"
                                                                 name="quantity" value="1" min="1" max="99"
                                                                 data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                                            <button class="btn btn-sm bg-dark text-light quantity-plus"
+                                                            <button class="btn btn-sm btn-black quantity-plus"
                                                                 type="button" data-item_id="{{ product.id }}"
                                                                 id="quantity-plus_{{ product.id }}"><i
                                                                     class="fas fa-plus"></i></button>
@@ -121,7 +121,7 @@
                                                                         <p>Are you sure you wish to delete this product?</p>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-dark rounded-0" data-bs-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-black rounded-0" data-bs-dismiss="modal">Close</button>
                                                                         <a href="{% url 'delete_product' product.id %}" type="button" class="btn btn-danger rounded-0">Delete</a>
                                                                     </div>
                                                                 </div>

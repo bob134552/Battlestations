@@ -36,6 +36,10 @@ html {
             transform-origin: top center;
 }
 
+#mobile-searchbar {
+    left: -8px!important;
+}
+
 .logo {
     position: relative;
 }
@@ -269,6 +273,25 @@ idea taken from https://codinhood.com/micro/10-dropdown-menu-animations-css-tran
     .custom-container {
         min-height: 882px;
     }
+    
+    .nav-link {
+        width: 170px;
+        font-size: 1.5em;
+        color: black!important;
+        font-weight: 500;
+    }
+
+    .nav-item {
+        border-width: 2px 0px 0px 2px;
+        border-style: solid;
+        border-color: black;
+    }
+
+    .nav-item:last-child {
+        border-width: 2px 2px 0px 2px;
+        border-style: solid;
+        border-color: black;
+    }
 }
 
 @media (max-width: 991px) {
@@ -335,8 +358,8 @@ idea taken from https://codinhood.com/micro/10-dropdown-menu-animations-css-tran
     }
     
     .home-img {
-        max-width: 200px;
-        max-width: 200px;
+        max-width: 230px;
+        max-height: 230px;
     }
 
     #product-image {

@@ -5,14 +5,14 @@
         <div class="col-12">
             <!-- Quantity Selector -->
             <div class="input-group px-5">
-                <button class="btn btn-sm bg-dark text-light rounded-start quantity-minus"
+                <button class="btn btn-sm btn-black rounded-start quantity-minus"
                     type="button" id="quantity-minus_{{ item.product.id }}"
                     data-item_id="{{ item.product.id }}"><i
                         class="fas fa-minus"></i></button>
                 <input class="form-control quantity-input" type="number" name="quantity"
                     value="{{ item.quantity }}" min="0" max="99"
                     data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
-                <button class="btn btn-sm bg-dark text-light quantity-plus" type="button"
+                <button class="btn btn-sm btn-black quantity-plus" type="button"
                     id="quantity-plus_{{ item.product.id }}"
                     data-item_id="{{ item.product.id }}"><i
                         class="fas fa-plus"></i></button>

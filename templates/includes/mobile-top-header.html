@@ -10,7 +10,8 @@
             <form class="form" method="GET" action="{% url 'products' %}">
                 <div class="input-group">
                     <input class="form-control rounded-start border border-secondary border-end-0" type="text" name="q" placeholder="Search..." maxlength="150">
-                    <button class="btn btn-outline-dark bg-dark rounded-end border-start-0" type="button"><span class="icon">
+                    <button class="btn btn-outline-dark bg-dark rounded-end border-start-0" type="button">
+                        <span class="icon">
                             <i class="fas fa-search fa-lg text-warning"></i>
                         </span>
                     </button>
@@ -21,7 +22,9 @@
     <li class="list-inline-item dropdown">
         <a class="dropdown-toggle btn d-block d-lg-none p-0 mobile" href="#" role="button" id="user-options" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="text-center">
-                <div><i class="fas fa-user fa-lg"></i></div>
+                <div class="icon">
+                    <i class="fas fa-user fa-lg"></i>
+                </div>
                 <p class="my-0 mobile-text">My Account</p>
             </div>
         </a>
@@ -41,7 +44,9 @@
     <li class="list-inline-item">
         <a class="btn d-block d-lg-none mobile" href="{% url 'show_basket' %}">
             <div class="text-center">
-                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                <div class="icon">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                </div>
                 <p class="my-0 mobile-text">
                     {% if final_amount %}
                         £{{ final_amount|floatformat:2 }}
