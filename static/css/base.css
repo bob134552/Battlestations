@@ -1,59 +1,43 @@
+/* General Styling */
 html {
     height: 100%;
 }
 
-.logo {
-    position: relative;
-}
-
-.btn-black {
-    background-color: #000!important;
-    color: #fff!important;
-}
-
-.border-custom {
-    border-width: 0 0 0 4px!important;
-}
-
 .icon {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
 }
 
-.head-underline {
-    width: 50px;
-    height: 3px;
-    background: #ffc107;
-    margin: auto;
+/* Navbar */
+#user-options::after {
+    content: none;
 }
 
-.home-img {
-    max-width: 265px;
-    max-height: 265px;
+.dropdown-menu li a {
+    text-decoration: none;
 }
 
-.footer-icon {
-    font-size: 2rem;
+#products > .dropdown-menu, #mobile-searchbar {
+    -webkit-animation: growDown 300ms ease-in-out;
+            animation: growDown 300ms ease-in-out;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+    -webkit-transform-origin: top center;
+        -ms-transform-origin: top center;
+            transform-origin: top center;
 }
 
-a.footer-icon--fb:hover i {
-    transition: 0.3s;
-    color: #036ce4 !important;
-}
-
-a.footer-icon--tw:hover i {
-    transition: 0.3s;
-    color: #1c9cea !important;
-}
-
-a.footer-icon--ig:hover i {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo {
+    position: relative;
 }
 
 .logo img {
@@ -64,18 +48,10 @@ a.footer-icon--ig:hover i {
     width: 150px;
 }
 
-#user-options::after {
-    content: none;
-}
-
-.dropdown-menu li a {
-    text-decoration: none;
-}
-
-#products > .dropdown-menu, #mobile-searchbar {
-    animation: growDown 300ms ease-in-out;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
-    transform-origin: top center;
+/* Buttons */
+.btn-black {
+    background-color: #000!important;
+    color: #fff!important;
 }
 
 .btt-atb {
@@ -88,6 +64,11 @@ a.footer-icon--ig:hover i {
     cursor: pointer;
 }
 
+/* Toasts */
+.border-custom {
+    border-width: 0 0 0 4px!important;
+}
+
 .message-container {
     position: fixed;
     top: 115px;
@@ -95,12 +76,60 @@ a.footer-icon--ig:hover i {
     z-index: 99999999;
 }
 
-.bag-notification-wrapper {
+.basket-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
+/* Site review section */
+.review {
+    width: 15em;
+    max-height: 15em;
+}
+
+/* Home category section */
+.head-underline {
+    width: 50px;
+    height: 3px;
+    background: #ffc107;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.home-img {
+    max-width: 265px;
+    max-height: 265px;
+}
+
+/* Footer */
+.footer-icon {
+    font-size: 2rem;
+}
+
+a.footer-icon--fb:hover i {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    color: #036ce4 !important;
+}
+
+a.footer-icon--tw:hover i {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    color: #1c9cea !important;
+}
+
+a.footer-icon--ig:hover i {
+    background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Allauth Form - from boutique ado tutorials */
 .allauth-form-inner-content label:not([for='id_remember']) {
     display: none;
 }
@@ -113,6 +142,22 @@ a.footer-icon--ig:hover i {
 .allauth-form-inner-content input {
     border-color: black;
     border-radius: 0;
+}
+
+.allauth-form-inner-content input::-webkit-input-placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content input::-moz-placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content input:-ms-input-placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content input::-ms-input-placeholder {
+    color: #aab7c4;
 }
 
 .allauth-form-inner-content input::placeholder {
@@ -139,7 +184,11 @@ a.footer-icon--ig:hover i {
     border-radius: 0;
 
     /* standard bootstrap btn transitions */
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 }
 
 /* Product Form */
@@ -163,6 +212,7 @@ a.footer-icon--ig:hover i {
     background-color: #dc3545;
 }
 
+/* Quantity input in basket. */
 .prev, .next {
     background-color: #000!important;
     height: 30px;
@@ -170,15 +220,34 @@ a.footer-icon--ig:hover i {
     padding-top: 7px;
 }
 
-@keyframes growDown {
+/* Animation for products dropdown on navbar
+idea taken from https://codinhood.com/micro/10-dropdown-menu-animations-css-transform */
+@-webkit-keyframes growDown {
   0% {
-    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
   }
   80% {
-    transform: scaleY(1.1);
+    -webkit-transform: scaleY(1.1);
+            transform: scaleY(1.1);
   }
   100% {
-    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+@keyframes growDown {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  80% {
+    -webkit-transform: scaleY(1.1);
+            transform: scaleY(1.1);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
 }
 
@@ -198,7 +267,7 @@ a.footer-icon--ig:hover i {
     }
 
     .custom-container {
-        min-height: 1000px;
+        min-height: 882px;
     }
 }
 
@@ -246,6 +315,10 @@ a.footer-icon--ig:hover i {
     .product-img {
         width: 300px;
         height: 300px;
+    }
+
+    .custom-container {
+        height: 990px;
     }
 }
 

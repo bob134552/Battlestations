@@ -1,0 +1,26 @@
+<form class="form update-form" action="{% url 'adjust_basket' item.product_id %}"
+    method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12">
+            <!-- Quantity Selector -->
+            <div class="input-group px-5">
+                <button class="btn btn-sm bg-dark text-light rounded-start quantity-minus"
+                    type="button" id="quantity-minus_{{ item.product.id }}"
+                    data-item_id="{{ item.product.id }}"><i
+                        class="fas fa-minus"></i></button>
+                <input class="form-control quantity-input" type="number" name="quantity"
+                    value="{{ item.quantity }}" min="0" max="99"
+                    data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                <button class="btn btn-sm bg-dark text-light quantity-plus" type="button"
+                    id="quantity-plus_{{ item.product.id }}"
+                    data-item_id="{{ item.product.id }}"><i
+                        class="fas fa-plus"></i></button>
+            </div>
+        </div>
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+    </div>
+</form>
+<a class="update-link ms-5 text-info"><small>Update</small></a>
+<a class="remove-item text-danger"
+    id="remove_{{ item.product_id }}"><small>Remove</small></a>

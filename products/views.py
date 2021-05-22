@@ -235,7 +235,7 @@ def add_custom_to_basket(request):
         'description': custom_pc_data['description'],
         'price': custom_pc_data['total'],
     })
-    
+
     if custom_pc_form.is_valid():
         custom_pc = Product(
             category=Category.objects.get(pk=11),

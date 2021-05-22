@@ -23,8 +23,9 @@
                     <input class="star star-1" id="star-1" type="radio" name="star" {% if rating_avg == 1 %}
                         checked{% endif %} disabled />
                     <label class="star star-1" for="star-1"></label>
+                    <p><strong>Average Rating</strong></p>
                     {% if rating_avg == None %}
-                    No Reviews for this site yet.
+                        <p>No Reviews for this site yet.</p>
                     {% endif %}
                 </form>
             </div>
@@ -51,7 +52,7 @@
                 </form>
             </div>
             <br>
-            {{ review.review }}
+            <div class="m-auto text-break review overflow-auto">{{ review.review }}</div>
             <br>
             <span class="text-end text-muted text-capitalize overflow-auto">-{% if review.user %}{{ review.user }}{% else%}Anonymous
                 User{% endif %},

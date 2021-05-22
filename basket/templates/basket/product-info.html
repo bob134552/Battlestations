@@ -1,0 +1,21 @@
+{% load template_extras %}
+<a href="{% url 'product_details' item.product.id %}" class="text-dark">
+    <p class="my-0 text-decoration-underline"><strong>{{ item.product.name }}</strong></p>
+</a>
+<p class="my-0 text-muted">SKU: {{ item.product.sku }}</p>
+<!-- Split tag used to display product information or custom build details -->
+<p class="my-0">
+    {% if item.product.category.name != 'custom_build' %}
+        {% with item.product.info|split:"," as details %}
+            {% for detail in details %}
+                - {{ detail }}<br>
+            {% endfor %}
+        {% endwith %}
+    {% else %}
+        {% with item.product.description|split:"|" as details %}
+            {% for detail in details %}
+                - {{ detail }}<br>
+            {% endfor %}
+        {% endwith %}
+    {% endif %}
+</p>

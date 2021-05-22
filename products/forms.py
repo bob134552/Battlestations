@@ -41,4 +41,3 @@ class CommentForm(forms.ModelForm):
                 placeholder = placeholders[field]
                 self.fields[field].label = False
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-
