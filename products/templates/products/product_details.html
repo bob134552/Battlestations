@@ -33,7 +33,7 @@
                         <div class="col-12 d-flex align-items-end flex-column">
                             {% if product.in_stock %}
                             <p class="text-primary fs-3 text-center me-4 mb-0">£{{ product.price }}</p>
-                            <div class="input-group w-auto mb-2">
+                            <div class="input-group w-auto mb-2 me-3">
                                 <label for="quantity" class="form-label me-2 mt-1 fs-5"><strong>Quantity:</strong></label>
                                 <button class="btn btn-sm btn-black rounded-start quantity-minus" type="button" id="quantity-minus_{{ product.id }}" data-item_id="{{ product.id }}"><i class="fas fa-minus"></i></button>
                                 <input class="form-control quantity-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
@@ -95,10 +95,12 @@
                         </span>
                     </p>
                     <p class="comment-body">{{ comment.body }}</p>
-                    <p>
-                        <a class="update-btn text-dark d-inline w-100">Edit</a>
-                        <a href="{% url 'delete_comment' product.id comment.id %}" class="text-danger d-inline w-100">Delete</a>
-                    </p>
+                    {% if request.user == comment.username or request.user.is_superuser %}
+                        <p>
+                            <a class="update-btn text-dark d-inline w-100">Edit</a>
+                            <a href="{% url 'delete_comment' product.id comment.id %}" class="text-danger d-inline w-100">Delete</a>
+                        </p>
+                    {% endif %}
                 </div>
                 <div class="col-md-6 offset-md-3 col-12 border rounded mb-3 update" style="display: none;">
                     <form method="POST" class="pb-2 update-form" id="comment_{{ comment.id }}">

@@ -2,6 +2,22 @@
 {% load static %}
 {% load template_extras %}
 
+{% block extra_title %}
+
+ {% if current_categories %}
+        {% for category in current_categories %}
+            {% if forloop.first %}
+                - {{ category.friendly_name }}
+            {% else %}
+                , {{ category.friendly_name }}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        - All Products
+    {% endif %}
+
+{% endblock %}
+
 {% block content %}
 
 <div class="container bg-light">
@@ -60,9 +76,9 @@
                                 </p>
                                 <p class="card-subtitle text-muted my-0">
                                     {% with product.info|split:"," as details %}
-                                    {% for detail in details %}
-                                    - {{ detail }}<br>
-                                    {% endfor %}
+                                        {% for detail in details %}
+                                            - {{ detail }}<br>
+                                        {% endfor %}
                                     {% endwith %}
                                 </p>
                                 <ul class="list-unstyled mt-auto align-self-end mb-0">
@@ -74,7 +90,7 @@
                                                     {% if product.in_stock %}
                                                         <p class="text-primary fs-3 text-center me-4 mb-0">£{{ product.price }}
                                                         </p>
-                                                        <div class="input-group w-auto mb-2">
+                                                        <div class="input-group w-auto mb-2 me-3">
                                                             <label for="quantity"
                                                                 class="form-label me-2 mt-1 fs-5"><strong>Quantity:</strong></label>
                                                             <button

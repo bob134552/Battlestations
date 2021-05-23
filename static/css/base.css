@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 /* General Styling */
 html {
     height: 100%;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
 }
 
 .icon {
@@ -341,7 +346,7 @@ idea taken from https://codinhood.com/micro/10-dropdown-menu-animations-css-tran
     }
 
     .custom-container {
-        height: 990px;
+        min-height: 990px;
     }
 }
 

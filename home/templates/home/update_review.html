@@ -11,7 +11,7 @@
 
 {% block content %}
 <!-- Updating site reviews -->
-<div class="container bg-light vh-100 pt-4">
+<div class="container custom-container pt-4">
     <div class="row">
         <div class="col-6 offset-3 text-center">
             <h2>Tell us how we did!</h2>
@@ -39,8 +39,8 @@
                 {{ review_form.review |as_crispy_field }}
                 {{ review_form.user | as_crispy_field }}
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'home' %}"  class="btn btn-black">Home</a>
-                    <button type="submit" class="btn  ms-2 btn-black">Send Review</button>
+                    <a href="{% url 'home' %}"  class="btn btn-black rounded-0">Home</a>
+                    <button type="submit" class="btn ms-2 btn-black rounded-0">Send Review</button>
                 </div>
             </form>
         </div>
