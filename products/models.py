@@ -38,7 +38,6 @@ class Comment(models.Model):
     username = models.CharField(max_length=80, null=True, blank=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ('-created',)

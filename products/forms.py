@@ -19,6 +19,8 @@ class ProductForm(forms.ModelForm):
 
         if self.fields['in_stock']:
             self.fields['in_stock'].initial = True
+        self.fields['sku'].label = 'SKU*'
+        self.fields['info'].label = 'Info (please separate each spec with a comma)'
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-dark rounded-0'

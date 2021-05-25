@@ -16,16 +16,15 @@ $(document).ready(function () {
                 body: body,
                 csrfmiddlewaretoken: csrfmiddlewaretoken
             },
-            success: function (data) {
+            success: function () {
                 // Change the body to match the editted comment and hide form.
-                commentBody.text(body)
+                commentBody.text(body);
                 form.hide();
                 comment.show();
-                console.log(data)
             },
             error: function (data) {
-                console.log(data)
-            }
+                console.log(data);
+            },
         });
     });
 });

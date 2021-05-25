@@ -39,7 +39,7 @@ The website should be:
 #### New User
 
 1. As a new visitor, I want to be able to navigate the site with ease.
-2. As a new visitor, I want to be able to use the site before registering and being able to purchase products without signing up. 
+2. As a new visitor, I want to be able to use the site before registering and be able to purchase products without signing up. 
 3. As a new visitor, I want to be able to sign up easily.
 
 #### Returning User
@@ -63,6 +63,9 @@ The website should be:
 
 ### Wireframe Mockups
 
+The wireframes were created using Balsamiq during the initial design and planning phase for this project. 
+The wireframes plan for this project can be found in my github repository:
+
 - Site Map - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/site-map.pdf)
 - Deskop Wireframe - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/desktop-wf.pdf)
 - Mobile Wireframe - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/mobile-wf.pdf)
@@ -77,7 +80,7 @@ responsive and will collapse on smaller screens.
 
 #### Footer
 
-Contains social media links to Facebook, Google and Instagram.
+Contains social media links to Facebook, Google and Instagram and contact details.
 
 #### Home Page
 
@@ -87,13 +90,13 @@ a logged in user be able to write their own review and give a star rating which 
 
 #### Site Review Page (add and update)
 
-The site review page is a form consisting a radio button star rating and a text field for users to write their review of the site. The update page is the same
+The Site Review page is a form consisting a radio button star rating and a text field for users to write their review of the site. The update page is the same
 but prefilled with the users initial review. There are 2 buttons available to the user, a home button should they wish to not submit or edit their review 
 and a submit button to save their review.
 
 #### Profile Page
 
-The Profile page is accessable from the profile option in the navbar, it features a form of the users previously saved delivery details, an order
+The Profile page is accessible from the profile option in the navbar, it features a form of the users previously saved delivery details, an order
 history that they can click on to view previous orders and 3 buttons that bring them to the email management, password change and social account 
 management pages.
 
@@ -101,6 +104,10 @@ management pages.
 
 The Email Management page allows users to select a primary email to be used, add/remove and verify additional emails if required and change primary email
 address.
+
+#### Password Change page
+
+The Password Change page allows the user to enter their old password and new password twice in order to change their current password.
 
 #### Social Accounts page
 
@@ -121,8 +128,8 @@ password reset page that allows users to reset their password through email.
 
 #### All Products page
 
-The All Products page displays a list of all available products to the user excluding Pre-built PCs. The user is able to see core information on each product, add a specified quantity 
-of the product to the basket and be able to sort the products by name, price and category in either ascending or descending order. Through the dropdown in the navbar
+The All Products page displays a list of all available products to the user, excluding Pre-built PCs. The user is able to see core information on each product, add a specified quantity 
+of the product to the basket and is able to sort the products by name, price and category in either ascending or descending order. Through the dropdown in the navbar
 the user is able to search a specific category (such as cooling, cpus etc.)
 
 ### Product Details page
@@ -133,7 +140,8 @@ or ask questions.
 
 #### Build a PC page
 
-The Build a PC page consists of a form containing dropdowns for each component category for a user to pick from and create their own unique PC build.
+The Build a PC page consists of a form containing dropdowns for each component category. 
+The user then picks a product in each category to create their own unique PC build.
 
 ####  Search Page
 
@@ -148,13 +156,13 @@ should they wish to add anything to their basket.
 
 #### Checkout Page
 
-The checkout page cosists of a form asking user for delivery details, Stripe card payment input and a card featuring the users order summary.
+The Checkout page cosists of a form asking user for delivery details, Stripe card payment input and a card featuring the users order summary.
 On submit of an order the page is overlayed with a loading spinner until the payment intent webhook from stripe is received and user is redirected to the
 checkout success page for their order.
 
 #### Checkout Success/Order History page
 
-The checkout success page is displayed after a successful purchase. the order history page is displayed when checking your purchase from the profile page.
+The Checkout Success page is displayed after a successful purchase. The order history page is displayed when checking your purchase from the profile page.
 Both pages contain similar information such as order summary and delivery details. One of the notable differences is that the order history page contains a
 button back to the profile page.
 
@@ -173,6 +181,82 @@ button back to the profile page.
 - The ability to edit pre built PCs if required.
 - The ability to give thumbs up/down to products and comments using Facebook like system.
 - A chat box for visitors so they can talk about upcoming releases and keep site traffic up.
+
+## Database and Database Models
+
+The database used was Postgres, which was installed through Heroku. Throughout production, SQLite3 database was used.
+During the creation of each app and creation/update of models the python3 manage.py makemigrations and python3 manage.py migrate was ran to modify or create each model. 
+
+#### Category Model
+
+|Name|Description|Field Type|
+|:---|:----:|---:|
+|Name|max_length=254|Charfield|
+|Friendly Name|models.CharField(max_length=254, null=True, blank=True)|Charfield|
+
+#### Product Model
+
+|Name|Description|Field Type|
+|:---|:----:|---:|
+|Category|'Category', null=True, blank=True, on_delete=models.SET_NULL|ForeignKey|
+|Sku|max_length=254, null=True, blank=True|Charfield|
+|Name|max_length=254|Charfield|
+|Info|max_length=2048, null=True, blank=True|CharField|
+|Description||TextField|
+|Price|max_digits=6, decimal_places=2|DecimalField|
+|Image Url|max_length=1024, null=True, blank=True|UrlField|
+|Image|null=True, blank=True|Image Field|
+|In Stock|default=True, null=False|BooleanField|
+
+#### Order Model
+
+|Name|Description|Field Type|
+|:---|:----:|---:|
+|Order Number|max_length=32, null=False, editable=False|CharField|
+|User Profile|UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'|ForeignKey|
+|Full Name|max_length=50, null=False, blank=False|Charfield|
+|Email|max_length=254, null=False, blank=False|EmailField|
+|Phone Number|max_length=20, null=False, blank=False|Charfield|
+|Country|blank_label='Country *', null=False, blank=False|CoutryField|
+|Postcode|max_length=20, null=False, blank=False|Charfield|
+|Town or City|max_length=40, null=False, blank=False|Charfield|
+|Street Address 1|max_length=80, null=False, blank=False|Charfield|
+|Street Address 2|max_length=80, null=False, blank=True|Charfield|
+|County|max_length=80, null=True, blank=True|Charfield|
+|Date|auto_now_add=True| DateTimeField|
+|Delivery Cost|max_digits=6, decimal_places=2, null=False, default=0|DecimalField|
+|Order Total|max_digits=10, decimal_places=2, null=False, default=0|DecimalField|
+|Grand Total|max_digits=10, decimal_places=2, null=False, default=0	|DecimalField|
+|Original Basket|null=False, blank=False, default=''|TextField|
+|Stripe Pid|max_length=254, null=False, blank=False, default=''|Charfield|
+
+#### Order Line Item Model
+
+|Name|Description|Field Type|
+|:---|:----:|---:|
+|Order|Order, null=False, blank=False, on_delete=models.CASCADE,related_name='lineitems'|ForeignKey|
+|Product|Product, null=False, blank=False, on_delete=models.CASCADE|ForeignKey|
+|Quantity|null=False, blank=False, default=0 |IntegerField|
+|Line Item Total|max_digits=6, decimal_places=2, null=False, blank=False, editable=False|Decimal Field|
+
+#### Site Review Model
+
+|Name|Description|Field Type|
+|:---|:----:|---:|
+|User|User, on_delete=models.SET_NULL, null=True|OneToOneField|
+|Rating|choices=CHOICES, default=1, null=False|IntegerField|
+|Review|null=False|TextField|
+|Date|auto_now_add=True, null=False|DateTimeField|
+
+#### Comment Model
+
+|Name|Description|Field Type|
+|:---|:----:|---:|
+|Product|Product, on_delete=models.CASCADE, related_name='comments'|ForeignKey|
+|Username|max_length=80, null=True, blank=True|CharField|
+|Body||TextField|
+|Created|auto_now_add=True|DateTimeField|
+
 
 ## Technologies used (Frameworks, Libraries, Languages and Programs used)
 

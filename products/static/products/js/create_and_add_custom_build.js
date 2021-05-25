@@ -4,9 +4,6 @@ $(document).ready(function () {
         e.preventDefault();
 
         var csrfmiddlewaretoken = $(this).children('input[name=csrfmiddlewaretoken]').val();
-        var redirectUrl = $(this).children('input[name=redirect_url]').val();
-        var category = $(this).children('input[name=category]').val();
-        var form = document.getElementById('custom-build-form');
         var selectedCase = $('#cases').find(":selected");
         var selectedMotherboard = $('#motherboard').find(":selected");
         var selectedCpu = $('#cpus').find(":selected");
@@ -15,8 +12,8 @@ $(document).ready(function () {
         var selectedStorage = $('#storage').find(":selected");
         var selectedPsu = $('#psus').find(":selected");
         var selectedCooling = $('#cooling').find(":selected");
-        var image = selectedCase.data('image')
-        var quantity = $(this).children('input[name=quantity]').val()
+        var image = selectedCase.data('image');
+        var quantity = $(this).children('input[name=quantity]').val();
 
         var caseData = {
             id: selectedCase.val(),
@@ -66,15 +63,15 @@ $(document).ready(function () {
             price: parseFloat(selectedCooling.data('price'))
         };
 
-        var description = `${caseData.name}|${motherboardData.name}|${cpuData.name}|${gpuData.name}|${memoryData.name}|${storageData.name}|${psuData.name}|${coolingData.name}`
+        var description = `${caseData.name}|${motherboardData.name}|${cpuData.name}|${gpuData.name}|${memoryData.name}|${storageData.name}|${psuData.name}|${coolingData.name}`;
         var total = (caseData.price + motherboardData.price + cpuData.price + gpuData.price + memoryData.price + storageData.price + psuData.price + coolingData.price).toFixed(2);
 
-        postData = {
+        var postData = {
             csrfmiddlewaretoken: csrfmiddlewaretoken,
             image: image,
             name: `Custom Build: ${caseData.name}`,
             description: description,
-            quantity: 1,
+            quantity: quantity,
             total: total,
             customData: {
                 case: caseData,
@@ -86,7 +83,7 @@ $(document).ready(function () {
                 psu: psuData,
                 cooling: coolingData
             },
-        }
+        };
 
         $.ajax({
             // Post data to add_custom_to_basket in basket views.
@@ -95,11 +92,11 @@ $(document).ready(function () {
             data: postData,
             success: function () {
                 // redirect to basket on successful post.
-                window.location.assign('/basket/')
+                window.location.assign('/basket/');
             },
             error: function (data) {
-                console.log(data)
+                console.log(data);
             }
         });
     });
-})
+});
