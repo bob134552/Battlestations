@@ -39,7 +39,11 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 
     - The sign up page is easy to access and is available through the "My Profile" dropdown on the top right of the site.
         - Signing up is simple to do and only requires and username, email and password.
+        - Attempting to sign up with an email that is being used by another user notifies the user and does not create the new account.
+        <img src="README_TESTING_IMAGES/signup.png" alt="signup">
+        
     - Alternatively if user wishes to log in with a social account the option is available on the log in page.
+    <img src="README_TESTING_IMAGES/login.png" alt="login">
 
 #### Returning User
 
@@ -67,6 +71,7 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
         can select.
     - Users are limited to 1 review per user to prevent multiple reviews from the same user.
     - Attempting to submit the review form with an empty text input or no star rating prompts the user that both are required.
+    <img src="README_TESTING_IMAGES/review-form.png" alt="review-form">
 
 4. As a returning user, I wish to be able to leave comments on the products I've purchased and view other users opinions too.
 
@@ -109,6 +114,12 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 - Clicking on the My Profile presents the users options respective of if they are logged in or not.
     - Sign up and log in when not logged in.
     - My profile and log out if logged in with Product Management if user is admin.
+
+<img src="README_TESTING_IMAGES/loggedout.png" alt="logged-out">
+<br>
+<img src="README_TESTING_IMAGES/logged-in.png" alt="logged-in">
+
+
 - Clicking on the basket takes the user to the basket page.
 
 #### Carousel
@@ -126,12 +137,21 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 
 - Clicking on the products image or name takes the user to the product's detail page.
 
+#### Search bar
+
+- If no matches the user is shown there are no results.
+<img src="README_TESTING_IMAGES/testing.png" alt="no-results">
+- If a search returns results users are shown the results.
+<img src="README_TESTING_IMAGES/search.png" alt="results">
+
+
 #### Sort dropdown
 
 - Clicking on the Sort by dropdown shows options to sort the products currently displayed.
 - Clicking on Name(A-Z) or Name(Z-A) will sort products in ascending or descending order.
 - Clicking on Category(A-Z) or Category(Z-A) will sort products into categories in ascending or descending order.
 - Clicking on Price(low to high) or Price(high to low) wil sort products in ascending or descending order based on cost.
+<img src="README_TESTING_IMAGES/sortdrop.png" alt="sort">
 
 
 ### Add to basket button and quantity selector on multiple pages(products, search and product details page).
@@ -147,7 +167,7 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - Removing a custom built pc also deletes it from the database.
 - Clicking on the products name takes user to the product's details page.
 
-### Checkout page.
+### Checkout page
 
 - Filling form out correctly and submitting takes users to checkout success page.
 - Leaving a required field blank notifies user of a missing field.
@@ -155,13 +175,51 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 - Commenting out the form.submit() in the stripe_elements.js stops the user from being taken to the checkout success.
     - The order is still submitted as the webhook handler adds it to the database and sends a confirmation email to the user should the form fail.
 
+<img src="README_TESTING_IMAGES/checkout.png" alt="checkout">
+<img src="README_TESTING_IMAGES/wh-success.png" alt="webhook">
+
+
 ### Profile page
 
 - Filling the delivery details and submitting adds or updates the details based on user input.
 - Clicking on a order number if available takes user to a page similar to the checkout success page that displays the users order details.
 
+### Social connections page
+
+- If connected to either Facebook or Google there is a radio button displayed for each.
+- Selecting either of the radio buttons and clicking the remove button, removes the social account.
+<img src="README_TESTING_IMAGES/facebook-1.png" alt="fb-selected">
+<img src="README_TESTING_IMAGES/facebook-2.png" alt="fb-dc">
+- Not having either selected refreshes the page.
+- Clicking on either the Facebook or Google button attempts to connect the users account to their selected social account.
+
+### Change Password page
+
+- Submitting a blank form notifies user that there are inputs missing.
+- Submitting incorrect original password notifies user that their current password is incorrect.
+- Submitting with mismatching new and repeat password notifies user that the passwords do not match.
+<img src="README_TESTING_IMAGES/change-pass.png" alt="pw-change">
+
+### Change Email page
+
+- Attempting to remove a primary email if it is the only email available notifies user that at least 1 email is required.
+- Attempting to add a email with an empty input field notfies user that the field is empty.
+- Attempting to submit an email already registered notifies user that it is already associated to the user.
+<img src="README_TESTING_IMAGES/email.png" alt="email">
+
+### Password Reset page
+
+- Attempting to submit a blank field notifies user that an input is required.
+- Attempting to submit a email not linking with the account notifies user that it isn't a email assigned with the account.
+<img src="README_TESTING_IMAGES/pw-reset.png" alt="pw-reset">
+
+
+
 ### Problems and bugs encountered.
 
-- Currently facebook log in is only available for test accounts on the site.
-    - Unable to log in via facebook without a test user account.
-    - Log in via Google works fine.
+- Facebook log in is only available for test accounts on the site.
+    - Fixed following: https://stackoverflow.com/questions/65503880/developer-facebook-com-asks-for-data-deletion-url/65508332
+    - Add policy page to both the deletion instruction url allows Facebook log in to be live.
+
+- Due to using bootstrap5 crispy forms did not work.
+    - This problem was fixed by pip3 installing crispy-bootstrap5 and specifying CRISPY_TEMPLATE_PACK and CRISPY_ALLOWED_TEMPLATE_PACKS to "bootstrap5".

@@ -1,5 +1,22 @@
 # BattleStations
 
+## Contents
+1. [**UX**](#ux)
+    - [**User Stories**](#user-stories)
+    - [**Design**](#design)
+    - [**Wireframe Mockups**](#wireframe-mockups)
+2. [**Features**](#features)
+    - [**Existing Features**](#existing-features)
+    - [**Features to add in the future**](#features-to-add-in-the-future)
+3. [**Database and Database Models**](#database-and-database-models)
+    - [**Database Models**](#models)
+4. [**Technologies Used**](#technologies-used-frameworks-libraries-languages-and-programs-used)
+5. [**Testing**](#testing)
+6. [**Deployment**](#deployment)
+7. [**Credits**](#credits)
+    - [**Media and Content**](#media-and-content)
+    - [**Acknowledgements**](#acknowledgements)
+
 ---
 
 ## Milestone Project 4 - Full Stack Development
@@ -38,6 +55,8 @@ The website should be:
 - Able to search through a database of PC components to find specific ones.
 - Able to add or remove products as required.
 
+<a href="#contents">Back To Top</a>
+
 ---
 
 ## User Stories
@@ -67,6 +86,8 @@ The website should be:
     From researching designs of other PC building/parts selling sites, the colour scheme of orange-yellow and black was chosen to give a sharper,
     minamalistic look.
 
+<a href="#contents">Back To Top</a>
+
 ---
 
 ### Wireframe Mockups
@@ -78,9 +99,20 @@ The wireframes plan for this project can be found in my github repository:
 - Deskop Wireframe - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/desktop-wf.pdf)
 - Mobile Wireframe - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/mobile-wf.pdf)
 
+<a href="#contents">Back To Top</a>
+
 ---
 
 ## Features
+
+### Existing Features
+
+- Comment section for products.
+- Social account login.
+- Stripe Payment handling.
+- Build a custom PC.
+- Site reviews.
+- Site management for admins.
 
 #### Navbar
 
@@ -176,21 +208,15 @@ The Checkout Success page is displayed after a successful purchase. The order hi
 Both pages contain similar information such as order summary and delivery details. One of the notable differences is that the order history page contains a
 button back to the profile page.
 
-### Existing Features
-
-- Comment section for products.
-- Social account login.
-- Stripe Payment handling.
-- Build a custom PC.
-- Site reviews.
-- Site management for admins.
-
-### Features to add in the future.
+### Features to add in the future
 
 - The ability to edit custom builds instead of restarting the build.
 - The ability to edit pre built PCs if required.
 - The ability to give thumbs up/down to products and comments using Facebook like system.
 - A chat box for visitors so they can talk about upcoming releases and keep site traffic up.
+- Paypal payment.
+
+<a href="#contents">Back To Top</a>
 
 ---
 
@@ -198,6 +224,8 @@ button back to the profile page.
 
 The database used was Postgres, which was installed through Heroku. Throughout production, SQLite3 database was used.
 During the creation of each app and creation/update of models the python3 manage.py makemigrations and python3 manage.py migrate was ran to modify or create each model. 
+
+### Models
 
 #### Category Model
 
@@ -269,6 +297,8 @@ During the creation of each app and creation/update of models the python3 manage
 |Body|body|blank|TextField|
 |Created|created|auto_now_add=True|DateTimeField|
 
+<a href="#contents">Back To Top</a>
+
 ---
 
 ## Technologies used (Frameworks, Libraries, Languages and Programs used)
@@ -313,11 +343,15 @@ During the creation of each app and creation/update of models the python3 manage
 - [Privacy Policies](https://app.privacypolicies.com/)
     - To create a privacy policy required for Facebook login.
 
+<a href="#contents">Back To Top</a>
+
 ---
 
 ## Testing
 
 Testing can be found in [TESTING.md](https://github.com/bob134552/Battlestations/blob/master/TESTING.md)
+
+<a href="#contents">Back To Top</a>
 
 ---
 
@@ -366,12 +400,44 @@ Depending on the database you use you will need to follow some extra steps.
 
 ### Notes:
 
+For enabling Facebook social login it is required to go to the [Facebook developer page](https://developers.facebook.com/).  
+Creating an app and heading to the settings page to acquire the app ID and secret required.
+
+<img src="/README_TESTING_IMAGES/facebook.png" alt="facebook">
+
+On the Django admin, navigate to the "Social Applications" admin and click "ADD SOCIAL APPLICATION".
+
+<img src="/README_TESTING_IMAGES/facebook-setup.png" alt="facebook-setup">
+
+Input the app ID and Secret into the respective fields and set your site as the chosen site.
+
+Similary, for allowing Google social account log in, create an app for your site through the Google Developers and create
+credentials for OAuth 2.0 Client IDs. You will be given a client ID and secret which can be used similarly to Facebook set up
+to enable Google log in.
+<img src="README_TESTING_IMAGES/google.png" alt="google">
+
+- For Facebook to allow log in it is required to have a Privacy Policy Page and information on how to remove app connection.
+
+<a href="#contents">Back To Top</a>
+
 ---
 
 ## Credits
 
-### Media
+### Code
 
----
+- [This](https://stackoverflow.com/questions/40870635/star-rating-system-html) post on stackoverflow to work out how to make a star rating.
+- [This](https://codinhood.com/micro/10-dropdown-menu-animations-css-transform) post to animate the dropdown for products.
+- [This](https://1stwebdesigner.com/pure-css-animated-page-loaders/) for the hexagon loading overlay during checkout.
+- The Boutique Ado tutorials by Chris Zielinski, for which help tremendously throughtout development of this site.
+
+### Media and Content
+
+- Most product images and details taken from [Scan](https://www.scan.co.uk/)
+- 2 products taken from [DinoPC](https://www.dinopc.com/)
 
 ### Acknowledgements
+
+<a href="#contents">Back To Top</a>
+
+---

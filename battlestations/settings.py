@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     # Required for allauth social accounts
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
 ]
 
 MIDDLEWARE = [
