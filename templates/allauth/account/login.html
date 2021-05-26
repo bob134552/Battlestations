@@ -27,9 +27,20 @@
     <p class="text-dark">Login with:</p>
     <ul class="list-inline">
         <li class="list-inline-item">
-            <a href="{% provider_login_url "facebook" method="js_sdk" %}"><span class="fs-4"><i class="fab fa-facebook"></i></span></a>
+            <a href="{% provider_login_url 'facebook' method='js_sdk' %}">
+                <span class="fs-4"><i class="fab fa-facebook"></i></span>
+            </a>
         </li>
-        <li class="list-inline-item"><a href="{% provider_login_url "google" %}"><span class="fs-4"><i class="fab fa-google"></i></span></i></a></li>
+        <li class="list-inline-item">
+            <a href="{% provider_login_url 'google' %}">
+                <span class="fs-4"><i class="fab fa-google"></i></span>
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="{% provider_login_url 'github' %}">
+                <span class="fs-4"><i class="fab fa-github"></i></span>
+            </a>
+        </li>
     </ul>
 
 </div>

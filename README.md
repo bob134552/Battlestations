@@ -411,10 +411,12 @@ On the Django admin, navigate to the "Social Applications" admin and click "ADD 
 
 Input the app ID and Secret into the respective fields and set your site as the chosen site.
 
-Similary, for allowing Google social account log in, create an app for your site through the Google Developers and create
+Similary, for allowing Google or Github social account log in, create an app for your site through the Google Developers and create
 credentials for OAuth 2.0 Client IDs. You will be given a client ID and secret which can be used similarly to Facebook set up
 to enable Google log in.
 <img src="README_TESTING_IMAGES/google.png" alt="google">
+
+<img src="README_TESTING_IMAGES/github.png" alt="github">
 
 - For Facebook to allow log in it is required to have a Privacy Policy Page and information on how to remove app connection.
 
