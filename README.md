@@ -1,5 +1,7 @@
 # BattleStations
 
+---
+
 ## Milestone Project 4 - Full Stack Development
 
 ## Bobby Jackson
@@ -15,6 +17,8 @@ The website features a catalogue of recently released product, user registration
 and email authentication and the ability to create your own custom desktop PC.
 The primary goal of the website is to create a easy platform for users to browse, buy and comment on products available
 on the site. 
+
+---
 
 ## UX
 
@@ -34,7 +38,9 @@ The website should be:
 - Able to search through a database of PC components to find specific ones.
 - Able to add or remove products as required.
 
-### User Stories
+---
+
+## User Stories
 
 #### New User
 
@@ -61,6 +67,8 @@ The website should be:
     From researching designs of other PC building/parts selling sites, the colour scheme of orange-yellow and black was chosen to give a sharper,
     minamalistic look.
 
+---
+
 ### Wireframe Mockups
 
 The wireframes were created using Balsamiq during the initial design and planning phase for this project. 
@@ -69,6 +77,8 @@ The wireframes plan for this project can be found in my github repository:
 - Site Map - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/site-map.pdf)
 - Deskop Wireframe - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/desktop-wf.pdf)
 - Mobile Wireframe - [View](https://github.com/bob134552/Battlestations/tree/master/wireframes/mobile-wf.pdf)
+
+---
 
 ## Features
 
@@ -182,6 +192,8 @@ button back to the profile page.
 - The ability to give thumbs up/down to products and comments using Facebook like system.
 - A chat box for visitors so they can talk about upcoming releases and keep site traffic up.
 
+---
+
 ## Database and Database Models
 
 The database used was Postgres, which was installed through Heroku. Throughout production, SQLite3 database was used.
@@ -189,74 +201,75 @@ During the creation of each app and creation/update of models the python3 manage
 
 #### Category Model
 
-|Name|Description|Field Type|
-|:---|:----:|---:|
-|Name|max_length=254|Charfield|
-|Friendly Name|models.CharField(max_length=254, null=True, blank=True)|Charfield|
+|Name|Key|Description|Field Type|
+|:---|:----:|:----:|---:|
+|Name|name|max_length=254|Charfield|
+|Friendly Name|friendly_name|models.CharField(max_length=254, null=True, blank=True)|Charfield|
 
 #### Product Model
 
-|Name|Description|Field Type|
-|:---|:----:|---:|
-|Category|'Category', null=True, blank=True, on_delete=models.SET_NULL|ForeignKey|
-|Sku|max_length=254, null=True, blank=True|Charfield|
-|Name|max_length=254|Charfield|
-|Info|max_length=2048, null=True, blank=True|CharField|
-|Description||TextField|
-|Price|max_digits=6, decimal_places=2|DecimalField|
-|Image Url|max_length=1024, null=True, blank=True|UrlField|
-|Image|null=True, blank=True|Image Field|
-|In Stock|default=True, null=False|BooleanField|
+|Name|Key|Description|Field Type|
+|:---|:----:|:----:|---:|
+|Category|category|'Category', null=True, blank=True, on_delete=models.SET_NULL|ForeignKey|
+|Sku|sku|max_length=254, null=True, blank=True|Charfield|
+|Name|name|max_length=254|Charfield|
+|Info|info|max_length=2048, null=True, blank=True|CharField|
+|Description|description|blank|TextField|
+|Price|price|max_digits=6, decimal_places=2|DecimalField|
+|Image Url|image_url|max_length=1024, null=True, blank=True|UrlField|
+|Image|image|null=True, blank=True|Image Field|
+|In Stock|in_stock|default=True, null=False|BooleanField|
 
 #### Order Model
 
-|Name|Description|Field Type|
-|:---|:----:|---:|
-|Order Number|max_length=32, null=False, editable=False|CharField|
-|User Profile|UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'|ForeignKey|
-|Full Name|max_length=50, null=False, blank=False|Charfield|
-|Email|max_length=254, null=False, blank=False|EmailField|
-|Phone Number|max_length=20, null=False, blank=False|Charfield|
-|Country|blank_label='Country *', null=False, blank=False|CoutryField|
-|Postcode|max_length=20, null=False, blank=False|Charfield|
-|Town or City|max_length=40, null=False, blank=False|Charfield|
-|Street Address 1|max_length=80, null=False, blank=False|Charfield|
-|Street Address 2|max_length=80, null=False, blank=True|Charfield|
-|County|max_length=80, null=True, blank=True|Charfield|
-|Date|auto_now_add=True| DateTimeField|
-|Delivery Cost|max_digits=6, decimal_places=2, null=False, default=0|DecimalField|
-|Order Total|max_digits=10, decimal_places=2, null=False, default=0|DecimalField|
-|Grand Total|max_digits=10, decimal_places=2, null=False, default=0	|DecimalField|
-|Original Basket|null=False, blank=False, default=''|TextField|
-|Stripe Pid|max_length=254, null=False, blank=False, default=''|Charfield|
+|Name|Key|Description|Field Type|
+|:---|:----:|:----:|---:|
+|Order Number|order_number|max_length=32, null=False, editable=False|CharField|
+|User Profile|user_profile|UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'|ForeignKey|
+|Full Name|full_name|max_length=50, null=False, blank=False|Charfield|
+|Email|email|max_length=254, null=False, blank=False|EmailField|
+|Phone Number|phone_number|max_length=20, null=False, blank=False|Charfield|
+|Country|country|blank_label='Country *', null=False, blank=False|CoutryField|
+|Postcode|postcode|max_length=20, null=False, blank=False|Charfield|
+|Town or City|town_or_city|max_length=40, null=False, blank=False|Charfield|
+|Street Address 1|street_address1|max_length=80, null=False, blank=False|Charfield|
+|Street Address 2|street_address2|max_length=80, null=False, blank=True|Charfield|
+|County|county|max_length=80, null=True, blank=True|Charfield|
+|Date|date|auto_now_add=True| DateTimeField|
+|Delivery Cost|delivery_cost|max_digits=6, decimal_places=2, null=False, default=0|DecimalField|
+|Order Total|order_total|max_digits=10, decimal_places=2, null=False, default=0|DecimalField|
+|Final Amount|final_amount|max_digits=10, decimal_places=2, null=False, default=0	|DecimalField|
+|Original Basket|original_basket|null=False, blank=False, default=''|TextField|
+|Stripe PID|stripe_pid|max_length=254, null=False, blank=False, default=''|Charfield|
 
 #### Order Line Item Model
 
-|Name|Description|Field Type|
-|:---|:----:|---:|
-|Order|Order, null=False, blank=False, on_delete=models.CASCADE,related_name='lineitems'|ForeignKey|
-|Product|Product, null=False, blank=False, on_delete=models.CASCADE|ForeignKey|
-|Quantity|null=False, blank=False, default=0 |IntegerField|
-|Line Item Total|max_digits=6, decimal_places=2, null=False, blank=False, editable=False|Decimal Field|
+|Name|Key|Description|Field Type|
+|:---|:----:|:----:|---:|
+|Order|order|Order, null=False, blank=False, on_delete=models.CASCADE,related_name='lineitems'|ForeignKey|
+|Product|product|Product, null=False, blank=False, on_delete=models.CASCADE|ForeignKey|
+|Quantity|quantity|null=False, blank=False, default=0 |IntegerField|
+|Line Item Total|lineitem_total|max_digits=6, decimal_places=2, null=False, blank=False, editable=False|Decimal Field|
 
 #### Site Review Model
 
-|Name|Description|Field Type|
-|:---|:----:|---:|
-|User|User, on_delete=models.SET_NULL, null=True|OneToOneField|
-|Rating|choices=CHOICES, default=1, null=False|IntegerField|
-|Review|null=False|TextField|
-|Date|auto_now_add=True, null=False|DateTimeField|
+|Name|Key|Description|Field Type|
+|:---|:----:|:----:|---:|
+|User|user|User, on_delete=models.SET_NULL, null=True|OneToOneField|
+|Rating|rating|choices=CHOICES, default=1, null=False|IntegerField|
+|Review|review|null=False|TextField|
+|Date|date|auto_now_add=True, null=False|DateTimeField|
 
 #### Comment Model
 
-|Name|Description|Field Type|
-|:---|:----:|---:|
-|Product|Product, on_delete=models.CASCADE, related_name='comments'|ForeignKey|
-|Username|max_length=80, null=True, blank=True|CharField|
-|Body||TextField|
-|Created|auto_now_add=True|DateTimeField|
+|Name|Key|Description|Field Type|
+|:---|:----:|:----:|---:|
+|Product|product|Product, on_delete=models.CASCADE, related_name='comments'|ForeignKey|
+|Username|username|max_length=80, null=True, blank=True|CharField|
+|Body|body|blank|TextField|
+|Created|created|auto_now_add=True|DateTimeField|
 
+---
 
 ## Technologies used (Frameworks, Libraries, Languages and Programs used)
 
@@ -298,9 +311,13 @@ During the creation of each app and creation/update of models the python3 manage
 - [Google Fonts](https://fonts.google.com/)
     - To apply a different font to the site than the standard font.
 
+---
+
 ## Testing
 
 Testing can be found in [TESTING.md](https://github.com/bob134552/Battlestations/blob/master/TESTING.md)
+
+---
 
 ## Deployment
 
@@ -335,7 +352,7 @@ To deploy on Heroku.
 3. Write your apps name and select a region close to you.
 4. From the app page select "Deploy" and connect to the GitHub cloned repository from before.
 5. For the app to work there are a few settings required, Select the "Settings" tab.
-6. Click Reveal Config Vars to show this.
+6. Click Reveal Config Vars to show them.
 
 <img src="README_TESTING_IMAGES/config-vars.png" alt="config-vars">
 
@@ -347,9 +364,12 @@ Depending on the database you use you will need to follow some extra steps.
 
 ### Notes:
 
+---
+
 ## Credits
 
 ### Media
 
+---
 
 ### Acknowledgements

@@ -13,7 +13,10 @@
                 <h3 class="text-decoration-underline pt-2 text-center">{{ product.name }}</h3>
             </div>
             <div class="col-md-4 col-12">
+                <!--If no product image or url available default to noimage-->
                 {% if product.image %}
+                    <img class="img-fluid card-img-top border" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
+                {% elif product.image.url %}
                     <img class="img-fluid card-img-top border" src="{{ product.image.url }}" alt="{{ product.name }}">
                 {% else %}
                     <img class="img-fluid card-img-top border" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
@@ -85,6 +88,7 @@
             <div class="col-12 mt-5 text-center">
                 <h5>Comments Section</h5>
                 <hr>
+                <p>{{comments|length}} Comments</p>
             </div>
             {% for comment in comments %}
                 <div class="col-md-6 offset-md-3 col-12 border rounded mb-3 comment">

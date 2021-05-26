@@ -31,14 +31,15 @@
                 <label for="id_account_{{ base_account.id }}" class="d-inline-block">
                     <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"
                         class="form-check-input" />
-                    <span class="socialaccount_provider {{ base_account.provider }} {{ account.get_brand.id }} fs-5">
+                    <span class="socialaccount_provider {{ base_account.provider }} {{ account.get_brand.id }} text-primary fs-5">
                         {% if account.get_brand.name == "Facebook" %}
-                            <i class="fab fa-facebook"></i>Facebook: <span class="text-capitalize">{{ account }}</span>
+                            <i class="fab fa-facebook"></i>&nbsp;Facebook: <span class="text-capitalize">{{ account }}</span>
                         {% elif account.get_brand.name == "Google" %}
-                            <i class="fab fa-google"></i>Google: <span class="text-capitalize">{{ account }}</span>
+                            <i class="fab fa-google"></i>&nbsp;Google: <span class="text-capitalize">{{ account }}</span>
                         {% else %}
                             {{ account.get_brand.name }}
-                        {% endif %}</span>
+                        {% endif %}
+                    </span>
                 </label>
             </div>
             {% endwith %}
@@ -53,7 +54,7 @@
 </form>
 
 {% else %}
-<p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
+    <p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
 {% endif %}
 
 <h4>{% trans 'Connect with your social account.' %}</h4>

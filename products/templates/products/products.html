@@ -43,11 +43,10 @@
             </div>
             <div class="col-12 col-md-6 order-md-first">
                 <p class="text-muted mt-3 text-center text-md-start">
-                    {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    {% if current_categories or current_sorting != 'None_None' %}
                         <span class="small"><a href="{% url 'products' %}">Back To All Products</a> | </span>
                     {% endif %}
-                    {{ products|length }} Products{% if search_term %} found for
-                    <strong>"{{ search_term }}"</strong>{% endif %}
+                    {{ products|length }} Products
                 </p>
             </div>
         </div>
@@ -60,10 +59,11 @@
                                 <div class="col-auto border-end border-bottom d-flex" id="product-image">
                                     <a href="{% url 'product_details' product.id %}" class="align-self-center">
                                         {% if product.image %}
+                                            <img class="img-fluid card-img-top product-img" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
+                                        {% elif product.image.url %}
                                             <img class="img-fluid card-img-top product-img" src="{{ product.image.url }}" alt="{{ product.name }}">
                                         {% else %}
-                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"
-                                                class="img-fluid card-img-top product-img">
+                                            <img class="img-fluid card-img-top product-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                         {% endif %}
                                     </a>
                                 </div>
@@ -121,7 +121,7 @@
                                                                 </button>
                                                             {% endif %}
                                                             {% if request.user.is_superuser %}
-                                                                <small class="pe-4">
+                                                                <small class="pe-4 me-1">
                                                                     <a href="{% url 'update_product' product.id %}">Update</a>
                                                                     <!--Trigger modal-->
                                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#delete_{{ product.id }}" class="text-danger">Delete</a>
