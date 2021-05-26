@@ -86,6 +86,14 @@ The website should be:
     From researching designs of other PC building/parts selling sites, the colour scheme of orange-yellow and black was chosen to give a sharper,
     minamalistic look.
 
+- Imagery
+
+    The images used in the site are all products for sale to the user and to allow them to get an idea of what they are buying.
+
+- Font
+
+    The font was chosen as it gave a sharper feel to the overall minamalistic style of the site.
+
 <a href="#contents">Back To Top</a>
 
 ---
