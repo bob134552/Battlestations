@@ -162,3 +162,6 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 
 ### Problems and bugs encountered.
 
+- Currently facebook log in is only available for test accounts on the site.
+    - Unable to log in via facebook without a test user account.
+    - Log in via Google works fine.

@@ -95,3 +95,8 @@ def delete_review(request, review_id):
     else:
         messages.error(request, 'Sorry can only delete your own review.')
         return (redirect(reverse('home')))
+
+
+def privacy_policy(request):
+    '''Displays privacy policy'''
+    return render(request, 'home/privacy-policy.html')

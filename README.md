@@ -233,7 +233,7 @@ During the creation of each app and creation/update of models the python3 manage
 |Postcode|postcode|max_length=20, null=False, blank=False|Charfield|
 |Town or City|town_or_city|max_length=40, null=False, blank=False|Charfield|
 |Street Address 1|street_address1|max_length=80, null=False, blank=False|Charfield|
-|Street Address 2|street_address2|max_length=80, null=False, blank=True|Charfield|
+|Street Address 2|street_address2|max_length=80, null=True, blank=True|Charfield|
 |County|county|max_length=80, null=True, blank=True|Charfield|
 |Date|date|auto_now_add=True| DateTimeField|
 |Delivery Cost|delivery_cost|max_digits=6, decimal_places=2, null=False, default=0|DecimalField|
@@ -310,6 +310,8 @@ During the creation of each app and creation/update of models the python3 manage
     - For brand logo design.
 - [Google Fonts](https://fonts.google.com/)
     - To apply a different font to the site than the standard font.
+- [Privacy Policies](https://app.privacypolicies.com/)
+    - To create a privacy policy required for Facebook login.
 
 ---
 

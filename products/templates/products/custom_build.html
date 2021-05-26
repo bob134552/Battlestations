@@ -131,14 +131,14 @@
                     {% endfor %}
                 </select>
 
-                <p class="mt-1">
-                    <strong>Total: £<span id="current-price">0.00</span></strong>
-                </p>
                 
                 <input type="hidden" name="category" id="category" value="11">
                 <input type="hidden" name="quantity" id="quantity" value="1">
                 <a href="{% url 'home' %}" class="btn btn-outline-dark rounded-0 mt-1">Cancel</a>
                 <button type="submit" class="btn btn-dark rounded-0 mt-1">Build!</button>
+                <p class="mt-1 d-inline float-end mt-3">
+                    <strong>Total: £<span id="current-price">0.00</span></strong>
+                </p>
             </form>
         </div>
     </div>

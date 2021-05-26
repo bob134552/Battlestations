@@ -8,4 +8,5 @@ urlpatterns = [
          views.update_review, name='update_review'),
     path('delete_review/<int:review_id>',
          views.delete_review, name='delete_review'),
+    path('privacy_policy', views.privacy_policy, name='privacy_policy')
 ]

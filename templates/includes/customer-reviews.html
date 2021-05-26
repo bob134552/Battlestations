@@ -7,7 +7,7 @@
     <div class="row mx-auto">
         <div class="col-12 text-center">
             <div class="stars">
-                <form>
+                <form class="d-flex flex-nowrap">
                     <input class="star star-5" id="star-5" type="radio" name="star" {% if rating_avg == 5 %}
                         checked{% endif %} disabled />
                     <label class="star star-5" for="star-5"></label>
@@ -23,17 +23,18 @@
                     <input class="star star-1" id="star-1" type="radio" name="star" {% if rating_avg == 1 %}
                         checked{% endif %} disabled />
                     <label class="star star-1" for="star-1"></label>
-                    <p><strong>Average Rating</strong></p>
-                    {% if rating_avg == None %}
-                        <p>No Reviews for this site yet.</p>
-                    {% endif %}
                 </form>
+                <p><strong>Average Rating</strong></p>
+                {% if rating_avg == None %}
+                    <p>No Reviews for this site yet.</p>
+                {% endif %}
+                <hr>
             </div>
         </div>
         {% for review in reviews %}
         <div class="col-12 col-md-6 mt-4 text-center">
-            <div class="stars">
-                <form>
+            <div class="stars border-bottom">
+                <form class="d-flex flex-nowrap">
                     <input class="star star-5" type="radio" name="star" {% if review.rating == 5 %}
                         checked{% endif %} disabled />
                     <label class="star star-5" for="star-5"></label>
