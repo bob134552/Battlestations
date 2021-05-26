@@ -36,8 +36,8 @@
                             <i class="fab fa-facebook"></i>&nbsp;Facebook: <span class="text-capitalize">{{ account }}</span>
                         {% elif account.get_brand.name == "Google" %}
                             <i class="fab fa-google"></i>&nbsp;Google: <span class="text-capitalize">{{ account }}</span>
-                        {% elif account.get_brand.name == "Github" %}
-                            <i class="fab fa-github"></i>&nbsp;Github: <span class="text-capitalize">{{ account }}</span>
+                        {% elif account.get_brand.name == "GitHub" %}
+                            <i class="fab fa-github"></i>&nbsp;GitHub: <span class="text-capitalize">{{ account }}</span>
                         {% else %}
                             {{ account.get_brand.name }}
                         {% endif %}

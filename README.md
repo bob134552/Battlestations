@@ -161,7 +161,7 @@ The Password Change page allows the user to enter their old password and new pas
 
 #### Social Accounts page
 
-The Social Accounts page allows users to manage their social connections and connect or remove their Facebook and Google accounts to their profile.
+The Social Accounts page allows users to manage their social connections and connect or remove their Facebook, GitHub and Google accounts to their profile.
 
 #### Sign up
 
@@ -173,7 +173,7 @@ there is a link that redirects to the log in page so they can log in with a soci
 The Login page contains a simple form that requires two inputs; username and password.
 A submit button below the form takes the user back to the home page, if the login details are entered correctly.
 If the details are incorrect the user is informed that either the username/password was incorrect. 
-There is a link to the sign up page, 2 social buttons(Facebook and Google) that allow a user to login with a social account and a link to the 
+There is a link to the sign up page, 3 social buttons(Facebook, GitHub and Google) that allow a user to login with a social account and a link to the 
 password reset page that allows users to reset their password through email.
 
 #### All Products page
@@ -342,6 +342,8 @@ During the creation of each app and creation/update of models the python3 manage
     - To allow Facebook log in to the site.
 - [Google Developers](https://developers.google.com/)
     - To send verification and checkout success emails through Google and allow log in with a Google account.
+- [GitHub OAuth Application](https://github.com/settings/applications/new)
+    - To allow log in with GitHub account.
 - [SQLite3](https://www.sqlite.org/index.html)
     - For database management during developement.
 - [Tailor Brands](https://www.tailorbrands.com/)
@@ -423,6 +425,8 @@ Similary, for allowing Google or Github social account log in, create an app for
 credentials for OAuth 2.0 Client IDs. You will be given a client ID and secret which can be used similarly to Facebook set up
 to enable Google log in.
 <img src="README_TESTING_IMAGES/google.png" alt="google">
+
+For GitHub going to the setting page and clicking applications allows users to create an OAuth app to allow log in with.
 
 <img src="README_TESTING_IMAGES/github.png" alt="github">
 

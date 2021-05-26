@@ -186,12 +186,12 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 
 ### Social connections page
 
-- If connected to either Facebook or Google there is a radio button displayed for each.
+- If connected to either Facebook, Google or GitHub there is a radio button displayed for each.
 - Selecting either of the radio buttons and clicking the remove button, removes the social account.
 <img src="README_TESTING_IMAGES/facebook-1.png" alt="fb-selected">
 <img src="README_TESTING_IMAGES/facebook-2.png" alt="fb-dc">
 - Not having either selected refreshes the page.
-- Clicking on either the Facebook or Google button attempts to connect the users account to their selected social account.
+- Clicking on either the Facebook, Google or GitHub button attempts to connect the users account to their selected social account.
 
 ### Change Password page
 
