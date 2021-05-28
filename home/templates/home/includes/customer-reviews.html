@@ -75,7 +75,10 @@
         {% endfor %}
         
         <div class="col-12 mt-4 d-flex align-items-center flex-column">
-            <p>Tell us how we did!</p>
+            <p class="mb-0">Tell us how we did!</p>
+            {% if not on_all_review_page %}
+                <a href="{% url 'show_all_reviews' %}">View All Reviews</a>
+            {% endif %}
             {% if request.user.is_authenticated %}
                 <a class="review-link" href="{% url 'add_review' %}">
                     Write A Review

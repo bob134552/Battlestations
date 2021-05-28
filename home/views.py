@@ -31,6 +31,22 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 
+def show_all_reviews(request):
+    '''Show all reviews to user.'''
+    reviews = SiteReviews.objects.all()
+    overall = SiteReviews.objects.aggregate(Avg('rating'))
+    rating_avg = None
+    if overall['rating__avg'] is not None:
+        rating_avg = round(overall['rating__avg'])
+    
+    context = {
+        'reviews': reviews,
+        'rating_avg': rating_avg,
+        'on_all_review_page': True,
+    }
+    return render(request, 'home/all_reviews.html', context)
+
+
 @login_required
 def add_review(request):
     '''Allows a logged in user to leave a review'''
