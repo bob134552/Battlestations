@@ -132,6 +132,10 @@ The Home page features a carousel featuring recent pre-built PCs available for p
 and a site review section where the four most recent reviews are visible for new or returning users to view. The site reviews section also allows 
 a logged in user be able to write their own review and give a star rating which adds to the average rating above the reviews.
 
+#### All Reviews Page
+
+The All Reviews page displays all customer reviews should the user be interested in reading more than the most recent four displayed on the home page.
+
 #### Site Review Page (add and update)
 
 The Site Review page is a form consisting of a radio button star rating and a text field for users to write their review of the site. The update page is the same
