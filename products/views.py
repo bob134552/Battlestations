@@ -130,6 +130,7 @@ def delete_comment(request, product_id, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user == comment.username or request.user.is_superuser:
         comment.delete()
+        messages.success(request, 'Comment Deleted.')
         return redirect(reverse('product_details', args=[product_id]))
     else:
         messages.error(request, 'Sorry can only delete your own comments.')

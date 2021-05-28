@@ -20,7 +20,7 @@
 
 ---
 
-## Milestone Project 4 - Full Stack Development
+## Milestone Project 4 - Full Stack Framework with Django
 
 ## Bobby Jackson
 
@@ -222,6 +222,7 @@ button back to the profile page.
 - Build a custom PC.
 - Site reviews.
 - Site management for admins.
+- Toast notifications throughout the site.
 
 ### Features to add in the future
 
@@ -239,7 +240,7 @@ button back to the profile page.
 ## Database and Database Models
 
 The database used was Postgres, which was installed through Heroku. Throughout production, SQLite3 database was used.
-During the creation of each app and creation/update of models the python3 manage.py makemigrations and python3 manage.py migrate was ran to modify or create each model. 
+During the creation of each app and creation/update of models the ```python3 manage.py makemigrations``` and ```python3 manage.py migrate``` was ran to modify or create each model. 
 
 ### Models
 
@@ -375,6 +376,8 @@ Testing can be found in [TESTING.md](https://github.com/bob134552/Battlestations
 
 ## Deployment
 
+### Cloning repository
+
 The project was developed using Gitpod IDE. It was committed and pushed to GitHub through the use of git using the functions in Gitpod.
 
 It was then deployed on Heroku by connecting the GitHub repository to the Heroku app.
@@ -383,7 +386,7 @@ To deploy the app on Heroku, first clone the repository.
 
 To Clone the repository:
 1. Log into GitHub.
-2. Install [Gitpod](https://www.gitpod.io/)
+2. Install [Gitpod](https://www.gitpod.io/).
 3. Select the [Battlestations repository](https://github.com/bob134552/Battlestations) from the list of repositories.
 4. At the top of the page click the drop down button with "code". 
 
@@ -399,22 +402,86 @@ To Clone the repository:
 
 If any problems occur refer [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for help.
 
-To deploy on Heroku.
+### Running Code for developement
+
+After following the steps above, you will need to install all requirements in requirements.txt.  
+This is done by typing into your IDE terminal  
+
+    pip3 install -r requirements.txt
+
+In your settings.py file you will want to set environment variables for developement. This can be done by accessing the account settings for your chosen IDE and choosing variables:
+
+<img src="README_TESTING_IMAGES/developement-vars.png" alt="dev-vars">
+
+Note: Developement variable should be set to True in production and False on deployment to Heroku
+
+During developement in order to have full access to the Django admin page you should create a super user through the terminal command:
+
+    python3 manage.py createsuperuser
+
+Follow the steps provided to create your username and password.
+
+Afterwards, you will need to make migrations and migrate to create the database required for the project.
+
+Use the following commands:
+
+```python3 manage.py makemigrations``` to see what migrations will be made add --dry-run to the end of the command.
+
+Then
+
+```python3 manage.py migrate``` to see what will be migrated add --plan to the end of the command.
+
+
+
+
+## Deploying on Heroku.
 
 1. Log into Heroku.
 2. Click on "New" button and "Create new app" on the drop down.
 3. Write your apps name and select a region close to you.
 4. From the app page select "Deploy" and connect to the GitHub cloned repository from before.
-5. For the app to work there are a few settings required, Select the "Settings" tab.
+5. Select the "Settings" tab. For the app to work there are a few settings required.
 6. Click Reveal Config Vars to show them.
 
-<img src="README_TESTING_IMAGES/config-vars.png" alt="config-vars">
+    <img src="README_TESTING_IMAGES/config-vars.png" alt="config-vars">
 
 7. Once filled in you can then return to the "Deploy" tab and scroll to the bottom and click "Deploy branch".
+8. Additonally you can connect your heroku app to your GitHub repository and allow for automatic deployment.
+
+You will also need to create a Procfile for heroku which contains the following:
+
+    web: gunicorn battlestations.wsgi:application
 
 Your app should be deployed and a link will be available to view it.
 
 Depending on the database you use you will need to follow some extra steps.
+
+When fully deploying to heroku you will need to migrate all migrations made through developement again
+to set up your Postgres database.
+
+This can be done by commenting out the sqlite3 database and using:
+
+    DATABASES = {
+        'default': dj_database_url.parse('<your postgres database url provided in the heroku config vars>')
+    }
+
+Once set you can migrate all migrations to the Postgres database using the command:
+
+```python3 manage.py migrate```
+
+Afterwards the database in settings.py can be determined by setting it as below:
+
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
 
 ### Notes:
 
@@ -451,7 +518,7 @@ For GitHub, going to the settings page and clicking applications allows users to
 - [This](https://stackoverflow.com/questions/40870635/star-rating-system-html) post on stackoverflow to work out how to make a star rating.
 - [This](https://codinhood.com/micro/10-dropdown-menu-animations-css-transform) post to animate the dropdown for products.
 - [This](https://1stwebdesigner.com/pure-css-animated-page-loaders/) for the hexagon loading overlay during checkout.
-- The Boutique Ado tutorials by Chris Zielinski, which helped tremendously throughtout development of this site.
+- The Boutique Ado tutorials by Chris Zielinski, which helped tremendously throughtout developement of this site.
 
 ### Media and Content
 

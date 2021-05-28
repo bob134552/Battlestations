@@ -11,6 +11,18 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 [PEP8 online check](http://pep8online.com/) was used to check for errors in python code for all apps.
 - Some errors remain due to length of lines, these were ignored as it was not possible to shorten them.
 
+#### Lighthouse Report
+
+The results of the lighthouse report are below.
+
+Desktop:
+
+<img src="/README_TESTING_IMAGES/lighthouse-desktop.png" alt="lighthouse-desktop">
+
+Mobile:
+
+<img src="README_TESTING_IMAGES/lighthouse-mobile.png" alt="lighthouse-mobile">
+
 ### Manual Testing Based On User Stories
 
 #### New User
@@ -20,7 +32,7 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     Navbar:
 
     - The navbar is always available to the user throughout the site.
-        - Clicking on the brand logo of the site (available on large screens) or on the home link brings the user to the front page of the site.
+    - Clicking on the brand logo of the site (available on large screens) or on the home link brings the user to the front page of the site.
     - Clicking on the dropdown for products allows the user to view either all products or a specified category.
     - Clicking on the Pre-Built nav link filters to show only pre-built PCs.
     - Clicking on the Build a PC nav link takes the user to a form where they are able to pick PC components for a personal custom build.
@@ -33,20 +45,29 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - All features of the site are available to the user except for being able to leave a review or comment on products.
     - A new user is able to purchase products without signing up and able to see order summary through the link provided in the confirmation email sent after purchase.
 
+
 3. As a new visitor, I want to be able to sign up easily.
 
     Sign up and log in page:
 
     - The sign up page is easy to access and is available through the "My Profile" dropdown on the top right of the site.
         - Signing up is simple to do and only requires a username, email and password.
-        - Attempting to sign up with an email that is being used by another user notifies the user and does not create the new account.
-        
+        - Attempting to sign up with an email that is already in use notifies the user and does not create the new account.
+        - Successfully signing up sends the user a verification email with a link to verify their account.
        
     <img src="README_TESTING_IMAGES/signup.png" alt="signup">
-        
-    - Alternatively if user wishes to log in with a social account the option is available on the log in page.
     
+    - Alternatively if user wishes to log in with a social account the option is available on the log in page.
+
     <img src="README_TESTING_IMAGES/login.png" alt="login">
+    
+    - Succesfully logging in returns user to the home page and a toast notifcation lets them know they are signed in.
+
+    <img src="README_TESTING_IMAGES/toast-login.png" alt="login">
+    
+    - Logging out returns user to the home page and notfies them that they have logged out.
+
+    <img src="README_TESTING_IMAGES/toast-signout.png" alt="signout">
 
 #### Returning User
 
@@ -57,6 +78,9 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - User delivery information is stored and displayed on the user profile page.
     - Information is saved if the user specified for it to be saved during their first purchase on the checkout form.
     - Delivery information can be manually added by the user in the user's profile page.
+    - A toast notifies user of a successful checkout.
+
+    <img src="README_TESTING_IMAGES/toast-checkout.png" alt="checkout-success">
 
 2. As a returning user, I want to be able to edit my details should they change.
 
@@ -76,24 +100,43 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - Users are limited to one review per user to prevent multiple reviews from the same user.
     - Attempting to submit the review form with an empty text input or no star rating prompts the user that both are required.
     
-<img src="README_TESTING_IMAGES/review-form.png" alt="review-form">
+    <img src="README_TESTING_IMAGES/review-form.png" alt="review-form">
+
+    - User is notified on a successful review submission through a toast notification.
+    
+    <img src="README_TESTING_IMAGES/toast-review-success.png" alt="submitted-review">
+    <br>
+    <img src="README_TESTING_IMAGES/toast-review.png" alt="review-updated">
 
 4. As a returning user, I wish to be able to leave comments on the products I've purchased and view other users opinions too.
 
     Product Details Comment Section:
 
     - Logged in users are able to submit as many comments as they wish on each product details page.
+
+    <img src="README_TESTING_IMAGES/test-comment.png" alt="test-comment">
+    <br>
+    <img src="README_TESTING_IMAGES/toast-comment.png" alt="comment">
+
     - Most recent comments are shown at the top.
     - Submitting a blank comment notifies the user that there needs to be some input for a comment to be submitted.
     - Clicking on update allows the user to edit their comment and after submitting the update it is correctly displayed.
-    - Deleting a comment removes it from the comment section.
+
+    <img src="README_TESTING_IMAGES/comment-update.png" alt="comment-update">
+    <br>
+    <img src="README_TESTING_IMAGES/updated-comment2.png" alt="updated-comment">
+
+    - Deleting a comment removes it from the comment section and notifies a user of its deletion.
+
+    <img src="README_TESTING_IMAGES/toast-comment-delete.png" alt="comment-deleted">
+
+
 
 #### Site Admin
 
 1. As a site admin, I want to be able to edit or delete other user posts should they contain anything inappropriate.
 
-    - For both the site review section on the home page and the comment section for each product, a site admin is given the 
-        option to either delete or update another users review or comment.
+    - For both the site review section on the home page and the comment section for each product, a site admin is given the option to either delete or update another users review or comment.
 
 2. As a site admin, I want to be able to manage products within the store be it adding, updating or deleting.
 
@@ -104,6 +147,28 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - Submitting the form without a required field informs the user.
     - Should the image for a product need to be changed, the file name for the new image is shown so that the user knows what its changing to.
     - Clicking remove on a product opens a modal asking the user if they are sure, in order to prevent accidental deletion of a product.
+     - Deleting the product removes it from the products database, redirects the user to the all products page and notifies through a toast of the removed product.
+
+    <img src="README_TESTING_IMAGES/delete-modal.png" alt="delete-modal"> 
+    <br>
+    <img src="README_TESTING_IMAGES/toast-product-delete.png">
+
+    - Succesfully adding a new product redirects user to the new product's details page and notifies of the new addition.
+
+    <img src="README_TESTING_IMAGES/new-product.png" alt="new-product">
+
+    - Clicking update on a product takes the user to the update page.
+        - Form is prefilled with the products data.
+
+        <img src="README_TESTING_IMAGES/update-form.png" alt="update-form">
+
+        - user is notified through a toast about the product that is being updated.
+
+        <img src="README_TESTING_IMAGES/toast-edit.png" alt="edit-toast">
+
+        - Submitting the form takes the user to the product's details page and notifies of a successful update.
+
+        <img src="README_TESTING_IMAGES/toast-edit-success.png" alt="edit-success-toast">
 
 ## Testing Elements on each page
 
@@ -162,12 +227,14 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 
 <img src="README_TESTING_IMAGES/sortdrop.png" alt="sort">
 
-
 ### Add to basket button and quantity selector (on multiple pages: products, search and product details page).
 
 - Clicking the add to basket button adds the specified product and its quantity to the basket.
 - Clicking on the plus or minus button on the quantity selector, increments or decrements the quantity value.
 - Clicking on the add to basket button with a selected quantity adds that product and quantity to the basket.
+- Adding a product to the basket displays a toast notifcation of the item in the basket.
+
+<img src="README_TESTING_IMAGES/toast-atb.png" alt="add-to-basket">
 
 ### Basket Page
 
@@ -185,7 +252,7 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - The order is still submitted as the webhook handler adds it to the database and sends a confirmation email to the user should the form fail.
 
 <img src="README_TESTING_IMAGES/checkout.png" alt="checkout">
-
+<br>
 <img src="README_TESTING_IMAGES/wh-success.png" alt="webhook">
 
 
@@ -194,23 +261,31 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 - Filling the delivery details and submitting adds or updates the details based on user input.
 - Clicking on a order number (if available) takes the user to a page similar to the checkout success page that displays the users order details.
 
+<img src="README_TESTING_IMAGES/toast-summary.png" alt="order-summary">
+
 ### Social connections page
 
 - If connected to either Facebook, Google or GitHub there is a radio button displayed for each.
 - Selecting either of the radio buttons and clicking the remove button, removes the social account.
 
 <img src="README_TESTING_IMAGES/facebook-1.png" alt="fb-selected">
-
+<br>
 <img src="README_TESTING_IMAGES/facebook-2.png" alt="fb-dc">
 
-- Not having either selected refreshes the page.
-- Clicking on either the Facebook, Google or GitHub button attempts to connect the users account to their selected social account.
+- Not having any selected refreshes the page.
+- Clicking on either the Facebook, Google or GitHub button attempts to connect the users account to their selected      social account.
+- Connecting or removing a social connection notifies user through a toast notification.
+
+<img src="README_TESTING_IMAGES/toast-connect.png" alt="connected">
+<br>
+<img src="README_TESTING_IMAGES/toast-disconnect.png" alt="disconnected">
 
 ### Change Password page
 
 - Submitting a blank form notifies the user that there are inputs missing.
 - Submitting incorrect original password notifies the user that their current password is incorrect.
 - Submitting with mismatching new and repeat password notifies the user that the passwords do not match.
+
 <img src="README_TESTING_IMAGES/change-pass.png" alt="pw-change">
 
 ### Change Email page
