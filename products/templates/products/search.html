@@ -33,6 +33,7 @@
                     </select>
                 </div>
             </div>
+
             <div class="col-12 col-md-6 order-md-first">
                 <p class="text-muted mt-3 text-center text-md-start">
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
@@ -58,6 +59,7 @@
                                     {% endif %}
                                 </a>
                             </div>
+                            
                             <div class="col-md-8 col-12">
                                 <div class="card-body h-100 d-flex flex-column">
                                     <a href="{% url 'product_details' product.id %}" class="text-dark">

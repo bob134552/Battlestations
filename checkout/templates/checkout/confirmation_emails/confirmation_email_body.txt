@@ -6,13 +6,13 @@ Your order details are below:
 
 Items:
 {% for item in order.lineitems.all %}
-    -{{ item.product.name }} x {{ item.quantity }}
+    - {{ item.product.name }} - {{ item.product.sku }} x {{ item.quantity }}
 {% endfor %}
 
 Order Date: {{ order.date }}
-Subtotal: {{ order.order_total }}
-Delivery: {{ order.delivery_cost }}
-Final Amount: {{ order.final_amount }}
+Subtotal: £{{ order.order_total }}
+Delivery: £{{ order.delivery_cost }}
+Final Amount: £{{ order.final_amount }}
 
 Delivery Details:
 

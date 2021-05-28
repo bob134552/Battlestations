@@ -14,6 +14,7 @@
 5. [**Testing**](#testing)
 6. [**Deployment**](#deployment)
 7. [**Credits**](#credits)
+    - [**Code**](#code)
     - [**Media and Content**](#media-and-content)
     - [**Acknowledgements**](#acknowledgements)
 
@@ -30,7 +31,7 @@ The live site can be found [here](https://battlestations-mp4.herokuapp.com/).
 A site designed to allow users to view and purchase computer components, pre-built desktops or create their own custom
 build from the parts provided within the store.
 The website contains products recently released and aims to keep up to date with all recent releases of PC parts. 
-The website features a catalogue of recently released product, user registration including social media integration 
+The website features a catalogue of recently released products, user registration including social media integration 
 and email authentication and the ability to create your own custom desktop PC.
 The primary goal of the website is to create a easy platform for users to browse, buy and comment on products available
 on the site. 
@@ -40,7 +41,7 @@ on the site.
 ## UX
 
 The ideal user for this site is:
-- Interested in either building or purchasing desktops or components for their own builds.
+- Interested in either building or purchasing desktops, or purchasing components for their own builds.
 - Interested in leaving their thoughts on products to help other users.
 - English speaking.
 
@@ -51,7 +52,7 @@ Visitors to the site are looking for:
 
 The website should be:
 - Easy to navigate.
-- Have a simple registration and log in with the possibility of using a social account to log in with.
+- Have a simple registration and log in with the possibility of using a social account for log in.
 - Able to search through a database of PC components to find specific ones.
 - Able to add or remove products as required.
 
@@ -115,13 +116,6 @@ The wireframes plan for this project can be found in my github repository:
 
 ### Existing Features
 
-- Comment section for products.
-- Social account login.
-- Stripe Payment handling.
-- Build a custom PC.
-- Site reviews.
-- Site management for admins.
-
 #### Navbar
 
 The navbar is available throughout the site as a means for the user to be able to search the site through the available search bar, access their basket
@@ -130,29 +124,29 @@ responsive and will collapse on smaller screens.
 
 #### Footer
 
-Contains social media links to Facebook, Google and Instagram and contact details.
+Contains social media links to Facebook, Google and Instagram. The footer also contains contact details and a privacy policy.
 
 #### Home Page
 
 The Home page features a carousel featuring recent pre-built PCs available for purchase, a section allowing users to choose a category to view,
-and a site review section where the 4 most recent reviews are visible for new or returning users to view. The site reviews section also allows 
+and a site review section where the four most recent reviews are visible for new or returning users to view. The site reviews section also allows 
 a logged in user be able to write their own review and give a star rating which adds to the average rating above the reviews.
 
 #### Site Review Page (add and update)
 
-The Site Review page is a form consisting a radio button star rating and a text field for users to write their review of the site. The update page is the same
-but prefilled with the users initial review. There are 2 buttons available to the user, a home button should they wish to not submit or edit their review 
+The Site Review page is a form consisting of a radio button star rating and a text field for users to write their review of the site. The update page is the same
+but prefilled with the users initial review. There are two buttons available to the user, a home button should they wish to not submit or edit their review 
 and a submit button to save their review.
 
 #### Profile Page
 
 The Profile page is accessible from the profile option in the navbar, it features a form of the users previously saved delivery details, an order
-history that they can click on to view previous orders and 3 buttons that bring them to the email management, password change and social account 
+history that they can click on to view previous orders and three buttons that bring them to the email management, password change and social account 
 management pages.
 
 #### Email Management page
 
-The Email Management page allows users to select a primary email to be used, add/remove and verify additional emails if required and change primary email
+The Email Management page allows users to select a primary email to be used, add/remove and verify additional emails if required, or change their primary email
 address.
 
 #### Password Change page
@@ -173,13 +167,13 @@ there is a link that redirects to the log in page so they can log in with a soci
 The Login page contains a simple form that requires two inputs; username and password.
 A submit button below the form takes the user back to the home page, if the login details are entered correctly.
 If the details are incorrect the user is informed that either the username/password was incorrect. 
-There is a link to the sign up page, 3 social buttons(Facebook, GitHub and Google) that allow a user to login with a social account and a link to the 
+There is a link to the sign up page, three social buttons (Facebook, GitHub and Google) that allow a user to login with a social account and a link to the 
 password reset page that allows users to reset their password through email.
 
 #### All Products page
 
-The All Products page displays a list of all available products to the user, excluding Pre-built PCs. The user is able to see core information on each product, add a specified quantity 
-of the product to the basket and is able to sort the products by name, price and category in either ascending or descending order. Through the dropdown in the navbar
+The All Products page displays a list of all available products to the user, excluding Pre-built PCs. The user is able to see core information on each product and add a specified quantity 
+of the product to the basket. The use can sort the products by name, price and category in either ascending or descending order. Through the dropdown in the navbar
 the user is able to search a specific category (such as cooling, cpus etc.)
 
 ### Product Details page
@@ -195,7 +189,7 @@ The user then picks a product in each category to create their own unique PC bui
 
 ####  Search Page
 
-The search page is used to display user queries through the use of the search bar. If no results are returned the user is notified and there is a link to go back to 
+The Search page is used to display user queries through the use of the search bar. If no results are returned the user is notified and there is a link to go back to 
 all products.
 
 #### Basket Page
@@ -206,8 +200,8 @@ should they wish to add anything to their basket.
 
 #### Checkout Page
 
-The Checkout page cosists of a form asking user for delivery details, Stripe card payment input and a card featuring the users order summary.
-On submit of an order the page is overlayed with a loading spinner until the payment intent webhook from stripe is received and user is redirected to the
+The Checkout page cosists of a form asking the user for delivery details, Stripe card payment input and a card featuring the users order summary.
+On submit of an order the page is overlayed with a loading spinner until the payment intent webhook from stripe is received and the user is then redirected to the
 checkout success page for their order.
 
 #### Checkout Success/Order History page
@@ -216,6 +210,15 @@ The Checkout Success page is displayed after a successful purchase. The order hi
 Both pages contain similar information such as order summary and delivery details. One of the notable differences is that the order history page contains a
 button back to the profile page.
 
+#### Other Existing Features
+
+- Comment section for products.
+- Social account login.
+- Stripe Payment handling.
+- Build a custom PC.
+- Site reviews.
+- Site management for admins.
+
 ### Features to add in the future
 
 - The ability to edit custom builds instead of restarting the build.
@@ -223,6 +226,7 @@ button back to the profile page.
 - The ability to give thumbs up/down to products and comments using Facebook like system.
 - A chat box for visitors so they can talk about upcoming releases and keep site traffic up.
 - Paypal payment.
+- A way to disable options for parts if they are not compatible with ones that are currently selected.
 
 <a href="#contents">Back To Top</a>
 
@@ -422,11 +426,11 @@ On the Django admin, navigate to the "Social Applications" admin and click "ADD 
 Input the app ID and Secret into the respective fields and set your site as the chosen site.
 
 Similary, for allowing Google or Github social account log in, create an app for your site through the Google Developers and create
-credentials for OAuth 2.0 Client IDs. You will be given a client ID and secret which can be used similarly to Facebook set up
-to enable Google log in.
+credentials for OAuth 2.0 Client IDs. You will be given a client ID and secret which similar to Facebook set up,
+enables Google log in.
 <img src="README_TESTING_IMAGES/google.png" alt="google">
 
-For GitHub going to the setting page and clicking applications allows users to create an OAuth app to allow log in with.
+For GitHub, going to the settings page and clicking applications allows users to create an OAuth app to allow for log in to the site.
 
 <img src="README_TESTING_IMAGES/github.png" alt="github">
 
@@ -443,7 +447,7 @@ For GitHub going to the setting page and clicking applications allows users to c
 - [This](https://stackoverflow.com/questions/40870635/star-rating-system-html) post on stackoverflow to work out how to make a star rating.
 - [This](https://codinhood.com/micro/10-dropdown-menu-animations-css-transform) post to animate the dropdown for products.
 - [This](https://1stwebdesigner.com/pure-css-animated-page-loaders/) for the hexagon loading overlay during checkout.
-- The Boutique Ado tutorials by Chris Zielinski, for which help tremendously throughtout development of this site.
+- The Boutique Ado tutorials by Chris Zielinski, which helped tremendously throughtout development of this site.
 
 ### Media and Content
 
@@ -451,6 +455,10 @@ For GitHub going to the setting page and clicking applications allows users to c
 - 2 products taken from [DinoPC](https://www.dinopc.com/)
 
 ### Acknowledgements
+
+- My family, especially my grandad Gordon. This would not have been possible without them. 
+- My wife and daughter for the daily support throughout the course.
+- My mentor for all the support, ideas and guidance.
 
 <a href="#contents">Back To Top</a>
 

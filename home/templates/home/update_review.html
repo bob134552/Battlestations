@@ -17,6 +17,7 @@
             <h2>Tell us how we did!</h2>
             <hr>
         </div>
+
         <div class="col-12">
             <form method="POST" action="{% url 'update_review' review.id %}" id="review-form" class="w-100">
                 {% csrf_token %}
@@ -36,7 +37,7 @@
                         <label class="star star-1" for="star-1"></label>
                     </div>
                 </div>
-                {{ review_form.review |as_crispy_field }}
+                {{ review_form.review | as_crispy_field }}
                 {{ review_form.user | as_crispy_field }}
                 <div class="d-flex justify-content-center">
                     <a href="{% url 'home' %}"  class="btn btn-black rounded-0">Home</a>

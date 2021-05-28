@@ -9,7 +9,7 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 [W3C HTML Validator](https://validator.w3.org/) was used to check for errors in all templates, any error left is due to django templating.
 [BeautifyTools](https://beautifytools.com/javascript-validator.php) was used to validate all written javascript.
 [PEP8 online check](http://pep8online.com/) was used to check for errors in python code for all apps.
-- Some errors due to length of lines ignored due to not being able to be shortened.
+- Some errors remain due to length of lines, these were ignored as it was not possible to shorten them.
 
 ### Manual Testing Based On User Stories
 
@@ -25,24 +25,27 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - Clicking on the Pre-Built nav link filters to show only pre-built PCs.
     - Clicking on the Build a PC nav link takes the user to a form where they are able to pick PC components for a personal custom build.
     - Clicking on the My Profile drop down gives users the option to sign up or login if the user isn't logged in.
-        - Meanwhile if the user is logged in they are given to option to view their own profile and log out.
-        - If user is a site admin they are able to access product management too and add a product.
+        - If the user is logged in they are given the option to view their own profile and log out.
+        - If the user is a site admin they are able to access product management.
 
-2. As a new visitor, I want to be able to use the site before registering and being able to purchase products without signing up.
+2. As a new visitor, I want to be able to use the site before registering and be able to purchase products without signing up.
 
     - All features of the site are available to the user except for being able to leave a review or comment on products.
-    - Able to purchase products without signing up and able to see order summary through the link provided in the confirmation email sent after purchase.
+    - A new user is able to purchase products without signing up and able to see order summary through the link provided in the confirmation email sent after purchase.
 
 3. As a new visitor, I want to be able to sign up easily.
 
     Sign up and log in page:
 
     - The sign up page is easy to access and is available through the "My Profile" dropdown on the top right of the site.
-        - Signing up is simple to do and only requires and username, email and password.
+        - Signing up is simple to do and only requires a username, email and password.
         - Attempting to sign up with an email that is being used by another user notifies the user and does not create the new account.
-        <img src="README_TESTING_IMAGES/signup.png" alt="signup">
+        
+       
+    <img src="README_TESTING_IMAGES/signup.png" alt="signup">
         
     - Alternatively if user wishes to log in with a social account the option is available on the log in page.
+    
     <img src="README_TESTING_IMAGES/login.png" alt="login">
 
 #### Returning User
@@ -67,19 +70,21 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     
     Review Form:
 
-    - At the bottom of the home page, users are able to leave 1 review should they wish. The review also includes a star rating they
+    - At the bottom of the home page, users are able to leave one review should they wish. The review also includes a star rating they
         can select.
-    - Users are limited to 1 review per user to prevent multiple reviews from the same user.
+    - Users are able to edit/delete their review if their opinion changes in the future. 
+    - Users are limited to one review per user to prevent multiple reviews from the same user.
     - Attempting to submit the review form with an empty text input or no star rating prompts the user that both are required.
-    <img src="README_TESTING_IMAGES/review-form.png" alt="review-form">
+    
+<img src="README_TESTING_IMAGES/review-form.png" alt="review-form">
 
 4. As a returning user, I wish to be able to leave comments on the products I've purchased and view other users opinions too.
 
     Product Details Comment Section:
 
-    - Logged in users are able to submit as many comments as they wish on each product's details page.
+    - Logged in users are able to submit as many comments as they wish on each product details page.
     - Most recent comments are shown at the top.
-    - Submitting a blank comment requires notifies user that there needs to be some input for a comment to be submitted.
+    - Submitting a blank comment notifies the user that there needs to be some input for a comment to be submitted.
     - Clicking on update allows the user to edit their comment and after submitting the update it is correctly displayed.
     - Deleting a comment removes it from the comment section.
 
@@ -97,8 +102,8 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
     - Attempting to access this page if user is not a site admin will return user to the login page.
     - The site admin is able to access both these pages, both are similar but the update page is prefilled with the selected products information.
     - Submitting the form without a required field informs the user.
-    - Should the image for a product need to be changed, the new image's file name is shown so user knows what its changing to.
-    - Clicking remove on a product opens a modal asking the user if they are sure to prevent accidental deletion of a product.
+    - Should the image for a product need to be changed, the file name for the new image is shown so that the user knows what its changing to.
+    - Clicking remove on a product opens a modal asking the user if they are sure, in order to prevent accidental deletion of a product.
 
 ## Testing Elements on each page
 
@@ -109,11 +114,11 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 - Clicking on the logo returns user to home page.
 - Clicking on the home nav link takes user to home page.
 - Clicking on the products dropdown gives users access to all products or a cetain category.
-- Clicking on the pre built PCs filters all products for pre built PCs.
+- Clicking on pre built PCs filters all products for pre built PCs.
 - Clicking on Build a PC takes users to the build a PC page.
-- Clicking on the My Profile presents the users options respective of if they are logged in or not.
+- Clicking on My Account presents the users options: different options are displayed depending on if they are logged in or not.
     - Sign up and log in when not logged in.
-    - My profile and log out if logged in with Product Management if user is admin.
+    - My profile and log out if logged in, with Product Management if user is admin.
 
 <img src="README_TESTING_IMAGES/loggedout.png" alt="logged-out">
 <br>
@@ -135,82 +140,92 @@ It was also tested on several devices: Samsung Galaxy S10+, iPhone 12, Samsung T
 
 ### Products/Search page
 
-- Clicking on the products image or name takes the user to the product's detail page.
+- Clicking on a products image or name takes the user to the products detail page.
 
 #### Search bar
 
 - If no matches the user is shown there are no results.
+
 <img src="README_TESTING_IMAGES/testing.png" alt="no-results">
-- If a search returns results users are shown the results.
+
+- If a search returns results, users are shown the results.
+
 <img src="README_TESTING_IMAGES/search.png" alt="results">
 
 
 #### Sort dropdown
 
-- Clicking on the Sort by dropdown shows options to sort the products currently displayed.
+- Clicking on the sort by dropdown shows options to sort the products currently displayed.
 - Clicking on Name(A-Z) or Name(Z-A) will sort products in ascending or descending order.
 - Clicking on Category(A-Z) or Category(Z-A) will sort products into categories in ascending or descending order.
-- Clicking on Price(low to high) or Price(high to low) wil sort products in ascending or descending order based on cost.
+- Clicking on Price(low to high) or Price(high to low) will sort products in ascending or descending order based on cost.
+
 <img src="README_TESTING_IMAGES/sortdrop.png" alt="sort">
 
 
-### Add to basket button and quantity selector on multiple pages(products, search and product details page).
+### Add to basket button and quantity selector (on multiple pages: products, search and product details page).
 
 - Clicking the add to basket button adds the specified product and its quantity to the basket.
-- Clicking on the plus or minus button on the quantity selector increments or decrements the quantity value.
-- Clicking on add to basket button with a selected quantity adds that product and that quantity to the basket.
+- Clicking on the plus or minus button on the quantity selector, increments or decrements the quantity value.
+- Clicking on the add to basket button with a selected quantity adds that product and quantity to the basket.
 
 ### Basket Page
 
 - Clicking on update changes the quantity of the selected product to the new quantity specified.
-- Clicking on remove removes the selected product from the basket.
+- Clicking on remove will remove the selected product from the basket.
     - Removing a custom built pc also deletes it from the database.
-- Clicking on the products name takes user to the product's details page.
+- Clicking on the products name takes the user to the details page for that product.
 
 ### Checkout page
 
-- Filling form out correctly and submitting takes users to checkout success page.
-- Leaving a required field blank notifies user of a missing field.
-- Filling the card details input incorrectly notifies user when they submit.
+- Filling the form out correctly and submitting takes users to checkout success page.
+- Leaving a required field blank notifies the user of a missing field.
+- Filling the card details input incorrectly notifies the user when they submit.
 - Commenting out the form.submit() in the stripe_elements.js stops the user from being taken to the checkout success.
     - The order is still submitted as the webhook handler adds it to the database and sends a confirmation email to the user should the form fail.
 
 <img src="README_TESTING_IMAGES/checkout.png" alt="checkout">
+
 <img src="README_TESTING_IMAGES/wh-success.png" alt="webhook">
 
 
 ### Profile page
 
 - Filling the delivery details and submitting adds or updates the details based on user input.
-- Clicking on a order number if available takes user to a page similar to the checkout success page that displays the users order details.
+- Clicking on a order number (if available) takes the user to a page similar to the checkout success page that displays the users order details.
 
 ### Social connections page
 
 - If connected to either Facebook, Google or GitHub there is a radio button displayed for each.
 - Selecting either of the radio buttons and clicking the remove button, removes the social account.
+
 <img src="README_TESTING_IMAGES/facebook-1.png" alt="fb-selected">
+
 <img src="README_TESTING_IMAGES/facebook-2.png" alt="fb-dc">
+
 - Not having either selected refreshes the page.
 - Clicking on either the Facebook, Google or GitHub button attempts to connect the users account to their selected social account.
 
 ### Change Password page
 
-- Submitting a blank form notifies user that there are inputs missing.
-- Submitting incorrect original password notifies user that their current password is incorrect.
-- Submitting with mismatching new and repeat password notifies user that the passwords do not match.
+- Submitting a blank form notifies the user that there are inputs missing.
+- Submitting incorrect original password notifies the user that their current password is incorrect.
+- Submitting with mismatching new and repeat password notifies the user that the passwords do not match.
 <img src="README_TESTING_IMAGES/change-pass.png" alt="pw-change">
 
 ### Change Email page
 
-- Attempting to remove a primary email if it is the only email available notifies user that at least 1 email is required.
-- Attempting to add a email with an empty input field notfies user that the field is empty.
-- Attempting to submit an email already registered notifies user that it is already associated to the user.
+- Attempting to remove a primary email if it is the only email available notifies the user that at least one email is required.
+- Attempting to add an email with an empty input field notfies the user that the field is empty.
+- Attempting to submit an email already registered notifies the user that the email is already associated to an account.
+
 <img src="README_TESTING_IMAGES/email.png" alt="email">
 
 ### Password Reset page
 
-- Attempting to submit a blank field notifies user that an input is required.
-- Attempting to submit a email not linking with the account notifies user that it isn't a email assigned with the account.
+- Attempting to submit a blank field notifies the user that an input is required.
+- Attempting to submit an email not linked to the account notifies the user that it isn't an email assigned their account.
+
 <img src="README_TESTING_IMAGES/pw-reset.png" alt="pw-reset">
 
 
